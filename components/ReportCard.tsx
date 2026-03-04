@@ -16,7 +16,16 @@ interface ReportCardProps {
 }
 
 export default function ReportCard({ report, locale, labels }: ReportCardProps) {
-  const icon = report.type === "informe" ? "📄" : "📰";
+  const iconMap: Record<string, string> = {
+    "informe": "📄",
+    "newsletter": "📰",
+    "player-profile": "👤",
+    "head2head": "⚔️",
+    "set-pieces": "🚩",
+    "post-match": "📊",
+    "playing-model": "♟️",
+  };
+  const icon = iconMap[report.type] || "📄";
 
   return (
     <div className={styles.card}>

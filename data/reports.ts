@@ -69,3 +69,6 @@ export const getReportsForTeam = (slug: string): Report[] =>
 
 export const getReportsByCompetition = (competition: string): Report[] =>
   reports.filter((r) => r.competition === competition);
+
+export const getReportsForPlayer = (playerSlug: string): Report[] =>
+  reports.filter((r) => r.playerSlug === playerSlug);

@@ -2,7 +2,14 @@ export type Confederation = "CONMEBOL" | "UEFA" | "CAF" | "AFC" | "CONCACAF" | "
 export type Tier = 1 | 2 | 3;
 export type TeamStatus = "available" | "coming_soon" | "playoff_pending";
 export type TeamMode = "national" | "club";
-export type ReportType = "informe" | "newsletter";
+export type ReportType =
+  | "informe"
+  | "newsletter"
+  | "player-profile"
+  | "head2head"
+  | "set-pieces"
+  | "post-match"
+  | "playing-model";
 
 export interface BilingualText {
   es: string;
@@ -25,6 +32,10 @@ export interface Report {
   pages?: string;
   date: string;
   formats: ReportFormat;
+  playerSlug?: string;
+  comparisonSlugs?: string[];
+  matchDate?: string;
+  matchOpponent?: string;
 }
 
 export interface Team {

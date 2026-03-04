@@ -1,16 +1,24 @@
 import { notFound } from "next/navigation";
 import { getDictionary, Locale, locales } from "@/lib/i18n";
-import { clubTeams, getTeamBySlug } from "@/data/teams";
-import { getReportsForTeam } from "@/data/reports";
+import {
+  getClubTeams,
+  getTeamBySlug,
+  getReportsForTeam,
+  toTeam,
+  toReport,
+} from "@/lib/queries";
 import { localized } from "@/lib/utils";
 import TierBadge from "@/components/TierBadge";
 import ReportCard from "@/components/ReportCard";
 import styles from "./page.module.css";
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
+  const clubs = await getClubTeams();
   const params: { locale: string; team: string }[] = [];
   for (const locale of locales) {
-    for (const team of clubTeams) {
+    for (const team of clubs) {
       params.push({ locale, team: team.slug });
     }
   }
@@ -26,10 +34,12 @@ export default async function ClubTeamPage({
   const loc = locale as Locale;
   const dict = await getDictionary(loc);
 
-  const team = getTeamBySlug(teamSlug);
-  if (!team || team.mode !== "club") return notFound();
+  const teamRow = await getTeamBySlug(teamSlug);
+  if (!teamRow || teamRow.mode !== "club") return notFound();
 
-  const teamReports = getReportsForTeam(team.slug);
+  const team = toTeam(teamRow);
+  const reportRows = await getReportsForTeam(team.slug);
+  const teamReports = reportRows.map(toReport);
   const tierLabel = dict.tiers[String(team.tier) as keyof typeof dict.tiers];
 
   return (

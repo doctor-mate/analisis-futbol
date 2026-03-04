@@ -1,11 +1,18 @@
 import Link from "next/link";
 import { getDictionary, Locale } from "@/lib/i18n";
-import { teams, getTeamsByGroup, groups, clubTeams } from "@/data/teams";
-import { getReportsForTeam } from "@/data/reports";
+import {
+  getNationalTeams,
+  getClubTeams,
+  getTeamsByGroup,
+  toTeam,
+  groups,
+} from "@/lib/queries";
 import { localized } from "@/lib/utils";
 import HeroSection from "@/components/HeroSection";
 import TeamCard from "@/components/TeamCard";
 import styles from "./page.module.css";
+
+export const revalidate = 3600;
 
 export default async function HomePage({
   params,
@@ -16,10 +23,16 @@ export default async function HomePage({
   const loc = locale as Locale;
   const dict = await getDictionary(loc);
 
-  // Featured teams (those with reports available, or top Tier 1 teams)
-  const featured = ["argentina", "brazil", "spain"].map(
-    (slug) => teams.find((t) => t.slug === slug)!
-  );
+  // Featured teams
+  const allTeams = await getNationalTeams();
+  const featured = ["argentina", "brazil", "spain"]
+    .map((slug) => allTeams.find((t) => t.slug === slug))
+    .filter(Boolean)
+    .map((row) => toTeam(row!));
+
+  // Club teams
+  const clubRows = await getClubTeams();
+  const clubs = clubRows.map(toTeam);
 
   function getStatusLabel(status: string): string {
     const map: Record<string, string> = {
@@ -46,18 +59,15 @@ export default async function HomePage({
         <div className="container">
           <h2>{dict.home.featured}</h2>
           <div className={styles.featuredGrid}>
-            {featured.map((team) => {
-              const teamReports = getReportsForTeam(team.slug);
-              return (
-                <TeamCard
-                  key={team.slug}
-                  team={team}
-                  locale={loc}
-                  tierLabel={dict.tiers[String(team.tier) as keyof typeof dict.tiers]}
-                  statusLabel={getStatusLabel(team.status)}
-                />
-              );
-            })}
+            {featured.map((team) => (
+              <TeamCard
+                key={team.slug}
+                team={team}
+                locale={loc}
+                tierLabel={dict.tiers[String(team.tier) as keyof typeof dict.tiers]}
+                statusLabel={getStatusLabel(team.status)}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -74,21 +84,24 @@ export default async function HomePage({
         <div className="container">
           <h2>{dict.home.quickView}</h2>
           <div className={styles.groupsMini}>
-            {groups.map((letter) => {
-              const groupTeams = getTeamsByGroup(letter);
-              return (
-                <div key={letter} className={styles.groupMini}>
-                  <div className={styles.groupLetter}>{letter}</div>
-                  <div className={styles.groupFlags}>
-                    {groupTeams.map((t) => (
-                      <span key={t.slug} title={localized(t.name, loc)}>
-                        {t.flag}
-                      </span>
-                    ))}
+            {await Promise.all(
+              groups.map(async (letter) => {
+                const groupRows = await getTeamsByGroup(letter);
+                const groupTeams = groupRows.map(toTeam);
+                return (
+                  <div key={letter} className={styles.groupMini}>
+                    <div className={styles.groupLetter}>{letter}</div>
+                    <div className={styles.groupFlags}>
+                      {groupTeams.map((t) => (
+                        <span key={t.slug} title={localized(t.name, loc)}>
+                          {t.flag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })
+            )}
           </div>
           <div className={styles.viewAllWrap}>
             <Link href={`/${locale}/mundial-2026`} className={styles.viewAll}>
@@ -99,7 +112,7 @@ export default async function HomePage({
       </section>
 
       {/* Clubs section */}
-      {clubTeams.length > 0 && (
+      {clubs.length > 0 && (
         <>
           <div className="container">
             <div className="diamond-separator">
@@ -110,7 +123,7 @@ export default async function HomePage({
             <div className="container">
               <h2>{dict.home.clubes}</h2>
               <div className={styles.featuredGrid}>
-                {clubTeams.map((team) => (
+                {clubs.map((team) => (
                   <TeamCard
                     key={team.slug}
                     team={team}

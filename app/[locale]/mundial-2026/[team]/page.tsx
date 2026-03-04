@@ -1,19 +1,28 @@
 import { notFound } from "next/navigation";
 import { getDictionary, Locale, locales } from "@/lib/i18n";
-import { teams, getTeamBySlug, getTeamsByGroup } from "@/data/teams";
-import { getReportsForTeam } from "@/data/reports";
+import {
+  getNationalTeams,
+  getTeamBySlug,
+  getTeamsByGroup,
+  getReportsForTeam,
+  toTeam,
+  toReport,
+} from "@/lib/queries";
 import { localized } from "@/lib/utils";
 import TierBadge from "@/components/TierBadge";
 import ReportCard from "@/components/ReportCard";
 import TeamCard from "@/components/TeamCard";
 import styles from "./page.module.css";
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
+  const teams = await getNationalTeams();
   const params: { locale: string; team: string }[] = [];
   for (const locale of locales) {
-    for (const team of teams) {
-      if (team.status !== "playoff_pending") {
-        params.push({ locale, team: team.slug });
+    for (const t of teams) {
+      if (t.status !== "playoff_pending") {
+        params.push({ locale, team: t.slug });
       }
     }
   }
@@ -29,13 +38,15 @@ export default async function TeamPage({
   const loc = locale as Locale;
   const dict = await getDictionary(loc);
 
-  const team = getTeamBySlug(teamSlug);
-  if (!team || team.mode !== "national") return notFound();
+  const teamRow = await getTeamBySlug(teamSlug);
+  if (!teamRow || teamRow.mode !== "national") return notFound();
 
-  const teamReports = getReportsForTeam(team.slug);
-  const groupRivals = getTeamsByGroup(team.group).filter(
-    (t) => t.slug !== team.slug
-  );
+  const team = toTeam(teamRow);
+  const reportRows = await getReportsForTeam(team.slug);
+  const teamReports = reportRows.map(toReport);
+
+  const rivalRows = await getTeamsByGroup(team.group);
+  const groupRivals = rivalRows.map(toTeam).filter((t) => t.slug !== team.slug);
 
   const tierLabel = dict.tiers[String(team.tier) as keyof typeof dict.tiers];
   const tierDesc =

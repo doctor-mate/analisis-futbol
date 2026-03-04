@@ -1,8 +1,10 @@
 import { getDictionary, Locale } from "@/lib/i18n";
-import { getTeamsByGroup, groups } from "@/data/teams";
+import { getTeamsByGroup, groups, toTeam } from "@/lib/queries";
 import { daysUntilWorldCup, t } from "@/lib/utils";
 import GroupGrid from "@/components/GroupGrid";
 import styles from "./page.module.css";
+
+export const revalidate = 3600;
 
 export default async function MundialPage({
   params,
@@ -35,17 +37,23 @@ export default async function MundialPage({
       {/* Groups Grid */}
       <section className={styles.groups}>
         <div className="container">
-          {groups.map((letter) => (
-            <GroupGrid
-              key={letter}
-              letter={letter}
-              teams={getTeamsByGroup(letter)}
-              locale={loc}
-              groupLabel={dict.mundial.group}
-              dict={dict.team}
-              tierLabels={dict.tiers}
-            />
-          ))}
+          {await Promise.all(
+            groups.map(async (letter) => {
+              const rows = await getTeamsByGroup(letter);
+              const teams = rows.map(toTeam);
+              return (
+                <GroupGrid
+                  key={letter}
+                  letter={letter}
+                  teams={teams}
+                  locale={loc}
+                  groupLabel={dict.mundial.group}
+                  dict={dict.team}
+                  tierLabels={dict.tiers}
+                />
+              );
+            })
+          )}
         </div>
       </section>
     </>

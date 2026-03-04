@@ -47,6 +47,15 @@
     "sections": "{n} sections",
     "pages": "{n} pages"
   },
+  "reportTypes": {
+    "informe": "Opposition Report",
+    "newsletter": "Newsletter",
+    "player-profile": "Player Profile",
+    "head2head": "Head to Head",
+    "set-pieces": "Set Piece Analysis",
+    "post-match": "Post-Match",
+    "playing-model": "Playing Model"
+  },
   "clubes": {
     "title": "Club reports",
     "subtitle": "Opposition analysis by league"

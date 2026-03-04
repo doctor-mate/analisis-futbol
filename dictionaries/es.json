@@ -47,6 +47,15 @@
     "sections": "{n} secciones",
     "pages": "{n} páginas"
   },
+  "reportTypes": {
+    "informe": "Informe de Oposición",
+    "newsletter": "Newsletter",
+    "player-profile": "Perfil de Jugador",
+    "head2head": "Comparativa",
+    "set-pieces": "Análisis ABP",
+    "post-match": "Post-Partido",
+    "playing-model": "Modelo de Juego"
+  },
   "clubes": {
     "title": "Informes de clubes",
     "subtitle": "Análisis de oposición por liga"

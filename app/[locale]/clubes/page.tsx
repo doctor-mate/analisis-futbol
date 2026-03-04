@@ -1,7 +1,9 @@
 import { getDictionary, Locale } from "@/lib/i18n";
-import { clubTeams } from "@/data/teams";
+import { getClubTeams, toTeam } from "@/lib/queries";
 import TeamCard from "@/components/TeamCard";
 import styles from "./page.module.css";
+
+export const revalidate = 3600;
 
 export default async function ClubesPage({
   params,
@@ -11,6 +13,9 @@ export default async function ClubesPage({
   const { locale } = await params;
   const loc = locale as Locale;
   const dict = await getDictionary(loc);
+
+  const clubRows = await getClubTeams();
+  const clubTeams = clubRows.map(toTeam);
 
   // Group clubs by competition
   const competitions = new Map<string, typeof clubTeams>();

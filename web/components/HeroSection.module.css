@@ -1,0 +1,86 @@
+.hero {
+  background: var(--sa-negro);
+  color: var(--sa-crema);
+  padding: 80px 24px 72px;
+}
+
+.inner {
+  max-width: var(--sa-container);
+  margin: 0 auto;
+}
+
+.accentLine {
+  width: 48px;
+  height: 3px;
+  background: var(--sa-rojo);
+  margin-bottom: 32px;
+}
+
+.title {
+  font-family: var(--sa-font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: var(--sa-crema);
+}
+
+.subtitle {
+  font-family: var(--sa-font-body);
+  font-size: 1.125rem;
+  color: var(--sa-tierra);
+  font-style: italic;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.countdown {
+  font-family: var(--sa-font-data);
+  font-size: 14px;
+  color: var(--sa-dorado);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.countdownIcon {
+  font-size: 16px;
+}
+
+.cta {
+  display: inline-block;
+  background: var(--sa-rojo);
+  color: var(--sa-blanco);
+  font-family: var(--sa-font-body);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: var(--sa-radius);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.cta:hover {
+  background: var(--sa-rojo-claro);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 56px 16px 48px;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+}

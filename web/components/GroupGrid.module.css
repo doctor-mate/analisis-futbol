@@ -1,0 +1,23 @@
+.group {
+  margin-bottom: 40px;
+}
+
+.title {
+  font-family: var(--sa-font-display);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--sa-negro);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,51 @@
+.header {
+  background: var(--sa-negro);
+  color: var(--sa-crema);
+  padding: 40px 0 36px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.flag {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.header h1 {
+  color: var(--sa-crema);
+}
+
+.metaRow {
+  font-size: 14px;
+  color: var(--sa-tierra);
+  margin-bottom: 12px;
+}
+
+.reports {
+  padding-bottom: 40px;
+}
+
+.reports h2 {
+  margin-bottom: 20px;
+}
+
+.reportsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comingSoon {
+  background: var(--sa-crema-oscura);
+  border: 1.5px dashed var(--sa-arena);
+  border-radius: var(--sa-radius-lg);
+  padding: 40px;
+  text-align: center;
+  color: var(--sa-tierra);
+  font-style: italic;
+}

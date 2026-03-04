@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soy Analista — Argentina: Informe de Seleccion · Mundial 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --crema: #F5F0E8;
+    --crema-oscura: #EDE6D8;
+    --arena: #D9CEBC;
+    --tierra: #A69882;
+    --cafe: #6B5B4D;
+    --cafe-oscuro: #4A3E34;
+    --negro: #1C1915;
+    --negro-suave: #2C2822;
+    --tinta: #3A3530;
+    --blanco: #FEFCF8;
+    --rojo: #C13628;
+    --rojo-claro: #D94F42;
+    --dorado: #B8922F;
+    --verde: #3A7D44;
+    --azul: #2E5E8C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    background: #e8e3db;
+    color: var(--negro);
+    line-height: 1.7;
+  }
+
+  .newsletter-wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--blanco);
+  }
+
+  /* ── HEADER IMAGE ── */
+  .header-image {
+    background: linear-gradient(135deg, var(--negro) 0%, var(--negro-suave) 40%, #1a2a3a 70%, #2a3a4a 100%);
+    padding: 48px 40px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-image::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(117,172,224,0.08) 0%, rgba(255,255,255,0.03) 100%);
+  }
+  .header-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--rojo);
+  }
+  .header-brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 1;
+  }
+  .header-monogram {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .monogram-box {
+    width: 28px; height: 28px;
+    border: 1.5px solid var(--arena);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--crema);
+  }
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--crema);
+    letter-spacing: 0.5px;
+  }
+  .header-type {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 11px;
+    color: var(--tierra);
+  }
+  .header-team {
+    position: relative;
+    z-index: 1;
+  }
+  .header-flag {
+    font-size: 42px;
+    margin-bottom: 8px;
+  }
+  .header-team h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--blanco);
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .header-subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--tierra);
+    margin-bottom: 20px;
+  }
+  .header-accent {
+    width: 50px;
+    height: 3px;
+    background: var(--rojo);
+    margin-bottom: 24px;
+  }
+  .header-stats {
+    display: flex;
+    gap: 32px;
+    position: relative;
+    z-index: 1;
+  }
+  .header-stat {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-stat-value {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--blanco);
+  }
+  .header-stat-label {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 10px;
+    color: var(--tierra);
+    margin-top: 2px;
+  }
+
+  /* ── CONTENT ── */
+  .content {
+    padding: 36px 40px;
+  }
+  .content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 8px;
+    margin-top: 20px;
+  }
+  .content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cafe-oscuro);
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+  .content p {
+    font-size: 16px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+    color: var(--negro);
+  }
+  .content p.small {
+    font-size: 13px;
+    color: var(--tierra);
+    font-style: italic;
+  }
+  .content strong { font-weight: 700; }
+  .editorial-rule {
+    border: none;
+    border-top: 2.5px solid var(--negro);
+    margin: 8px 0 4px;
+  }
+  .editorial-rule-thin {
+    border: none;
+    border-top: 0.5px solid var(--arena);
+    margin: 0 0 16px;
+  }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--tierra);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  /* ── DIAMOND SEPARATOR ── */
+  .diamond-sep {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 28px 0;
+  }
+  .diamond-sep-line {
+    flex: 1;
+    height: 1px;
+    background: var(--arena);
+  }
+  .diamond-sep-icon {
+    width: 8px;
+    height: 8px;
+    background: var(--rojo);
+    transform: rotate(45deg);
+    margin: 0 12px;
+    flex-shrink: 0;
+  }
+
+  /* ── STAT CARDS ── */
+  .stat-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .stat-card {
+    background: var(--blanco);
+    border: 1px solid var(--arena);
+    border-radius: 4px;
+    padding: 16px 10px;
+    text-align: center;
+  }
+  .stat-card-value {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--negro);
+    line-height: 1.2;
+  }
+  .stat-card-value.accent { color: var(--rojo); }
+  .stat-card-label {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 10px;
+    color: var(--tierra);
+    margin-top: 4px;
+  }
+  .stat-card-pct {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    margin-top: 4px;
+  }
+
+  /* ── METRIC ROW ── */
+  .metric-row {
+    background: var(--crema);
+    border-radius: 4px;
+    padding: 10px 16px;
+    margin: 12px 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--cafe-oscuro);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* ── GROUP TABLE ── */
+  .group-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .group-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--tierra);
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 2px solid var(--negro);
+    background: var(--crema-oscura);
+  }
+  .group-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--arena);
+    vertical-align: middle;
+  }
+  .group-table td:first-child { font-weight: 700; }
+
+  /* ── BLOCKQUOTE ── */
+  .callout {
+    background: var(--negro);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 20px 0;
+  }
+  .callout p {
+    font-style: italic;
+    color: var(--crema);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+  .callout ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  .callout li {
+    color: var(--crema);
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }
+  .callout li::before {
+    content: '\25C6';
+    color: var(--rojo);
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+    top: 6px;
+  }
+
+  /* ── CTA / PAYWALL ── */
+  .cta-box {
+    background: var(--crema);
+    border: 1px solid var(--arena);
+    border-radius: 6px;
+    padding: 28px 32px;
+    text-align: center;
+    margin: 28px 0;
+  }
+  .cta-box p {
+    font-style: italic;
+    font-size: 14px;
+    color: var(--cafe);
+    margin-bottom: 16px;
+  }
+  .cta-button {
+    display: inline-block;
+    background: var(--rojo);
+    color: var(--blanco);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+  }
+  .paywall-break {
+    background: var(--negro);
+    color: var(--crema);
+    text-align: center;
+    padding: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    margin: 32px 0;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── PERCENTILE BARS ── */
+  .pct-section {
+    margin: 20px 0 8px;
+  }
+  .pct-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cafe-oscuro);
+    margin-bottom: 12px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--arena);
+  }
+  .pct-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+  .pct-label {
+    flex: 0 0 180px;
+    font-size: 13px;
+    color: var(--cafe);
+  }
+  .pct-value {
+    flex: 0 0 55px;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--negro);
+    text-align: right;
+  }
+  .pct-bar-wrap {
+    flex: 1;
+    height: 8px;
+    background: var(--crema-oscura);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .pct-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s;
+  }
+  .pct-tag {
+    flex: 0 0 38px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    text-align: right;
+  }
+  .pct-elite { color: var(--rojo); }
+  .pct-high { color: var(--dorado); }
+  .pct-mid { color: var(--azul); }
+  .pct-low { color: var(--tierra); }
+  .bar-elite { background: var(--rojo); }
+  .bar-high { background: var(--dorado); }
+  .bar-mid { background: var(--azul); }
+  .bar-low { background: var(--tierra); }
+
+  /* ── PLAYER CARD ── */
+  .player-card {
+    background: var(--blanco);
+    border: 1px solid var(--arena);
+    border-radius: 6px;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  .player-card-header {
+    padding: 16px 24px 12px;
+    border-bottom: 1px solid var(--crema-oscura);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .player-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--negro);
+    line-height: 1.2;
+  }
+  .player-card-pos {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--tierra);
+  }
+  .player-card-ici {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--rojo);
+    text-align: right;
+  }
+  .player-card-ici-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--tierra);
+    text-align: right;
+  }
+  .player-card-meta {
+    padding: 8px 24px;
+    background: var(--crema);
+    display: flex;
+    gap: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--cafe);
+  }
+  .player-card-body {
+    padding: 16px 24px;
+  }
+  .player-card-body p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .player-roles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin: 12px 0;
+  }
+  .role-item {
+    text-align: center;
+  }
+  .role-bar-bg {
+    height: 5px;
+    background: var(--crema-oscura);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 3px;
+  }
+  .role-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+  }
+  .role-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--tierra);
+  }
+  .role-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--cafe-oscuro);
+  }
+  .player-rival {
+    background: var(--crema);
+    border-radius: 4px;
+    padding: 10px 16px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--cafe-oscuro);
+    line-height: 1.6;
+  }
+  .player-rival strong { color: var(--rojo); }
+
+  /* ── STRENGTH/WEAKNESS CARDS ── */
+  .sw-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+  .sw-label.strength { color: var(--verde); }
+  .sw-label.weakness { color: var(--rojo); }
+  .sw-card {
+    border: 1px solid var(--arena);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background: var(--blanco);
+    border-left: 3px solid;
+  }
+  .sw-card.strength-card { border-left-color: var(--verde); }
+  .sw-card.weakness-card { border-left-color: var(--rojo); }
+  .sw-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    margin: 0 0 6px;
+    color: var(--negro);
+  }
+  .sw-card p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--cafe);
+  }
+  .sw-card .sw-metric {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 6px 10px;
+    background: var(--crema);
+    border-radius: 3px;
+    display: inline-block;
+  }
+  .sw-card.strength-card .sw-metric { color: var(--verde); }
+  .sw-card.weakness-card .sw-metric { color: var(--rojo); }
+
+  /* ── XI LINEUP ── */
+  .lineup-box {
+    background: var(--negro);
+    border-radius: 6px;
+    padding: 28px 24px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  .lineup-system {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--tierra);
+    margin-bottom: 20px;
+  }
+  .lineup-line {
+    margin-bottom: 16px;
+  }
+  .lineup-line-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--tierra);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+  .lineup-players {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .lineup-player {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--crema);
+  }
+  .lineup-player.captain {
+    border-color: var(--rojo);
+    color: var(--blanco);
+  }
+
+  /* ── CLAVES TABLE ── */
+  .claves-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+  }
+  .claves-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--arena);
+    vertical-align: top;
+    font-size: 14px;
+  }
+  .claves-table td:first-child {
+    width: 200px;
+    font-weight: 700;
+    color: var(--negro);
+    font-size: 13px;
+  }
+  .claves-table td:last-child {
+    font-style: italic;
+    color: var(--cafe);
+    font-size: 13px;
+  }
+
+  /* ── DOWNLOAD CTA ── */
+  .download-cta {
+    background: var(--crema);
+    border: 1px solid var(--arena);
+    border-radius: 6px;
+    padding: 24px 32px;
+    text-align: center;
+    margin: 28px 0;
+  }
+  .download-cta a {
+    display: inline-block;
+    background: var(--negro);
+    color: var(--crema);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .download-cta p {
+    font-size: 12px;
+    color: var(--tierra);
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* ── FOOTER ── */
+  .newsletter-footer {
+    padding: 24px 40px 32px;
+    border-top: 2px solid var(--negro);
+    text-align: center;
+  }
+  .newsletter-footer p {
+    font-size: 12px;
+    color: var(--tierra);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+  .newsletter-footer .brand-footer {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--negro);
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 12px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    .content { padding: 24px 20px; }
+    .header-image { padding: 32px 20px 28px; }
+    .header-team h1 { font-size: 36px; }
+    .header-stats { gap: 16px; flex-wrap: wrap; }
+    .stat-cards { grid-template-columns: repeat(2, 1fr); }
+    .player-roles { grid-template-columns: repeat(2, 1fr); }
+    .pct-label { flex: 0 0 120px; font-size: 11px; }
+    .pct-value { flex: 0 0 45px; font-size: 11px; }
+    .claves-table td:first-child { width: 140px; }
+    .lineup-players { gap: 8px; }
+    .lineup-player { font-size: 11px; padding: 5px 10px; }
+    .newsletter-footer { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="newsletter-wrapper">
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- HEADER IMAGE                                    -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="header-image">
+    <div class="header-brand">
+      <div class="header-monogram">
+        <div class="monogram-box">A</div>
+        <span class="brand-name">Soy Analista</span>
+      </div>
+      <span class="header-type">Informe de seleccion · Mundial 2026 · Tier 1</span>
+    </div>
+    <div class="header-team">
+      <div class="header-flag">&#127462;&#127479;</div>
+      <h1>Argentina</h1>
+      <div class="header-subtitle">CONMEBOL · FIFA #2 · Grupo J · Campeona defensora</div>
+      <div class="header-accent"></div>
+    </div>
+    <div class="header-stats">
+      <div class="header-stat">
+        <span class="header-stat-value">4-3-3</span>
+        <span class="header-stat-label">Sistema</span>
+      </div>
+      <div class="header-stat">
+        <span class="header-stat-value">1ro</span>
+        <span class="header-stat-label">Eliminatorias</span>
+      </div>
+      <div class="header-stat">
+        <span class="header-stat-value">31GF-10GC</span>
+        <span class="header-stat-label">18 partidos</span>
+      </div>
+      <div class="header-stat">
+        <span class="header-stat-value">70.6%</span>
+        <span class="header-stat-label">Win rate Scaloni</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FREE SECTION                                    -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="content">
+
+    <p class="small" style="text-align:center; margin-bottom:20px;">Edicion #001 · 4 de marzo de 2026 · soyanalista.com</p>
+
+    <hr class="editorial-rule">
+    <hr class="editorial-rule-thin">
+    <h2>Resumen ejecutivo</h2>
+
+    <p>Argentina de Lionel Scaloni llega al Mundial 2026 como campeona defensora y maxima candidata al titulo. Opera en un <strong>4-3-3 flexible</strong> que muta al 4-4-2 sin balon y al 4-2-3-1 cuando busca control posicional. Con un <strong>65-68% de posesion</strong> promedio <strong>(P88 entre selecciones mundialistas)</strong>, domina los partidos desde la construccion pausada pero con verticalidad letal cuando detecta espacios a la espalda de la linea rival.</p>
+
+    <p><strong>Como ataca:</strong> La profundidad ofensiva es la principal virtud: <strong>Messi (ICI 3.85)</strong> sigue siendo el catalizador creativo a los 38 anos, pero <strong>Alvarez (ICI 3.50)</strong> y <strong>Lautaro Martinez (ICI 3.52)</strong> diversifican la finalizacion con perfiles complementarios. Generan <strong>1.72 goles/partido</strong> en eliminatorias con 31 goles repartidos entre al menos <strong>12 anotadores distintos</strong>.</p>
+
+    <p><strong>Como defiende:</strong> La mejor defensa de CONMEBOL: <strong>0.56 GA/partido (P91)</strong> con <strong>12 porterias a cero</strong> en 18 partidos (66.7%). Romero y Lisandro Martinez forman una dupla de centrales de nivel Champions. El mediocampo Enzo-De Paul filtra progresiones rivales con la combinacion mas completa del torneo.</p>
+
+    <div class="callout">
+      <p><strong>Claves del partido:</strong></p>
+      <ul>
+        <li>Explotar la transicion defensiva cuando pierde en campo rival</li>
+        <li>Neutralizar a Messi alejandolo del centro</li>
+        <li>Evitar duelos aereos donde Romero domina</li>
+        <li>El plan B en el mediocampo es significativamente inferior al titular</li>
+      </ul>
+    </div>
+
+    <!-- STAT CARDS -->
+    <div class="diamond-sep"><div class="diamond-sep-line"></div><div class="diamond-sep-icon"></div><div class="diamond-sep-line"></div></div>
+
+    <h3>Los numeros en un vistazo</h3>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="stat-card-value accent">38</div>
+        <div class="stat-card-label">Puntos elim.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-value">12-2-4</div>
+        <div class="stat-card-label">V - E - D</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-value">+21</div>
+        <div class="stat-card-label">Dif. goles</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-value accent">1ro</div>
+        <div class="stat-card-label">Pos. CONMEBOL</div>
+      </div>
+    </div>
+
+    <div class="metric-row">
+      0.56 GA/p (P91) · 66% posesion (P88) · 1.72 G/p (P82) · 12 porterias a cero
+    </div>
+
+    <!-- GROUP -->
+    <div class="diamond-sep"><div class="diamond-sep-line"></div><div class="diamond-sep-icon"></div><div class="diamond-sep-line"></div></div>
+
+    <h3>El grupo</h3>
+    <p><strong>Grupo J</strong>: Argentina &#127462;&#127479; · Algeria &#127465;&#127487; · Austria &#127462;&#127481; · Jordan &#127471;&#127476;</p>
+
+    <table class="group-table">
+      <thead><tr><th>Seleccion</th><th>FIFA</th><th>Perfil</th></tr></thead>
+      <tbody>
+        <tr><td>&#127462;&#127479; Argentina</td><td>#2</td><td style="font-style:italic;color:var(--cafe);font-size:13px;">Posesion + pressing selectivo</td></tr>
+        <tr><td>&#127465;&#127487; Algeria</td><td>#34</td><td style="font-style:italic;color:var(--cafe);font-size:13px;">Bloque medio, transiciones rapidas</td></tr>
+        <tr><td>&#127462;&#127481; Austria</td><td>#25</td><td style="font-style:italic;color:var(--cafe);font-size:13px;">Pressing alto Rangnick, intensidad</td></tr>
+        <tr><td>&#127471;&#127476; Jordan</td><td>#62</td><td style="font-style:italic;color:var(--cafe);font-size:13px;">Bloque bajo, debutante mundialista</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Partido clave:</strong> Argentina vs Austria (J2, 21 de junio, Arlington). El pressing de Rangnick contra la salida de balon argentina — el duelo tactico mas interesante del grupo.</p>
+    <p><strong>Probabilidad de clasificacion:</strong> <span style="color:var(--verde);font-family:'DM Mono',monospace;font-weight:500;">1ro del grupo (82%)</span></p>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <p>El informe completo incluye: dashboard estadistico con percentiles vs las 47 selecciones, analisis de las 6 fases tacticas, fichas de 14 jugadores clave con ICI compuesto, 4 fortalezas y 4 debilidades con evidencia cuantitativa, y el XI probable con recomendaciones tacticas.</p>
+      <p><strong>Son 18 paginas de analisis profesional — el nivel de un departamento de scouting de un club de primera.</strong></p>
+      <a href="#" class="cta-button">Suscribite por 8 EUR/mes &rarr;</a>
+    </div>
+
+    <!-- PAYWALL -->
+    <div class="paywall-break">&#128274; El resto de este informe es exclusivo para suscriptores.</div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAID SECTION                                    -->
+    <!-- ═══════════════════════════════════════════════ -->
+
+    <hr class="editorial-rule">
+    <hr class="editorial-rule-thin">
+    <h2>Dashboard estadistico</h2>
+    <p class="small">Percentiles calculados contra las 47 selecciones clasificadas al Mundial 2026, basados en eliminatorias continentales.</p>
+
+    <!-- Defense -->
+    <div class="pct-section">
+      <div class="pct-section-title">Fase defensiva</div>
+      <div class="pct-row">
+        <span class="pct-label">Goles enc. / partido</span>
+        <span class="pct-value">0.56</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-elite" style="width:91%"></div></div>
+        <span class="pct-tag pct-elite">P91</span>
+      </div>
+      <div class="pct-row">
+        <span class="pct-label">Porterias a cero</span>
+        <span class="pct-value">66.7%</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-elite" style="width:93%"></div></div>
+        <span class="pct-tag pct-elite">P93</span>
+      </div>
+      <div class="pct-row">
+        <span class="pct-label">GA local / partido</span>
+        <span class="pct-value">0.22</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-elite" style="width:96%"></div></div>
+        <span class="pct-tag pct-elite">P96</span>
+      </div>
+      <div class="pct-row">
+        <span class="pct-label">GA visitante / partido</span>
+        <span class="pct-value">0.89</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-high" style="width:65%"></div></div>
+        <span class="pct-tag pct-high">P65</span>
+      </div>
+      <div class="pct-row">
+        <span class="pct-label">Duelos def. ganados</span>
+        <span class="pct-value">~54%</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-high" style="width:68%"></div></div>
+        <span class="pct-tag pct-high">P68</span>
+      </div>
+    </div>
+
+    <!-- Distribution -->
+    <div class="pct-section">
+      <div class="pct-section-title">Distribucion</div>
+      <div class="pct-row">
+        <span class="pct-label">Posesion promedio</span>
+        <span class="pct-value">~66%</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-elite" style="width:88%"></div></div>
+        <span class="pct-tag pct-elite">P88</span>
+      </div>
+      <div class="pct-row">
+        <span class="pct-label">Precision de pase</span>
+        <span class="pct-value">~87%</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-elite" style="width:82%"></div></div>
+        <span class="pct-tag pct-elite">P82</span>
+      </div>
+      <div class="pct-row">
+        <span class="pct-label">Pases progresivos / p</span>
+        <span class="pct-value">~8.5</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-elite" style="width:78%"></div></div>
+        <span class="pct-tag pct-elite">P78</span>
+      </div>
+      <div class="pct-row">
+        <span class="pct-label">Pases al ult. tercio / p</span>
+        <span class="pct-value">~12</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-elite" style="width:80%"></div></div>
+        <span class="pct-tag pct-elite">P80</span>
+      </div>
+    </div>
+
+    <!-- Attack -->
+    <div class="pct-section">
+      <div class="pct-section-title">Fase ofensiva</div>
+      <div class="pct-row">
+        <span class="pct-label">Goles / partido</span>
+        <span class="pct-value">1.72</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-elite" style="width:82%"></div></div>
+        <span class="pct-tag pct-elite">P82</span>
+      </div>
+      <div class="pct-row">
+        <span class="pct-label">xG / partido (est.)</span>
+        <span class="pct-value">~1.65</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-elite" style="width:80%"></div></div>
+        <span class="pct-tag pct-elite">P80</span>
+      </div>
+      <div class="pct-row">
+        <span class="pct-label">Tiros / partido (est.)</span>
+        <span class="pct-value">~13.5</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-high" style="width:72%"></div></div>
+        <span class="pct-tag pct-high">P72</span>
+      </div>
+      <div class="pct-row">
+        <span class="pct-label">Conversion de gol</span>
+        <span class="pct-value">~12.7%</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-elite" style="width:78%"></div></div>
+        <span class="pct-tag pct-elite">P78</span>
+      </div>
+      <div class="pct-row">
+        <span class="pct-label">Goleadores distintos</span>
+        <span class="pct-value">12+</span>
+        <div class="pct-bar-wrap"><div class="pct-bar-fill bar-elite" style="width:92%"></div></div>
+        <span class="pct-tag pct-elite">P92</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Lectura global:</strong> Perfil de seleccion top-5 mundial en todas las fases. Mayor fortaleza: solidez defensiva (P91). Posesion dominante (P88). Produccion ofensiva diversificada (12+ goleadores = P92). Principal inconsistencia: disparidad local/visitante en goles encajados.</p>
+    </div>
+
+    <!-- ── MODELO DE JUEGO ── -->
+    <div class="diamond-sep"><div class="diamond-sep-line"></div><div class="diamond-sep-icon"></div><div class="diamond-sep-line"></div></div>
+
+    <hr class="editorial-rule">
+    <hr class="editorial-rule-thin">
+    <h2>Modelo de juego</h2>
+
+    <h3>Construccion</h3>
+    <p>Argentina construye desde atras con Romero y Lisandro abiertos a 25-30 metros. Enzo o De Paul baja entre centrales para formar un trivote de salida (3v2). Laterales proyectan alto generando amplitud. Posesion de ~66% <strong>(P88)</strong> con dos velocidades: fase paciente (70%, circulacion lateral) y fase de activacion (30%, pase vertical que rompe lineas via Messi, Enzo o Mac Allister). <strong>E. Martinez</strong> participa activamente con pases largos diagonales.</p>
+
+    <h3>Progresion</h3>
+    <p>Opera por el centro via el triangulo <strong>Enzo-De Paul-Mac Allister</strong>. Enzo orquesta (8-9 pases progresivos/partido, 8 goles PL 25-26). De Paul conecta (motor, +11 km/partido). Mac Allister alterna interior-mediapunta con llegada. <strong>Vias:</strong> Canal central (40%), canal derecho (35%, Molina + Messi), canal izquierdo (25%, Nico Gonzalez + Tagliafico).</p>
+
+    <h3>Finalizacion</h3>
+    <p>~13.5 tiros/partido <strong>(P72)</strong>, 1.72 goles/partido <strong>(P82)</strong>. Perfil eficiente: calidad de finalizadores de elite. xG ~1.65/partido — ligero sobrerendimiento (+0.07), consistente con Messi, Lautaro y Alvarez. <strong>Tipos de gol:</strong> Combinado central (~40%), jugada individual (~20%), transicion (~15%), balon parado (~15%), centro + remate (~10%).</p>
+
+    <h3>Pressing y defensa</h3>
+    <p>Bloque medio-alto. PPDA estimado ~10-12 (pressing moderado-alto, no extremo). <strong>Triggers:</strong> pase hacia atras, recepcion de espaldas, lateral en banda, saque de puerta corto. Romero (agresivo, anticipa) + Lisandro (posicional, cubre) = dupla complementaria.</p>
+    <div class="metric-row">Debilidad: las 4 derrotas (todas de visitante) incluyeron goles en transiciones. Espacio a la espalda de Molina = via de ataque.</div>
+
+    <h3>Transiciones</h3>
+    <p><strong>Ofensiva:</strong> Letal tras recuperacion alta — pase filtrado a Messi/Alvarez en 3-4 seg. <strong>Defensiva (punto mas vulnerable):</strong> Si el pressing post-perdida falla, laterales proyectados dejan espacio. Las 4 derrotas coinciden con exposicion en ese espacio.</p>
+
+    <!-- ── JUGADORES CLAVE ── -->
+    <div class="diamond-sep"><div class="diamond-sep-line"></div><div class="diamond-sep-icon"></div><div class="diamond-sep-line"></div></div>
+
+    <hr class="editorial-rule">
+    <hr class="editorial-rule-thin">
+    <h2>Jugadores clave</h2>
+
+    <!-- Messi -->
+    <div class="player-card">
+      <div class="player-card-header">
+        <div>
+          <div class="player-card-name">&#128081; Lionel Messi</div>
+          <div class="player-card-pos">Extremo derecho / Segunda punta</div>
+        </div>
+        <div>
+          <div class="player-card-ici">3.85</div>
+          <div class="player-card-ici-label">ICI ELITE</div>
+        </div>
+      </div>
+      <div class="player-card-meta">
+        <span>Inter Miami</span><span>38 anos</span><span>29G+19A MLS 2025</span><span>8G elim.</span>
+      </div>
+      <div class="player-card-body">
+        <div class="player-roles">
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-elite" style="width:97.5%"></div></div><div class="role-value">3.9</div><div class="role-label">Creativo</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-elite" style="width:95%"></div></div><div class="role-value">3.8</div><div class="role-label">Finaliz.</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-elite" style="width:75%"></div></div><div class="role-value">3.0</div><div class="role-label">Progres.</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-low" style="width:20%"></div></div><div class="role-value">0.8</div><div class="role-label">Defensivo</div></div>
+        </div>
+        <p>Capitan. A los 38 no presiona ni corre como antes pero sigue siendo el jugador mas peligroso del torneo con balon en el ultimo tercio. El carril derecho con Molina proyectandose y Messi cortando hacia adentro es la via de ataque principal.</p>
+        <div class="player-rival"><strong>Para el rival:</strong> No dejarle recibir de frente al arco entre lineas. Doblar marca (lateral + mediocampista). Alejarlo del centro hacia la banda derecha.</div>
+      </div>
+    </div>
+
+    <!-- Alvarez -->
+    <div class="player-card">
+      <div class="player-card-header">
+        <div>
+          <div class="player-card-name">&#9889; Julian Alvarez</div>
+          <div class="player-card-pos">Delantero centro</div>
+        </div>
+        <div>
+          <div class="player-card-ici">3.50</div>
+          <div class="player-card-ici-label">ICI ELITE</div>
+        </div>
+      </div>
+      <div class="player-card-meta">
+        <span>Atletico Madrid</span><span>26 anos</span><span>13G+5A 25-26</span><span>5G elim.</span>
+      </div>
+      <div class="player-card-body">
+        <div class="player-roles">
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-elite" style="width:87.5%"></div></div><div class="role-value">3.5</div><div class="role-label">Finaliz.</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-elite" style="width:80%"></div></div><div class="role-value">3.2</div><div class="role-label">Progres.</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-high" style="width:70%"></div></div><div class="role-value">2.8</div><div class="role-label">Creativo</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-high" style="width:70%"></div></div><div class="role-value">2.8</div><div class="role-label">Defensivo</div></div>
+        </div>
+        <p>Delantero mas completo del plantel. Remata de todas las posiciones, presiona centrales, conecta bajando al mediocampo. Nunca esta quieto: baja, sube, se mueve lateralmente.</p>
+        <div class="player-rival"><strong>Para el rival:</strong> No marcarlo al hombre — arrastra al central. Mantener la linea y no seguirlo a zonas de mediocampo.</div>
+      </div>
+    </div>
+
+    <!-- Enzo -->
+    <div class="player-card">
+      <div class="player-card-header">
+        <div>
+          <div class="player-card-name">&#127919; Enzo Fernandez</div>
+          <div class="player-card-pos">Mediocampista central</div>
+        </div>
+        <div>
+          <div class="player-card-ici">3.40</div>
+          <div class="player-card-ici-label">ICI ALTO</div>
+        </div>
+      </div>
+      <div class="player-card-meta">
+        <span>Chelsea (PL)</span><span>25 anos</span><span>8G+2A PL 25-26</span>
+      </div>
+      <div class="player-card-body">
+        <div class="player-roles">
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-elite" style="width:95%"></div></div><div class="role-value">3.8</div><div class="role-label">Creativo</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-elite" style="width:87.5%"></div></div><div class="role-value">3.5</div><div class="role-label">Progres.</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-elite" style="width:80%"></div></div><div class="role-value">3.2</div><div class="role-label">Defensivo</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-high" style="width:60%"></div></div><div class="role-value">2.4</div><div class="role-label">Finaliz.</div></div>
+        </div>
+        <p>Corazon del equipo. Orquestador: recibe de espaldas, gira, distribuye. Lidera pases progresivos. Llegada al area con remate de media distancia. Cuando Enzo no esta, Argentina pierde su principal via de progresion.</p>
+        <div class="player-rival"><strong>Para el rival:</strong> Presionarlo cuando recibe de espaldas. No darle tiempo para girar — cuando gira con espacio, encuentra pases letales.</div>
+      </div>
+    </div>
+
+    <!-- Romero -->
+    <div class="player-card">
+      <div class="player-card-header">
+        <div>
+          <div class="player-card-name">&#128274; Cristian Romero</div>
+          <div class="player-card-pos">Central derecho</div>
+        </div>
+        <div>
+          <div class="player-card-ici">3.10</div>
+          <div class="player-card-ici-label">ICI ALTO</div>
+        </div>
+      </div>
+      <div class="player-card-meta">
+        <span>Tottenham (PL)</span><span>27 anos</span><span>Cap. Spurs</span><span>92% pases</span>
+      </div>
+      <div class="player-card-body">
+        <div class="player-roles">
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-elite" style="width:95%"></div></div><div class="role-value">3.8</div><div class="role-label">Defensivo</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-high" style="width:72.5%"></div></div><div class="role-value">2.9</div><div class="role-label">Progres.</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-low" style="width:20%"></div></div><div class="role-value">0.8</div><div class="role-label">Creativo</div></div>
+          <div class="role-item"><div class="role-bar-bg"><div class="role-bar-fill bar-low" style="width:10%"></div></div><div class="role-value">0.4</div><div class="role-label">Finaliz.</div></div>
+        </div>
+        <p>Central agresivo de anticipacion. Conduce desde atras para romper lineas. Duelo aereo dominante. Su estilo tiene riesgo (2 rojas PL 25-26) pero otorga una linea defensiva mas adelantada.</p>
+        <div class="player-rival"><strong>Para el rival:</strong> Sale a anticipar — jugadores rapidos en diagonal pueden explotarlo. Vulnerable a dribblers que cambian de direccion.</div>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:16px;">Tambien clave: <strong>Lautaro Martinez</strong> (ICI 3.52, ST, 14G Serie A), <strong>E. Martinez</strong> (ICI 3.22, GK, especialista penales), <strong>Mac Allister</strong> (ICI 3.18, CM, 3G UCL), <strong>De Paul</strong> (ICI 2.92, CM, motor y cohesion).</p>
+
+    <!-- ── FORTALEZAS Y DEBILIDADES ── -->
+    <div class="diamond-sep"><div class="diamond-sep-line"></div><div class="diamond-sep-icon"></div><div class="diamond-sep-line"></div></div>
+
+    <hr class="editorial-rule">
+    <hr class="editorial-rule-thin">
+    <h2>Fortalezas y debilidades</h2>
+
+    <div class="sw-label strength">&#9989; FORTALEZAS — QUE RESPETAR</div>
+
+    <div class="sw-card strength-card">
+      <h4>1. Madurez competitiva incomparable</h4>
+      <p>Nucleo de 8-9 jugadores con 50+ partidos juntos. Campeon del Mundo 2022, bicampeon de America. 4 titulos consecutivos. No hay contexto que los desestabilice.</p>
+      <span class="sw-metric">70.6% win rate en ~85 partidos con Scaloni</span>
+    </div>
+
+    <div class="sw-card strength-card">
+      <h4>2. Profundidad ofensiva elite</h4>
+      <p>Messi, Alvarez, Lautaro: tres delanteros top-20 mundial. Garnacho, Almada y Nico Paz desde el banco. 12 goleadores distintos en eliminatorias — la distribucion mas amplia del Mundial.</p>
+      <span class="sw-metric">1.72 goles/partido (P82), 12+ goleadores (P92)</span>
+    </div>
+
+    <div class="sw-card strength-card">
+      <h4>3. Solidez defensiva de elite</h4>
+      <p>Romero-Lisandro de nivel Champions. E. Martinez aporta seguridad y factor psicologico en penales. Mediocampo Enzo-De Paul filtra progresiones antes de que lleguen a la defensa.</p>
+      <span class="sw-metric">0.56 GA/p (P91). 0.22 GA/p local (P96). 66.7% arco en cero</span>
+    </div>
+
+    <div class="sw-card strength-card">
+      <h4>4. Pressing coordinado e inteligente</h4>
+      <p>No presiona 90 minutos: elige cuando apretar con triggers claros. Recuperaciones en campo rival alimentan transiciones ofensivas letales.</p>
+      <span class="sw-metric">Pressing selectivo — elige el momento, no se desgasta</span>
+    </div>
+
+    <div class="sw-label weakness">&#9888;&#65039; DEBILIDADES — QUE EXPLOTAR</div>
+
+    <div class="sw-card weakness-card">
+      <h4>1. Vulnerabilidad de visitante</h4>
+      <p>8W-1E-0L en casa vs 4W-1E-4L de visitante. Menor agresividad defensiva fuera del Monumental. Las 4 derrotas fueron todas de visitante.</p>
+      <span class="sw-metric">Win rate local 88.9% vs visitante 44.4%</span>
+    </div>
+
+    <div class="sw-card weakness-card">
+      <h4>2. Transiciones defensivas expuestas</h4>
+      <p>Cuando pierde en campo rival con laterales proyectados, el espacio entre lineas se abre. 3 de 4 derrotas incluyeron goles en transicion rapida rival.</p>
+      <span class="sw-metric">Espalda de Molina (RB) = principal via de ataque</span>
+    </div>
+
+    <div class="sw-card weakness-card">
+      <h4>3. Dependencia del mediocampo titular</h4>
+      <p>Caida significativa sin Enzo y De Paul juntos. Paredes ofrece control pero no la dinamica del doble pivote. El Plan B no tiene la misma jerarquia.</p>
+      <span class="sw-metric">~80% win rate con ambos vs ~55% sin alguno</span>
+    </div>
+
+    <div class="sw-card weakness-card">
+      <h4>4. Gestion fisica de Messi</h4>
+      <p>A los 38, Scaloni ya gestiona su carga (12 de 18 eliminatorias). En un Mundial con partidos cada 3-4 dias, la dosificacion abre una ventana para rivales.</p>
+      <span class="sw-metric">Messi jugo 12 de 18 partidos de eliminatorias</span>
+    </div>
+
+    <!-- ── XI PROBABLE ── -->
+    <div class="diamond-sep"><div class="diamond-sep-line"></div><div class="diamond-sep-icon"></div><div class="diamond-sep-line"></div></div>
+
+    <hr class="editorial-rule">
+    <hr class="editorial-rule-thin">
+    <h2>XI probable</h2>
+
+    <div class="lineup-box">
+      <div class="lineup-system">4-3-3 — Formacion mas utilizada (est. 14 de 18 eliminatorias)</div>
+
+      <div class="lineup-line">
+        <div class="lineup-line-label">Ataque</div>
+        <div class="lineup-players">
+          <div class="lineup-player">N. Gonzalez</div>
+          <div class="lineup-player">J. Alvarez</div>
+          <div class="lineup-player captain">L. Messi (C)</div>
+        </div>
+      </div>
+
+      <div class="lineup-line">
+        <div class="lineup-line-label">Mediocampo</div>
+        <div class="lineup-players">
+          <div class="lineup-player">A. Mac Allister</div>
+          <div class="lineup-player">R. De Paul</div>
+          <div class="lineup-player">Enzo Fernandez</div>
+        </div>
+      </div>
+
+      <div class="lineup-line">
+        <div class="lineup-line-label">Defensa</div>
+        <div class="lineup-players">
+          <div class="lineup-player">N. Tagliafico</div>
+          <div class="lineup-player">L. Martinez</div>
+          <div class="lineup-player">C. Romero</div>
+          <div class="lineup-player">N. Molina</div>
+        </div>
+      </div>
+
+      <div class="lineup-line">
+        <div class="lineup-line-label">Portero</div>
+        <div class="lineup-players">
+          <div class="lineup-player">E. Martinez</div>
+        </div>
+      </div>
+    </div>
+
+    <p><strong>Alternativas:</strong> <strong>4-2-3-1</strong> con Paredes (vs pressing alto, ej: Austria). <strong>Doble 9</strong> Alvarez + Lautaro (buscar el gol con urgencia).</p>
+
+    <!-- ── CLAVES ── -->
+    <div class="diamond-sep"><div class="diamond-sep-line"></div><div class="diamond-sep-icon"></div><div class="diamond-sep-line"></div></div>
+
+    <h3 style="color:var(--rojo);">Claves para enfrentar a Argentina</h3>
+
+    <table class="claves-table">
+      <tr><td>Presionar alto la salida</td><td>Cuando los centrales dudan con presion, pierden balones peligrosos</td></tr>
+      <tr><td>Atacar espalda de Molina</td><td>Sube constantemente — el espacio a su espalda es explotable</td></tr>
+      <tr><td>No seguir a Alvarez</td><td>Mantener la linea; seguirlo desordena la defensa</td></tr>
+      <tr><td>Anular a Enzo</td><td>Sin Enzo, Argentina pierde su orquestador principal</td></tr>
+      <tr><td>Messi: alejarlo del centro</td><td>Empujarlo a la banda reduce su angulo de pase y tiro</td></tr>
+      <tr><td>Evitar penales</td><td>E. Martinez en tandas es ventaja Argentina</td></tr>
+    </table>
+
+    <!-- ── DOWNLOAD ── -->
+    <div class="download-cta">
+      <a href="informe_argentina_mundial2026.pdf">Descargar informe completo — 18 pag. PDF &darr;</a>
+      <p>Incluye las 17 secciones del analisis, dashboard, fichas ICI y recomendaciones tacticas.</p>
+    </div>
+
+    <!-- ── SHARE CTA ── -->
+    <div class="callout" style="text-align:center;">
+      <p>Si este analisis te parecio util, compartilo con alguien que necesite entender el Mundial con datos.</p>
+    </div>
+
+    <p class="small" style="margin-top:20px;">¿Que seleccion queres que analicemos la semana que viene? Responde a este email con tu pedido.</p>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FOOTER                                          -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="newsletter-footer">
+    <p>Fuentes: FBref, Transfermarkt, FIFA, CONMEBOL. Datos actualizados al 3 de marzo de 2026.</p>
+    <p>Los percentiles son estimaciones basadas en datos publicos de eliminatorias continentales. Los ICI compuestos combinan rendimiento con seleccion (40%) y club (60%).</p>
+    <p class="brand-footer">Soy Analista · soyanalista.com · @analistasoy</p>
+  </div>
+
+</div>
+
+</body>
+</html>

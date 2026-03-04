@@ -1,0 +1,92 @@
+.card {
+  background: var(--sa-blanco);
+  border: 1.5px solid var(--sa-arena);
+  border-radius: var(--sa-radius-lg);
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: var(--sa-rojo);
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.title {
+  font-family: var(--sa-font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 13px;
+  color: var(--sa-cafe);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  font-family: var(--sa-font-data);
+  font-size: 11px;
+  color: var(--sa-tierra);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-block;
+  font-family: var(--sa-font-body);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--sa-radius);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btnPrimary {
+  background: var(--sa-rojo);
+  color: var(--sa-blanco);
+}
+
+.btnPrimary:hover {
+  background: var(--sa-rojo-claro);
+}
+
+.btnSecondary {
+  background: var(--sa-crema-oscura);
+  color: var(--sa-negro);
+  border: 1px solid var(--sa-arena);
+}
+
+.btnSecondary:hover {
+  background: var(--sa-arena);
+}
+
+@media (max-width: 480px) {
+  .actions {
+    flex-direction: column;
+  }
+
+  .btnPrimary, .btnSecondary {
+    text-align: center;
+  }
+}

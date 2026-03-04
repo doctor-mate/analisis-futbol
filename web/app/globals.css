@@ -1,0 +1,140 @@
+/* ============================================
+   SOY ANALISTA — Design System
+   Global CSS with brand tokens
+   ============================================ */
+
+/* --- CSS Custom Properties (Brand Tokens) --- */
+:root {
+  /* Neutrals (warm earth tones) */
+  --sa-crema: #F5F0E8;
+  --sa-crema-oscura: #EDE6D8;
+  --sa-arena: #D9CEBC;
+  --sa-tierra: #A69882;
+  --sa-cafe: #6B5B4D;
+  --sa-cafe-oscuro: #4A3E34;
+  --sa-negro: #1C1915;
+  --sa-negro-suave: #2C2822;
+  --sa-tinta: #3A3530;
+  --sa-blanco: #FEFCF8;
+
+  /* Accents */
+  --sa-rojo: #C13628;
+  --sa-rojo-claro: #D94F42;
+  --sa-dorado: #B8922F;
+  --sa-verde: #3A7D44;
+  --sa-azul: #2E5E8C;
+
+  /* Typography (set by next/font in layout) */
+  --sa-font-display: var(--font-playfair), Georgia, serif;
+  --sa-font-body: var(--font-source-serif), Georgia, serif;
+  --sa-font-data: var(--font-dm-mono), 'Courier New', monospace;
+
+  /* Spacing */
+  --sa-container: 960px;
+  --sa-container-wide: 1120px;
+  --sa-radius: 6px;
+  --sa-radius-lg: 10px;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Base --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--sa-crema);
+  font-family: var(--sa-font-body);
+  color: var(--sa-negro);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --- Container --- */
+.container {
+  max-width: var(--sa-container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-wide {
+  max-width: var(--sa-container-wide);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: var(--sa-font-display);
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.75rem; font-weight: 800; }
+h2 { font-size: 1.625rem; font-weight: 700; }
+h3 { font-size: 1.125rem; font-weight: 700; }
+
+/* --- Decorative Elements --- */
+.editorial-rule {
+  border: none;
+  border-top: 3px solid var(--sa-negro);
+  border-bottom: 1px solid var(--sa-arena);
+  height: 6px;
+  margin: 48px 0;
+}
+
+.diamond-separator {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 40px 0;
+}
+
+.diamond-separator::before,
+.diamond-separator::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--sa-arena);
+}
+
+.diamond-separator .diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--sa-rojo);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.accent-line {
+  width: 48px;
+  height: 3px;
+  background: var(--sa-rojo);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.375rem; }
+  .container, .container-wide { padding: 0 16px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.625rem; }
+}

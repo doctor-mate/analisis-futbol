@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Soy Analista — Professional Opposition Analysis",
+    "description": "Tactical reports for all 48 World Cup 2026 teams and top European league clubs."
+  },
+  "nav": {
+    "mundial": "World Cup 2026",
+    "clubes": "Clubs",
+    "metodologia": "Methodology"
+  },
+  "hero": {
+    "title": "Professional opposition analysis",
+    "subtitle": "Tactical reports for all 48 World Cup 2026 teams",
+    "cta": "View World Cup reports",
+    "countdown": "{days} days until the World Cup"
+  },
+  "home": {
+    "featured": "Featured reports",
+    "quickView": "World Cup 2026 — Quick view",
+    "clubes": "Club reports",
+    "viewAll": "View all reports"
+  },
+  "mundial": {
+    "title": "World Cup 2026",
+    "subtitle": "Reports for all 48 teams",
+    "group": "Group",
+    "filters": {
+      "all": "All",
+      "available": "Available",
+      "comingSoon": "Coming soon"
+    }
+  },
+  "team": {
+    "group": "Group",
+    "fifaRanking": "FIFA #{rank}",
+    "tier1": "Full report",
+    "tier2": "Medium report",
+    "tier3": "Quick profile",
+    "reports": "Available reports",
+    "groupContext": "Group context",
+    "comingSoon": "Coming soon",
+    "available": "Available",
+    "playoffPending": "TBD",
+    "viewHtml": "View report",
+    "downloadPdf": "Download PDF",
+    "downloadDocx": "Download DOCX",
+    "sections": "{n} sections",
+    "pages": "{n} pages"
+  },
+  "clubes": {
+    "title": "Club reports",
+    "subtitle": "Opposition analysis by league"
+  },
+  "footer": {
+    "brand": "Soy Analista",
+    "tagline": "Professional opposition analysis",
+    "rights": "© 2026 Soy Analista. All rights reserved.",
+    "methodology": "Methodology"
+  },
+  "tiers": {
+    "1": "★ Full",
+    "2": "● Medium",
+    "3": "○ Profile"
+  }
+}

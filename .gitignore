@@ -12,6 +12,14 @@ scouting_processed/
 # macOS
 .DS_Store
 
+# Python
+.venv/
+
+# Node / Next.js
+web/node_modules/
+web/.next/
+web/out/
+
 # Editores
 *.swp
 *.swo

@@ -1,0 +1,100 @@
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  background: var(--sa-blanco);
+  border: 1.5px solid var(--sa-arena);
+  border-radius: var(--sa-radius);
+  padding: 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: var(--sa-rojo);
+  box-shadow: 0 4px 12px rgba(28, 25, 21, 0.08);
+  transform: translateY(-2px);
+}
+
+.card.available {
+  border-color: var(--sa-rojo);
+}
+
+.card.coming_soon {
+  background: var(--sa-crema-oscura);
+  border-color: var(--sa-arena);
+}
+
+.card.coming_soon:hover {
+  border-color: var(--sa-tierra);
+}
+
+.card.playoff_pending {
+  background: var(--sa-crema-oscura);
+  border: 1.5px dashed var(--sa-arena);
+  cursor: default;
+  opacity: 0.7;
+}
+
+.card.playoff_pending:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--sa-arena);
+}
+
+.compact {
+  padding: 10px 12px;
+}
+
+.flag {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.compact .flag {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.name {
+  font-family: var(--sa-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.compact .name {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.status {
+  font-family: var(--sa-font-data);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+
+.status_available {
+  color: var(--sa-verde);
+}
+
+.status_coming_soon {
+  color: var(--sa-tierra);
+}
+
+.status_playoff_pending {
+  color: var(--sa-tierra);
+  font-style: italic;
+}

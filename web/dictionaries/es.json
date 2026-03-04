@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Soy Analista — Análisis de oposición profesional",
+    "description": "Informes tácticos de las 48 selecciones del Mundial 2026 y clubes de las principales ligas europeas."
+  },
+  "nav": {
+    "mundial": "Mundial 2026",
+    "clubes": "Clubes",
+    "metodologia": "Metodología"
+  },
+  "hero": {
+    "title": "Análisis de oposición profesional",
+    "subtitle": "Informes tácticos de las 48 selecciones del Mundial 2026",
+    "cta": "Ver informes del Mundial",
+    "countdown": "Faltan {days} días para el Mundial"
+  },
+  "home": {
+    "featured": "Informes destacados",
+    "quickView": "Mundial 2026 — Vista rápida",
+    "clubes": "Informes de clubes",
+    "viewAll": "Ver todos los informes"
+  },
+  "mundial": {
+    "title": "Mundial 2026",
+    "subtitle": "Informes de las 48 selecciones",
+    "group": "Grupo",
+    "filters": {
+      "all": "Todos",
+      "available": "Disponibles",
+      "comingSoon": "Próximamente"
+    }
+  },
+  "team": {
+    "group": "Grupo",
+    "fifaRanking": "FIFA #{rank}",
+    "tier1": "Informe completo",
+    "tier2": "Informe medio",
+    "tier3": "Ficha rápida",
+    "reports": "Informes disponibles",
+    "groupContext": "Contexto de grupo",
+    "comingSoon": "Próximamente",
+    "available": "Disponible",
+    "playoffPending": "Por definir",
+    "viewHtml": "Ver informe",
+    "downloadPdf": "Descargar PDF",
+    "downloadDocx": "Descargar DOCX",
+    "sections": "{n} secciones",
+    "pages": "{n} páginas"
+  },
+  "clubes": {
+    "title": "Informes de clubes",
+    "subtitle": "Análisis de oposición por liga"
+  },
+  "footer": {
+    "brand": "Soy Analista",
+    "tagline": "Análisis de oposición profesional",
+    "rights": "© 2026 Soy Analista. Todos los derechos reservados.",
+    "methodology": "Metodología"
+  },
+  "tiers": {
+    "1": "★ Completo",
+    "2": "● Medio",
+    "3": "○ Ficha"
+  }
+}

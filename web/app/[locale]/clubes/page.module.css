@@ -1,0 +1,48 @@
+.header {
+  padding: 48px 0 0;
+}
+
+.header h1 {
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-style: italic;
+  color: var(--sa-cafe);
+  font-size: 1.05rem;
+}
+
+.leagues {
+  padding-bottom: 40px;
+}
+
+.leagueBlock {
+  margin-bottom: 40px;
+}
+
+.leagueBlock h2 {
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.upcoming {
+  background: var(--sa-crema-oscura);
+  border: 1.5px dashed var(--sa-arena);
+  border-radius: var(--sa-radius-lg);
+  padding: 32px;
+  text-align: center;
+  color: var(--sa-tierra);
+  font-style: italic;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

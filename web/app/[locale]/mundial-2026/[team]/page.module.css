@@ -1,0 +1,139 @@
+.header {
+  background: var(--sa-negro);
+  color: var(--sa-crema);
+  padding: 40px 0 36px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.flag {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.header h1 {
+  color: var(--sa-crema);
+}
+
+.metaRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: var(--sa-font-body);
+  font-size: 14px;
+  color: var(--sa-tierra);
+  margin-bottom: 12px;
+}
+
+.tierRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tierDesc {
+  font-family: var(--sa-font-body);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--sa-tierra);
+}
+
+/* Quick Stats */
+.quickStats {
+  padding: 24px 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.statBox {
+  background: var(--sa-blanco);
+  border: 1px solid var(--sa-arena);
+  border-radius: var(--sa-radius);
+  padding: 16px;
+  text-align: center;
+}
+
+.statValue {
+  font-family: var(--sa-font-data);
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: var(--sa-negro);
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--sa-tierra);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Reports */
+.reports {
+  padding-bottom: 0;
+}
+
+.reports h2 {
+  margin-bottom: 20px;
+}
+
+.reportsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comingSoon {
+  background: var(--sa-crema-oscura);
+  border: 1.5px dashed var(--sa-arena);
+  border-radius: var(--sa-radius-lg);
+  padding: 40px;
+  text-align: center;
+  color: var(--sa-tierra);
+  font-style: italic;
+  font-size: 15px;
+}
+
+/* Group Context */
+.groupContext {
+  padding-bottom: 40px;
+}
+
+.groupContext h2 {
+  margin-bottom: 16px;
+}
+
+.rivalsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rivalsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .rivalsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .flag {
+    font-size: 2rem;
+  }
+}

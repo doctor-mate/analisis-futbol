@@ -1,0 +1,24 @@
+.header {
+  padding: 48px 0 0;
+}
+
+.header h1 {
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-style: italic;
+  color: var(--sa-cafe);
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+.countdown {
+  font-family: var(--sa-font-data);
+  font-size: 14px;
+  color: var(--sa-dorado);
+}
+
+.groups {
+  padding-bottom: 40px;
+}

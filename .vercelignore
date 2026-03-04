@@ -1,0 +1,7 @@
+.venv/
+.claude/
+osasuna_pages/
+osasuna_text.txt
+scouting_data/
+scouting_processed/
+reports/

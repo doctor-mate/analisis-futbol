@@ -1,4 +1,17 @@
-# Archivos de referencia del Osasuna (solo uso interno)
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+# Env files
+.env*
+
+# Archivos de referencia (solo uso interno)
 osasuna_pages/
 osasuna_text.txt
 
@@ -15,12 +28,15 @@ scouting_processed/
 # Python
 .venv/
 
-# Node / Next.js
-web/node_modules/
-web/.next/
-web/out/
+# Vercel
+.vercel/
 
 # Editores
 *.swp
 *.swo
 *~
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

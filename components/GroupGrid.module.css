@@ -2,12 +2,21 @@
   margin-bottom: 40px;
 }
 
+.titleLink {
+  text-decoration: none;
+}
+
 .title {
   font-family: var(--sa-font-display);
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 12px;
   color: var(--sa-negro);
+  transition: color 0.2s;
+}
+
+.titleLink:hover .title {
+  color: var(--sa-rojo);
 }
 
 .grid {

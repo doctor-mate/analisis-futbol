@@ -16,6 +16,26 @@ import styles from "./page.module.css";
 
 export const revalidate = 3600;
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; team: string }>;
+}) {
+  const { locale, team: teamSlug } = await params;
+  const teamRow = await getTeamBySlug(teamSlug);
+  if (!teamRow) return {};
+
+  const name = locale === "es" ? teamRow.name_es : teamRow.name_en;
+  return {
+    title: locale === "es"
+      ? `${name} — Análisis de Oposición | Mundial 2026 | Soy Analista`
+      : `${name} — Opposition Analysis | World Cup 2026 | Soy Analista`,
+    description: locale === "es"
+      ? `Informe táctico de ${name} para el Mundial 2026. Grupo ${teamRow.wc_group}, ${teamRow.confederation}.`
+      : `Tactical analysis of ${name} for the 2026 World Cup. Group ${teamRow.wc_group}, ${teamRow.confederation}.`,
+  };
+}
+
 export async function generateStaticParams() {
   const teams = await getNationalTeams();
   const params: { locale: string; team: string }[] = [];

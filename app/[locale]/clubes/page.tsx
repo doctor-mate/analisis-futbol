@@ -68,14 +68,15 @@ export default async function ClubesPage({
             </div>
           ))}
 
-          {/* Placeholder for upcoming leagues */}
-          <div className={styles.upcoming}>
-            <p>
-              {loc === "es"
-                ? "Premier League · Serie A · Bundesliga · Ligue 1 — Próximamente"
-                : "Premier League · Serie A · Bundesliga · Ligue 1 — Coming soon"}
-            </p>
-          </div>
+          {competitions.size === 0 && (
+            <div className={styles.upcoming}>
+              <p>
+                {loc === "es"
+                  ? "Informes de clubes — Próximamente"
+                  : "Club reports — Coming soon"}
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </>

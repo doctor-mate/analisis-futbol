@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .monogram {
@@ -46,26 +46,74 @@
   color: var(--sa-tierra);
 }
 
-.links {
+/* Two-column layout */
+.columns {
   display: flex;
-  gap: 24px;
+  gap: 64px;
   margin-bottom: 32px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--sa-tinta);
 }
 
-.links a {
+.col {}
+
+.colTitle {
+  font-family: var(--sa-font-data);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sa-cafe);
+  margin-bottom: 10px;
+}
+
+.colLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.colLinks a {
   font-size: 13px;
   color: var(--sa-tierra);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.links a:hover {
+.colLinks a:hover {
   color: var(--sa-crema);
+}
+
+/* Subscribe CTA */
+.subscribe {
+  margin-bottom: 24px;
+}
+
+.subscribeBtn {
+  display: inline-block;
+  font-family: var(--sa-font-data);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sa-negro);
+  background: var(--sa-dorado);
+  padding: 8px 20px;
+  border-radius: var(--sa-radius);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+}
+
+.subscribeBtn:hover {
+  background: var(--sa-crema);
 }
 
 .copy {
   font-size: 12px;
   color: var(--sa-cafe-oscuro);
+}
+
+@media (max-width: 480px) {
+  .columns {
+    flex-direction: column;
+    gap: 24px;
+  }
 }

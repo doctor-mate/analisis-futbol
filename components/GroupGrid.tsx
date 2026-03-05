@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Team } from "@/data/types";
 import { Locale } from "@/lib/i18n";
 import TeamCard from "./TeamCard";
@@ -31,9 +32,14 @@ export default function GroupGrid({
 }: GroupGridProps) {
   return (
     <div className={styles.group}>
-      <h3 className={styles.title}>
-        {groupLabel} {letter}
-      </h3>
+      <Link
+        href={`/${locale}/mundial-2026/grupo/${letter.toLowerCase()}`}
+        className={styles.titleLink}
+      >
+        <h3 className={styles.title}>
+          {groupLabel} {letter} →
+        </h3>
+      </Link>
       <div className={styles.grid}>
         {teams.map((team) => (
           <TeamCard

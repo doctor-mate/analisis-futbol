@@ -14,6 +14,27 @@ import styles from "./page.module.css";
 
 export const revalidate = 3600;
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; team: string }>;
+}) {
+  const { locale, team: teamSlug } = await params;
+  const teamRow = await getTeamBySlug(teamSlug);
+  if (!teamRow) return {};
+
+  const name = locale === "es" ? teamRow.name_es : teamRow.name_en;
+  const comp = teamRow.competition_slug?.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()) || "";
+  return {
+    title: locale === "es"
+      ? `${name} — Análisis de Oposición | ${comp} | Soy Analista`
+      : `${name} — Opposition Analysis | ${comp} | Soy Analista`,
+    description: locale === "es"
+      ? `Informe táctico de ${name}, ${comp}.`
+      : `Tactical analysis of ${name}, ${comp}.`,
+  };
+}
+
 export async function generateStaticParams() {
   const clubs = await getClubTeams();
   const params: { locale: string; team: string }[] = [];

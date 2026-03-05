@@ -61,3 +61,23 @@ export interface Group {
   letter: string;
   teams: string[]; // slugs
 }
+
+export type MatchStage = "group" | "round-of-32" | "round-of-16" | "quarter-final" | "semi-final" | "third-place" | "final";
+export type MatchStatus = "scheduled" | "prematch_ready" | "live" | "completed" | "postmatch_ready";
+
+export interface Match {
+  slug: string;
+  competition: string;
+  stage: MatchStage;
+  groupLetter?: string;
+  matchNumber?: number;
+  date: string;
+  time?: string;
+  venue?: string;
+  city?: string;
+  homeTeamSlug?: string;
+  awayTeamSlug?: string;
+  homeScore?: number;
+  awayScore?: number;
+  status: MatchStatus;
+}

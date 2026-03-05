@@ -1,0 +1,166 @@
+.card {
+  background: var(--sa-blanco);
+  border: 1px solid var(--sa-arena);
+  border-radius: var(--sa-radius-lg);
+  padding: 16px 20px;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: var(--sa-rojo);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-family: var(--sa-font-data);
+  font-size: 11px;
+  color: var(--sa-tierra);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.date {
+  font-weight: 600;
+}
+
+.time {
+  color: var(--sa-cafe);
+}
+
+.stage {
+  margin-left: auto;
+  color: var(--sa-rojo);
+  font-weight: 600;
+}
+
+.teams {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.teamSide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.teamAway {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.flag {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.teamName {
+  font-family: var(--sa-font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--sa-negro);
+}
+
+.score {
+  flex-shrink: 0;
+  min-width: 60px;
+  text-align: center;
+}
+
+.scoreValue {
+  font-family: var(--sa-font-data);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--sa-negro);
+}
+
+.vs {
+  font-family: var(--sa-font-data);
+  font-size: 13px;
+  color: var(--sa-tierra);
+  text-transform: uppercase;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--sa-arena);
+}
+
+.venue {
+  font-family: var(--sa-font-body);
+  font-size: 12px;
+  color: var(--sa-tierra);
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status {
+  font-family: var(--sa-font-data);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: var(--sa-crema-oscura);
+  color: var(--sa-tierra);
+}
+
+.statusPrematch {
+  background: var(--sa-dorado);
+  color: var(--sa-negro);
+}
+
+.statusPostmatch {
+  background: var(--sa-rojo);
+  color: var(--sa-blanco);
+}
+
+.statusCompleted {
+  background: var(--sa-cafe);
+  color: var(--sa-blanco);
+}
+
+.viewLink {
+  font-family: var(--sa-font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sa-rojo);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.viewLink:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+  .teamName {
+    font-size: 13px;
+  }
+
+  .flag {
+    font-size: 1.25rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}

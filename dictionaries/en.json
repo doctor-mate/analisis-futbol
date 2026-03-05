@@ -6,6 +6,7 @@
   "nav": {
     "mundial": "World Cup 2026",
     "clubes": "Clubs",
+    "calendario": "Schedule",
     "metodologia": "Methodology"
   },
   "search": {
@@ -23,7 +24,8 @@
     "clubes": "Club reports",
     "viewAll": "View all reports",
     "progress": "World Cup 2026 Progress",
-    "progressClubs": "Club Progress"
+    "progressClubs": "Club Progress",
+    "recentActivity": "Recent activity"
   },
   "mundial": {
     "title": "World Cup 2026",
@@ -36,6 +38,21 @@
       "tier": "Tier",
       "confederation": "Confederation"
     }
+  },
+  "matches": {
+    "calendar": "Match schedule",
+    "calendarSubtitle": "All World Cup 2026 matches with tactical analysis",
+    "noMatches": "The match schedule will be published soon.",
+    "scheduled": "Scheduled",
+    "prematchReady": "Preview available",
+    "completed": "Completed",
+    "postmatchReady": "Analysis available",
+    "viewMatch": "View analysis",
+    "prematch": "Pre-match analysis",
+    "prematchEmpty": "Pre-match analysis will be published before the match.",
+    "postmatch": "Post-match analysis",
+    "postmatchEmpty": "Post-match analysis will be published after the match.",
+    "relatedReports": "Related reports"
   },
   "team": {
     "group": "Group",

@@ -3,8 +3,10 @@ import type {
   TeamRow,
   ReportRow,
   PlayerRow,
+  MatchRow,
   ReportType,
   TeamMode,
+  MatchStatus,
 } from "@/types/database";
 import type { Locale } from "./i18n";
 
@@ -104,9 +106,113 @@ export async function getPlayersByTeam(teamSlug: string): Promise<PlayerRow[]> {
   return data ?? [];
 }
 
+// ---- Matches ----
+
+export async function getMatchBySlug(slug: string): Promise<MatchRow | null> {
+  const { data, error } = await supabase
+    .from("matches")
+    .select("*")
+    .eq("slug", slug)
+    .single();
+  if (error) return null;
+  return data;
+}
+
+export async function getMatchesByDate(date?: string): Promise<MatchRow[]> {
+  try {
+    let query = supabase
+      .from("matches")
+      .select("*")
+      .order("match_date", { ascending: true })
+      .order("match_time", { ascending: true });
+    if (date) query = query.eq("match_date", date);
+    const { data, error } = await query;
+    if (error) return [];
+    return data ?? [];
+  } catch { return []; }
+}
+
+export async function getMatchesByTeam(teamSlug: string): Promise<MatchRow[]> {
+  try {
+    const { data, error } = await supabase
+      .from("matches")
+      .select("*")
+      .or(`home_team_slug.eq.${teamSlug},away_team_slug.eq.${teamSlug}`)
+      .order("match_date", { ascending: true });
+    if (error) return [];
+    return data ?? [];
+  } catch { return []; }
+}
+
+export async function getMatchesByStage(stage: string): Promise<MatchRow[]> {
+  try {
+    const { data, error } = await supabase
+      .from("matches")
+      .select("*")
+      .eq("stage", stage)
+      .order("match_date", { ascending: true })
+      .order("match_time", { ascending: true });
+    if (error) return [];
+    return data ?? [];
+  } catch { return []; }
+}
+
+export async function getUpcomingMatches(limit = 6): Promise<MatchRow[]> {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const { data, error } = await supabase
+      .from("matches")
+      .select("*")
+      .gte("match_date", today)
+      .order("match_date", { ascending: true })
+      .order("match_time", { ascending: true })
+      .limit(limit);
+    if (error) return [];
+    return data ?? [];
+  } catch { return []; }
+}
+
+export async function getRecentMatches(limit = 6): Promise<MatchRow[]> {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const { data, error } = await supabase
+      .from("matches")
+      .select("*")
+      .lt("match_date", today)
+      .order("match_date", { ascending: false })
+      .limit(limit);
+    if (error) return [];
+    return data ?? [];
+  } catch { return []; }
+}
+
+export async function getReportsForMatch(matchSlug: string): Promise<ReportRow[]> {
+  try {
+    const { data, error } = await supabase
+      .from("reports")
+      .select("*")
+      .eq("match_slug", matchSlug)
+      .eq("status", "published")
+      .order("published_date", { ascending: false });
+    if (error) return [];
+    return data ?? [];
+  } catch { return []; }
+}
+
+export async function getRecentReports(limit = 5): Promise<ReportRow[]> {
+  const { data, error } = await supabase
+    .from("reports")
+    .select("*")
+    .eq("status", "published")
+    .order("published_date", { ascending: false })
+    .limit(limit);
+  if (error) throw error;
+  return data ?? [];
+}
+
 // ---- Adapters (TeamRow → Team, ReportRow → Report for components) ----
 
-import type { Team, Report } from "@/data/types";
+import type { Team, Report, Match } from "@/data/types";
 
 export function toTeam(row: TeamRow): Team {
   return {
@@ -145,6 +251,25 @@ export function toReport(row: ReportRow): Report {
     comparisonSlugs: row.comparison_slugs ?? undefined,
     matchDate: row.match_date ?? undefined,
     matchOpponent: row.match_opponent ?? undefined,
+  };
+}
+
+export function toMatch(row: MatchRow): Match {
+  return {
+    slug: row.slug,
+    competition: row.competition_slug ?? "",
+    stage: row.stage,
+    groupLetter: row.group_letter ?? undefined,
+    matchNumber: row.match_number ?? undefined,
+    date: row.match_date,
+    time: row.match_time ?? undefined,
+    venue: row.venue ?? undefined,
+    city: row.city ?? undefined,
+    homeTeamSlug: row.home_team_slug ?? undefined,
+    awayTeamSlug: row.away_team_slug ?? undefined,
+    homeScore: row.home_score ?? undefined,
+    awayScore: row.away_score ?? undefined,
+    status: row.status,
   };
 }
 

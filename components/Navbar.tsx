@@ -17,7 +17,7 @@ interface SearchTeam {
 interface NavbarProps {
   locale: string;
   dict: {
-    nav: { mundial: string; clubes: string; metodologia: string };
+    nav: { mundial: string; clubes: string; calendario: string; metodologia: string };
     search?: { placeholder: string };
   };
   searchTeams?: SearchTeam[];
@@ -32,6 +32,7 @@ export default function Navbar({ locale, dict, searchTeams }: NavbarProps) {
 
   const navLinks = [
     { href: `/${locale}/mundial-2026`, label: dict.nav.mundial },
+    { href: `/${locale}/mundial-2026/calendario`, label: dict.nav.calendario },
     { href: `/${locale}/clubes`, label: dict.nav.clubes },
     { href: `/${locale}/metodologia`, label: dict.nav.metodologia },
   ];

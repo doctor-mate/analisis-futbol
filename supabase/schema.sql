@@ -128,6 +128,32 @@ CREATE TABLE player_stats (
   UNIQUE(player_slug, team_slug, season)
 );
 
+-- 8. Matches (World Cup 2026 + tournament matches)
+CREATE TABLE matches (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  slug TEXT UNIQUE NOT NULL,
+  competition_slug TEXT REFERENCES competitions(slug),
+  stage TEXT NOT NULL CHECK (stage IN (
+    'group', 'round-of-32', 'round-of-16',
+    'quarter-final', 'semi-final', 'third-place', 'final'
+  )),
+  group_letter TEXT,
+  match_number INT,
+  match_date DATE NOT NULL,
+  match_time TEXT,
+  venue TEXT,
+  city TEXT,
+  home_team_slug TEXT REFERENCES teams(slug),
+  away_team_slug TEXT REFERENCES teams(slug),
+  home_score INT,
+  away_score INT,
+  status TEXT DEFAULT 'scheduled' CHECK (status IN (
+    'scheduled', 'prematch_ready', 'live', 'completed', 'postmatch_ready'
+  )),
+  created_at TIMESTAMPTZ DEFAULT now(),
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+
 -- =============================================================
 -- Indexes
 -- =============================================================
@@ -142,6 +168,11 @@ CREATE INDEX idx_players_team ON players(current_team_slug);
 CREATE INDEX idx_players_national ON players(national_team_slug);
 CREATE INDEX idx_scraped_data_team ON scraped_data(team_slug);
 CREATE INDEX idx_player_stats_player ON player_stats(player_slug);
+CREATE INDEX idx_matches_date ON matches(match_date);
+CREATE INDEX idx_matches_competition ON matches(competition_slug);
+CREATE INDEX idx_matches_home ON matches(home_team_slug);
+CREATE INDEX idx_matches_away ON matches(away_team_slug);
+CREATE INDEX idx_matches_status ON matches(status);
 
 -- =============================================================
 -- Row Level Security
@@ -162,6 +193,9 @@ CREATE POLICY "Public read published reports" ON reports FOR SELECT USING (statu
 
 ALTER TABLE player_stats ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Public read player_stats" ON player_stats FOR SELECT USING (true);
+
+ALTER TABLE matches ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Public read matches" ON matches FOR SELECT USING (true);
 
 -- Internal tables: no public read (only service_role)
 ALTER TABLE scraped_data ENABLE ROW LEVEL SECURITY;
@@ -185,4 +219,7 @@ CREATE TRIGGER players_updated_at BEFORE UPDATE ON players
   FOR EACH ROW EXECUTE FUNCTION update_updated_at();
 
 CREATE TRIGGER reports_updated_at BEFORE UPDATE ON reports
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+
+CREATE TRIGGER matches_updated_at BEFORE UPDATE ON matches
   FOR EACH ROW EXECUTE FUNCTION update_updated_at();

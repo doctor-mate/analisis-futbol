@@ -4,13 +4,16 @@ import {
   getNationalTeams,
   getClubTeams,
   getTeamsByGroup,
+  getRecentReports,
   toTeam,
+  toReport,
   groups,
 } from "@/lib/queries";
 import { localized } from "@/lib/utils";
 import HeroSection from "@/components/HeroSection";
 import TeamCard from "@/components/TeamCard";
 import ProgressGrid from "@/components/ProgressGrid";
+import ActivityFeed from "@/components/ActivityFeed";
 import styles from "./page.module.css";
 
 export const revalidate = 3600;
@@ -37,6 +40,18 @@ export default async function HomePage({
   // Club teams
   const clubRows = await getClubTeams();
   const clubs = clubRows.map(toTeam);
+
+  // Recent reports for activity feed
+  const recentRows = await getRecentReports(5);
+  const recentReports = recentRows.map(toReport);
+  const recentTeamsMap = new Map<string, ReturnType<typeof toTeam>>();
+  for (const r of recentReports) {
+    if (!recentTeamsMap.has(r.teamSlug)) {
+      const found = allTeams.find((t) => t.slug === r.teamSlug)
+        || clubRows.find((t) => t.slug === r.teamSlug);
+      if (found) recentTeamsMap.set(r.teamSlug, toTeam(found));
+    }
+  }
 
   function getStatusLabel(status: string): string {
     const map: Record<string, string> = {
@@ -104,6 +119,30 @@ export default async function HomePage({
           </div>
         </div>
       </section>
+
+      {/* Activity Feed */}
+      {recentReports.length > 0 && (
+        <>
+          <div className="container">
+            <div className="diamond-separator">
+              <div className="diamond" />
+            </div>
+          </div>
+          <section className={styles.section}>
+            <div className="container">
+              <ActivityFeed
+                reports={recentReports}
+                teams={recentTeamsMap}
+                locale={loc}
+                title={dict.home.recentActivity}
+                emptyMessage=""
+                viewAllLabel={dict.home.viewAll}
+                viewAllHref={`/${locale}/mundial-2026`}
+              />
+            </div>
+          </section>
+        </>
+      )}
 
       {/* Diamond separator */}
       <div className="container">

@@ -1,0 +1,132 @@
+.feed {
+  background: var(--sa-blanco);
+  border: 1px solid var(--sa-arena);
+  border-radius: var(--sa-radius-lg);
+  padding: 20px;
+}
+
+.title {
+  font-family: var(--sa-font-display);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sa-rojo);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--sa-rojo);
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--sa-arena);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.date {
+  font-family: var(--sa-font-data);
+  font-size: 11px;
+  color: var(--sa-tierra);
+  min-width: 44px;
+  flex-shrink: 0;
+}
+
+.icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sa-font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sa-negro);
+}
+
+.flag {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.newBadge {
+  font-family: var(--sa-font-data);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--sa-dorado);
+  color: var(--sa-negro);
+  padding: 1px 5px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.teamLink {
+  font-family: var(--sa-font-body);
+  font-size: 11px;
+  color: var(--sa-tierra);
+  text-decoration: none;
+}
+
+.teamLink:hover {
+  color: var(--sa-rojo);
+}
+
+.viewBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sa-crema-oscura);
+  color: var(--sa-negro);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.viewBtn:hover {
+  background: var(--sa-rojo);
+  color: var(--sa-blanco);
+}
+
+.viewAll {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.viewAllLink {
+  font-family: var(--sa-font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sa-rojo);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.viewAllLink:hover {
+  opacity: 0.8;
+}

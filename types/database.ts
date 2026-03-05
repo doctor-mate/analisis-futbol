@@ -16,6 +16,8 @@ export type Confederation = "CONMEBOL" | "UEFA" | "CAF" | "AFC" | "CONCACAF" | "
 export type Tier = 1 | 2 | 3;
 export type CompetitionType = "league" | "tournament" | "world-cup";
 export type DataSource = "fbref" | "understat" | "transfermarkt";
+export type MatchStage = "group" | "round-of-32" | "round-of-16" | "quarter-final" | "semi-final" | "third-place" | "final";
+export type MatchStatus = "scheduled" | "prematch_ready" | "live" | "completed" | "postmatch_ready";
 
 // ---- Row types ----
 
@@ -86,6 +88,7 @@ export interface ReportRow {
   comparison_slugs: string[] | null;
   match_date: string | null;
   match_opponent: string | null;
+  match_slug: string | null;
   file_html: string | null;
   file_pdf: string | null;
   file_docx: string | null;
@@ -113,6 +116,26 @@ export interface ProcessedDataRow {
   role_profiles: Record<string, unknown> | null;
   tactical_indices: Record<string, unknown> | null;
   processed_at: string;
+}
+
+export interface MatchRow {
+  id: string;
+  slug: string;
+  competition_slug: string | null;
+  stage: MatchStage;
+  group_letter: string | null;
+  match_number: number | null;
+  match_date: string;
+  match_time: string | null;
+  venue: string | null;
+  city: string | null;
+  home_team_slug: string | null;
+  away_team_slug: string | null;
+  home_score: number | null;
+  away_score: number | null;
+  status: MatchStatus;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface PlayerStatsRow {

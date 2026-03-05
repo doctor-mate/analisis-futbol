@@ -1,21 +1,21 @@
 {
   "meta": {
-    "title": "Soy Analista — Professional Opposition Analysis",
-    "description": "Tactical reports for all 48 World Cup 2026 teams and top European league clubs."
+    "title": "Soy Analista — Professional Tactical Analysis | World Cup 2026 & European Leagues",
+    "description": "Opposition reports, playing models, player profiles, and match analysis. Tactical coverage of World Cup 2026 and Europe's top five leagues. Data-driven methodology using FBref, Understat, and Transfermarkt."
   },
   "nav": {
     "mundial": "World Cup 2026",
     "clubes": "Clubs",
     "calendario": "Schedule",
-    "metodologia": "Methodology"
+    "about": "About"
   },
   "search": {
     "placeholder": "Search team..."
   },
   "hero": {
-    "title": "Professional opposition analysis",
-    "subtitle": "Tactical reports for all 48 World Cup 2026 teams",
-    "cta": "View World Cup reports",
+    "title": "Professional tactical analysis",
+    "subtitle": "Playing models, opposition reports, player profiles, and match analysis. World Cup 2026 national teams and clubs from Europe's top five leagues.",
+    "cta": "Explore World Cup 2026",
     "countdown": "{days} days until the World Cup"
   },
   "home": {
@@ -80,15 +80,37 @@
     "post-match": "Post-Match",
     "playing-model": "Playing Model"
   },
+  "about": {
+    "title": "About the project",
+    "subtitle": "What Soy Analista is and how we work",
+    "introP1": "Soy Analista is a tactical analysis platform that produces professional, data-driven reports for coaching staffs, analysts, journalists, and demanding fans.",
+    "introP2": "The primary focus is the 2026 World Cup, with coverage of all 48 qualified nations. In parallel, club reports are published for teams across Europe's top five leagues: LaLiga, Premier League, Serie A, Bundesliga, and Ligue 1.",
+    "introP3": "Each report is built from data sourced from FBref, Understat, Transfermarkt, and FIFA, processed through a proprietary 17-section methodology covering all five phases of play.",
+    "reportTypesTitle": "Report types",
+    "reportTypeDescs": {
+      "informe": "Full opposition analysis: 17 sections covering all 5 phases of play.",
+      "playing-model": "Tactical identity: how the team builds up, progresses, finishes, and defends.",
+      "player-profile": "Individual scouting with metric radar, percentiles, and tactical context.",
+      "head2head": "Direct comparison between two teams or players with comparative tables.",
+      "set-pieces": "Offensive and defensive set pieces: corners, free kicks, penalties, goal kicks.",
+      "post-match": "Tactical analysis of completed matches with key moments and ratings.",
+      "newsletter": "Periodic summaries with the latest news and publications."
+    },
+    "methodologyTitle": "Methodology",
+    "sectionsTitle": "17 analysis sections",
+    "sectionsIntro": "Each Tier 1 report includes 17 sections covering everything from the institutional profile to the predicted XI, including tactical analysis of all 5 phases of play.",
+    "tiersTitle": "Tier system",
+    "sourcesTitle": "Data sources"
+  },
   "clubes": {
     "title": "Club reports",
-    "subtitle": "Opposition analysis by league"
+    "subtitle": "Tactical reports for clubs across LaLiga, Premier League, Serie A, Bundesliga, and Ligue 1"
   },
   "footer": {
     "brand": "Soy Analista",
-    "tagline": "Professional opposition analysis",
+    "tagline": "Professional tactical analysis",
     "rights": "© 2026 Soy Analista. All rights reserved.",
-    "methodology": "Methodology",
+    "about": "About",
     "subscribe": "Subscribe to our newsletter"
   },
   "tiers": {

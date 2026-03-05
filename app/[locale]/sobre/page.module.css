@@ -20,12 +20,62 @@
   margin-bottom: 16px;
 }
 
+.content h3 {
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+}
+
+/* Project intro */
+.projectIntro {
+  max-width: 680px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--sa-cafe);
+  margin-bottom: 12px;
+}
+
+.projectIntro:last-of-type {
+  margin-bottom: 0;
+}
+
 .intro {
   font-size: 15px;
   color: var(--sa-cafe);
   margin-bottom: 24px;
   max-width: 680px;
   line-height: 1.7;
+}
+
+/* Report types grid */
+.reportTypesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.reportTypeCard {
+  padding: 20px;
+  border: 1px solid var(--sa-arena);
+  border-radius: var(--sa-radius);
+  background: var(--sa-blanco);
+}
+
+.reportTypeIcon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.reportTypeName {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.reportTypeDesc {
+  font-size: 13px;
+  color: var(--sa-cafe);
+  line-height: 1.6;
 }
 
 /* 17 sections grid */
@@ -113,6 +163,10 @@
 }
 
 @media (max-width: 768px) {
+  .reportTypesGrid {
+    grid-template-columns: 1fr;
+  }
+
   .sectionsGrid {
     grid-template-columns: repeat(2, 1fr);
   }

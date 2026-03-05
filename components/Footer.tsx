@@ -8,7 +8,7 @@ interface FooterProps {
       brand: string;
       tagline: string;
       rights: string;
-      methodology: string;
+      about: string;
       subscribe: string;
     };
   };
@@ -36,8 +36,8 @@ export default function Footer({ locale, dict }: FooterProps) {
               <Link href={`/${locale}/clubes`}>
                 {locale === "es" ? "Clubes" : "Clubs"}
               </Link>
-              <Link href={`/${locale}/metodologia`}>
-                {dict.footer.methodology}
+              <Link href={`/${locale}/sobre`}>
+                {dict.footer.about}
               </Link>
             </div>
           </div>

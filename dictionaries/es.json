@@ -1,21 +1,21 @@
 {
   "meta": {
-    "title": "Soy Analista — Análisis de oposición profesional",
-    "description": "Informes tácticos de las 48 selecciones del Mundial 2026 y clubes de las principales ligas europeas."
+    "title": "Soy Analista — Análisis táctico profesional | Mundial 2026 y ligas europeas",
+    "description": "Informes de oposición, modelos de juego, perfiles de jugador y análisis de partido. Cobertura táctica del Mundial 2026 y las cinco grandes ligas europeas. Metodología basada en datos de FBref, Understat y Transfermarkt."
   },
   "nav": {
     "mundial": "Mundial 2026",
     "clubes": "Clubes",
     "calendario": "Calendario",
-    "metodologia": "Metodología"
+    "about": "Sobre el proyecto"
   },
   "search": {
     "placeholder": "Buscar equipo..."
   },
   "hero": {
-    "title": "Análisis de oposición profesional",
-    "subtitle": "Informes tácticos de las 48 selecciones del Mundial 2026",
-    "cta": "Ver informes del Mundial",
+    "title": "Análisis táctico profesional",
+    "subtitle": "Modelos de juego, informes de oposición, perfiles de jugador y análisis de partido. Selecciones del Mundial 2026 y clubes de las cinco grandes ligas europeas.",
+    "cta": "Explorar el Mundial 2026",
     "countdown": "Faltan {days} días para el Mundial"
   },
   "home": {
@@ -80,15 +80,37 @@
     "post-match": "Post-Partido",
     "playing-model": "Modelo de Juego"
   },
+  "about": {
+    "title": "Sobre el proyecto",
+    "subtitle": "Qué es Soy Analista y cómo trabajamos",
+    "introP1": "Soy Analista es una plataforma de análisis táctico que produce informes profesionales basados en datos para cuerpos técnicos, analistas, periodistas y aficionados exigentes.",
+    "introP2": "El foco principal es el Mundial 2026, con cobertura de las 48 selecciones clasificadas. En paralelo, se publican informes de clubes de las cinco grandes ligas europeas: LaLiga, Premier League, Serie A, Bundesliga y Ligue 1.",
+    "introP3": "Cada informe se construye a partir de datos de FBref, Understat, Transfermarkt y FIFA, procesados con una metodología propia de 17 secciones que cubre las cinco fases del juego.",
+    "reportTypesTitle": "Tipos de informe",
+    "reportTypeDescs": {
+      "informe": "Análisis completo del rival: 17 secciones que cubren las 5 fases del juego.",
+      "playing-model": "Identidad táctica del equipo: cómo construye, progresa, finaliza y defiende.",
+      "player-profile": "Scouting individual con radar de métricas, percentiles y contexto táctico.",
+      "head2head": "Enfrentamiento directo entre dos equipos o jugadores con tablas comparativas.",
+      "set-pieces": "Balón parado ofensivo y defensivo: corners, faltas, penales, saques.",
+      "post-match": "Análisis táctico de partidos disputados con momentos clave y ratings.",
+      "newsletter": "Resúmenes periódicos con las novedades y publicaciones recientes."
+    },
+    "methodologyTitle": "Metodología",
+    "sectionsTitle": "17 secciones de análisis",
+    "sectionsIntro": "Cada informe Tier 1 incluye 17 secciones que cubren desde el perfil institucional hasta el XI probable, pasando por análisis táctico de las 5 fases del juego.",
+    "tiersTitle": "Sistema de tiers",
+    "sourcesTitle": "Fuentes de datos"
+  },
   "clubes": {
     "title": "Informes de clubes",
-    "subtitle": "Análisis de oposición por liga"
+    "subtitle": "Informes tácticos de clubes de LaLiga, Premier League, Serie A, Bundesliga y Ligue 1"
   },
   "footer": {
     "brand": "Soy Analista",
-    "tagline": "Análisis de oposición profesional",
+    "tagline": "Análisis táctico profesional",
     "rights": "© 2026 Soy Analista. Todos los derechos reservados.",
-    "methodology": "Metodología",
+    "about": "Sobre el proyecto",
     "subscribe": "Suscribite a la newsletter"
   },
   "tiers": {

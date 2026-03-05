@@ -61,7 +61,10 @@ export const teams: Team[] = [
     quickStats: { formation: "4-3-3", qualifyingPosition: "1°", goals: "39 en 18", winRate: "72%" },
   },
   { slug: "algeria", name: { es: "Argelia", en: "Algeria" }, flag: "🇩🇿", group: "J", confederation: "CAF", fifaRanking: 30, tier: 2, mode: "national", competition: "mundial-2026", status: "coming_soon" },
-  { slug: "austria", name: { es: "Austria", en: "Austria" }, flag: "🇦🇹", group: "J", confederation: "UEFA", fifaRanking: 23, tier: 2, mode: "national", competition: "mundial-2026", status: "coming_soon" },
+  {
+    slug: "austria", name: { es: "Austria", en: "Austria" }, flag: "🇦🇹", group: "J", confederation: "UEFA", fifaRanking: 23, tier: 2, mode: "national", competition: "mundial-2026", status: "available",
+    quickStats: { formation: "4-2-3-1", qualifyingPosition: "1°", goals: "22 en 8", winRate: "88%" },
+  },
   { slug: "jordan", name: { es: "Jordania", en: "Jordan" }, flag: "🇯🇴", group: "J", confederation: "AFC", fifaRanking: 68, tier: 3, mode: "national", competition: "mundial-2026", status: "coming_soon" },
 
   // ===== GROUP K =====

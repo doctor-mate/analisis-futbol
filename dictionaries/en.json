@@ -8,6 +8,9 @@
     "clubes": "Clubs",
     "metodologia": "Methodology"
   },
+  "search": {
+    "placeholder": "Search team..."
+  },
   "hero": {
     "title": "Professional opposition analysis",
     "subtitle": "Tactical reports for all 48 World Cup 2026 teams",
@@ -18,7 +21,9 @@
     "featured": "Featured reports",
     "quickView": "World Cup 2026 — Quick view",
     "clubes": "Club reports",
-    "viewAll": "View all reports"
+    "viewAll": "View all reports",
+    "progress": "World Cup 2026 Progress",
+    "progressClubs": "Club Progress"
   },
   "mundial": {
     "title": "World Cup 2026",
@@ -27,7 +32,9 @@
     "filters": {
       "all": "All",
       "available": "Available",
-      "comingSoon": "Coming soon"
+      "comingSoon": "Coming soon",
+      "tier": "Tier",
+      "confederation": "Confederation"
     }
   },
   "team": {

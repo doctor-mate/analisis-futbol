@@ -1,0 +1,85 @@
+.wrapper {
+  background: var(--sa-blanco);
+  border: 1px solid var(--sa-arena);
+  border-radius: var(--sa-radius-lg);
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--sa-font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.counter {
+  font-family: var(--sa-font-data);
+  font-size: 14px;
+}
+
+.counterNum {
+  color: var(--sa-rojo);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.counterSep {
+  color: var(--sa-tierra);
+  margin: 0 2px;
+}
+
+.counterTotal {
+  color: var(--sa-tierra);
+}
+
+.bar {
+  height: 4px;
+  background: var(--sa-arena);
+  border-radius: 2px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--sa-rojo);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cell {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  background: var(--sa-crema-oscura);
+  opacity: 0.4;
+  transition: all 0.2s;
+}
+
+.cell.ready {
+  opacity: 1;
+  background: var(--sa-crema);
+  box-shadow: 0 0 0 1.5px var(--sa-rojo);
+}
+
+.cell:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}

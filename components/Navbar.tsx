@@ -3,16 +3,27 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import SearchBar from "./SearchBar";
 import styles from "./Navbar.module.css";
+
+interface SearchTeam {
+  slug: string;
+  name: string;
+  flag: string;
+  mode: "national" | "club";
+  href: string;
+}
 
 interface NavbarProps {
   locale: string;
   dict: {
     nav: { mundial: string; clubes: string; metodologia: string };
+    search?: { placeholder: string };
   };
+  searchTeams?: SearchTeam[];
 }
 
-export default function Navbar({ locale, dict }: NavbarProps) {
+export default function Navbar({ locale, dict, searchTeams }: NavbarProps) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -46,6 +57,13 @@ export default function Navbar({ locale, dict }: NavbarProps) {
               {link.label}
             </Link>
           ))}
+          {searchTeams && (
+            <SearchBar
+              locale={locale}
+              teams={searchTeams}
+              placeholder={dict.search?.placeholder ?? "Search..."}
+            />
+          )}
           <Link href={switchPath} className={styles.langSwitch}>
             {otherLocale.toUpperCase()}
           </Link>

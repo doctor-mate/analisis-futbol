@@ -22,11 +22,30 @@
   line-height: 1;
 }
 
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
 .title {
   font-family: var(--sa-font-display);
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 4px;
+}
+
+.newBadge {
+  font-family: var(--sa-font-data);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--sa-dorado);
+  color: var(--sa-negro);
+  padding: 2px 8px;
+  border-radius: 3px;
+  flex-shrink: 0;
 }
 
 .description {

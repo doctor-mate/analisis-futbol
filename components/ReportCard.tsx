@@ -15,6 +15,13 @@ interface ReportCardProps {
   };
 }
 
+function isNew(dateStr: string): boolean {
+  const published = new Date(dateStr);
+  const now = new Date();
+  const diffDays = (now.getTime() - published.getTime()) / (1000 * 60 * 60 * 24);
+  return diffDays <= 7;
+}
+
 export default function ReportCard({ report, locale, labels }: ReportCardProps) {
   const iconMap: Record<string, string> = {
     "informe": "📄",
@@ -26,13 +33,17 @@ export default function ReportCard({ report, locale, labels }: ReportCardProps) 
     "playing-model": "♟️",
   };
   const icon = iconMap[report.type] || "📄";
+  const showNew = isNew(report.date);
 
   return (
     <div className={styles.card}>
       <div className={styles.header}>
         <span className={styles.icon}>{icon}</span>
         <div>
-          <h3 className={styles.title}>{localized(report.label, locale)}</h3>
+          <div className={styles.titleRow}>
+            <h3 className={styles.title}>{localized(report.label, locale)}</h3>
+            {showNew && <span className={styles.newBadge}>New</span>}
+          </div>
           {report.description && (
             <p className={styles.description}>
               {localized(report.description, locale)}

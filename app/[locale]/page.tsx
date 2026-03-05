@@ -10,6 +10,7 @@ import {
 import { localized } from "@/lib/utils";
 import HeroSection from "@/components/HeroSection";
 import TeamCard from "@/components/TeamCard";
+import ProgressGrid from "@/components/ProgressGrid";
 import styles from "./page.module.css";
 
 export const revalidate = 3600;
@@ -23,8 +24,11 @@ export default async function HomePage({
   const loc = locale as Locale;
   const dict = await getDictionary(loc);
 
-  // Featured teams
+  // All national teams
   const allTeams = await getNationalTeams();
+  const nationalTeams = allTeams.filter((t) => t.status !== "playoff_pending").map(toTeam);
+
+  // Featured teams
   const featured = ["argentina", "brazil", "spain"]
     .map((slug) => allTeams.find((t) => t.slug === slug))
     .filter(Boolean)
@@ -68,6 +72,35 @@ export default async function HomePage({
                 statusLabel={getStatusLabel(team.status)}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Diamond separator */}
+      <div className="container">
+        <div className="diamond-separator">
+          <div className="diamond" />
+        </div>
+      </div>
+
+      {/* Progress Dashboard */}
+      <section className={styles.section}>
+        <div className="container">
+          <div className={styles.progressRow}>
+            <ProgressGrid
+              teams={nationalTeams}
+              locale={loc}
+              title={dict.home.progress}
+              total={48}
+            />
+            {clubs.length > 0 && (
+              <ProgressGrid
+                teams={clubs}
+                locale={loc}
+                title={dict.home.progressClubs}
+                total={clubs.length}
+              />
+            )}
           </div>
         </div>
       </section>

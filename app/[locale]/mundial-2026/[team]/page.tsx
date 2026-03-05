@@ -156,8 +156,22 @@ export default async function TeamPage({
 
           {teamReports.length > 0 ? (
             <div className={styles.reportsList}>
-              {teamReports.map((report, i) => (
-                <ReportCard key={i} report={report} locale={loc} labels={dict.team} />
+              {Object.entries(
+                teamReports.reduce<Record<string, typeof teamReports>>((acc, r) => {
+                  const key = r.type;
+                  if (!acc[key]) acc[key] = [];
+                  acc[key].push(r);
+                  return acc;
+                }, {})
+              ).map(([type, reports]) => (
+                <div key={type} className={styles.reportGroup}>
+                  <h3 className={styles.reportGroupTitle}>
+                    {dict.reportTypes[type as keyof typeof dict.reportTypes] || type}
+                  </h3>
+                  {reports.map((report, i) => (
+                    <ReportCard key={i} report={report} locale={loc} labels={dict.team} />
+                  ))}
+                </div>
               ))}
             </div>
           ) : (

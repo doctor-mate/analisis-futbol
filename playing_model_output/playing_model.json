@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "team": "Argentina",
+    "mode": "national",
+    "matches_analyzed": 22,
+    "data_sources": {
+      "fbref": true,
+      "understat": false,
+      "processed": true
+    },
+    "confederation": "CONMEBOL",
+    "generated_at": "2026-03-04T23:40:34Z"
+  },
+  "tactical_identity": "Equipo directo con juego posicional y verticalidad en progresion",
+  "formation": {
+    "primary": "4-3-3",
+    "primary_pct": 44.4,
+    "variants": [
+      {
+        "formation": "4-2-3-1",
+        "pct": 22.2
+      },
+      {
+        "formation": "4-4-2",
+        "pct": 11.1
+      }
+    ],
+    "total_matches_with_formation": 18
+  },
+  "indices": {
+    "block_compactness": {
+      "value": 3.3,
+      "max": 6.0,
+      "components": {
+        "height_ratio": 0.721,
+        "press_score": 0.073,
+        "ppda_used": false
+      }
+    },
+    "offensive_positional_style": {
+      "value": 3.7,
+      "max": 5.0,
+      "components": {
+        "possession_pct": 63.9,
+        "pass_completion": 88.0,
+        "short_pass_pct": 55.0,
+        "att_third_touches_per90": 180.0
+      }
+    },
+    "pass_distance_profile": {
+      "value": 4.4,
+      "max": 5.0,
+      "components": {
+        "short_pct": 55.0,
+        "medium_pct": 30.0,
+        "long_pct": 15.0,
+        "directness_raw": 0.475
+      }
+    },
+    "progression_speed": {
+      "value": 3.8,
+      "max": 5.0,
+      "components": {
+        "prog_passes_per90": 36.8,
+        "prog_carries_per90": 28.6,
+        "total_passes_per90": 425.5,
+        "progression_rate": 0.1538
+      }
+    },
+    "pressing_intensity": {
+      "value": 1.5,
+      "max": 5.0,
+      "source": "fbref_proxy",
+      "components": {
+        "tackles_per90": 8.4,
+        "interceptions_per90": 7.4,
+        "def_actions_per90": 15.7
+      }
+    },
+    "defensive_block_height": {
+      "value": 5.0,
+      "max": 5.0,
+      "components": {
+        "def_third_pct": 27.9,
+        "mid_third_pct": 45.1,
+        "att_third_pct": 27.0,
+        "clearances_per90": 12.3
+      }
+    }
+  },
+  "phase_analysis": {
+    "build_up": {
+      "pass_completion": 88.0,
+      "short_pass_pct": 55.0,
+      "long_pass_pct": 15.0
+    },
+    "progression": {
+      "prog_passes_per90": 36.8,
+      "prog_carries_per90": 28.6,
+      "prog_ratio": 1.29,
+      "final_third_passes_per90": 40.9
+    },
+    "attacking": {
+      "shots_per90": 9.6,
+      "sot_per90": 3.7,
+      "xg_per90": 0.0,
+      "goals_per90": 1.41,
+      "xg_overperformance": 31.0,
+      "sca_per90": 20.5,
+      "crosses_per90": 2.3
+    },
+    "defensive": {
+      "tackles_per90": 8.4,
+      "interceptions_per90": 7.4,
+      "blocks_per90": 6.5,
+      "total_def_actions_per90": 22.3,
+      "ppda": null,
+      "ppda_source": "unavailable",
+      "zone_distribution": {
+        "defensive_third_pct": 27.9,
+        "middle_third_pct": 45.1,
+        "attacking_third_pct": 27.0
+      }
+    },
+    "transition": {
+      "att_third_recoveries_per90": 4.2,
+      "prog_actions_per90": 65.5
+    },
+    "set_pieces": {
+      "sca_from_dead_ball": 108.0,
+      "sca_from_dead_ball_per90": 4.9
+    }
+  },
+  "key_players": {
+    "build_up": [],
+    "progression": [],
+    "attacking": [
+      {
+        "name": "Nicolás Otamendi",
+        "xG": 0.0,
+        "xAG": 0.0
+      },
+      {
+        "name": "Rodrigo De Paul",
+        "xG": 0.0,
+        "xAG": 0.0
+      },
+      {
+        "name": "Emiliano Martínez",
+        "xG": 0.0,
+        "xAG": 0.0
+      }
+    ],
+    "defensive": []
+  },
+  "warnings": [
+    {
+      "level": "info",
+      "message": "National team mode: PPDA unavailable, pressing intensity estimated from FBref data."
+    },
+    {
+      "level": "info",
+      "message": "Understat data unavailable. xG and PPDA sourced from FBref or estimated."
+    }
+  ],
+  "ici_summary": {
+    "average_ici": 1.68,
+    "high_contributors": 8,
+    "total_active": 28,
+    "ici_source": "national_only",
+    "top_5": [
+      {
+        "name": "Squad Total",
+        "ici": 2.4,
+        "source": "national_only",
+        "role": [
+          "Total defender",
+          "Pure playmaker",
+          "Explosive / Vertical",
+          "Elite finisher"
+        ]
+      },
+      {
+        "name": "Julián Álvarez",
+        "ici": 1.75,
+        "source": "national_only",
+        "role": [
+          "Total defender",
+          "Pure playmaker",
+          "Explosive / Vertical",
+          "Elite finisher"
+        ]
+      },
+      {
+        "name": "Lionel Messi",
+        "ici": 1.75,
+        "source": "national_only",
+        "role": [
+          "Total defender",
+          "Pure playmaker",
+          "Explosive / Vertical",
+          "Elite finisher"
+        ]
+      },
+      {
+        "name": "Lautaro Martínez",
+        "ici": 1.75,
+        "source": "national_only",
+        "role": [
+          "Total defender",
+          "Pure playmaker",
+          "Explosive / Vertical",
+          "Elite finisher"
+        ]
+      },
+      {
+        "name": "Nicolás González",
+        "ici": 1.75,
+        "source": "national_only",
+        "role": [
+          "Total defender",
+          "Pure playmaker",
+          "Explosive / Vertical",
+          "Elite finisher"
+        ]
+      }
+    ]
+  }
+}

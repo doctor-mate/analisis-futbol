@@ -25,6 +25,25 @@ export const reports: Report[] = [
   {
     teamSlug: "argentina",
     competition: "mundial-2026",
+    type: "playing-model",
+    label: {
+      es: "Modelo de Juego",
+      en: "Playing Model",
+    },
+    description: {
+      es: "Análisis descriptivo de 10 secciones: identidad táctica, formación, construcción, progresión, ataque, pressing, transiciones, balón parado, evolución y comparación CONMEBOL.",
+      en: "10-section descriptive analysis: tactical identity, formation, build-up, progression, attacking, pressing, transitions, set pieces, evolution and CONMEBOL comparison.",
+    },
+    sections: 10,
+    pages: "12",
+    date: "2026-03-04",
+    formats: {
+      html: "/reports/argentina-mundial-2026/modelo-de-juego.html",
+    },
+  },
+  {
+    teamSlug: "argentina",
+    competition: "mundial-2026",
     type: "newsletter",
     label: {
       es: "Newsletter — Edición #001",

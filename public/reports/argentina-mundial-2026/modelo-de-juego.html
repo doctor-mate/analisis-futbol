@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina — Modelo de Juego · Mundial 2026 | Soy Analista</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sa-crema: #F5F0E8;
+  --sa-crema-oscura: #EDE6D8;
+  --sa-arena: #D9CEBC;
+  --sa-tierra: #A69882;
+  --sa-cafe: #6B5B4D;
+  --sa-cafe-oscuro: #4A3E34;
+  --sa-negro: #1C1915;
+  --sa-negro-suave: #2C2822;
+  --sa-tinta: #3A3530;
+  --sa-blanco: #FEFCF8;
+  --sa-rojo: #C13628;
+  --sa-rojo-claro: #D94F42;
+  --sa-dorado: #B8922F;
+  --sa-verde: #3A7D44;
+  --sa-azul: #2E5E8C;
+  --sa-font-display: 'Playfair Display', Georgia, serif;
+  --sa-font-body: 'Source Serif 4', Georgia, serif;
+  --sa-font-data: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--sa-crema);
+  font-family: var(--sa-font-body);
+  color: var(--sa-negro);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.report-header {
+  background: var(--sa-negro);
+  color: var(--sa-crema);
+  padding: 48px 24px 40px;
+}
+
+.container { max-width: 960px; margin: 0 auto; }
+
+.brand-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.monogram {
+  width: 32px; height: 32px;
+  border: 1.5px solid var(--sa-arena);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--sa-font-display);
+  font-style: italic; font-size: 18px; font-weight: 700;
+  color: var(--sa-crema);
+}
+
+.brand-name {
+  font-family: var(--sa-font-display);
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-left: 10px;
+}
+
+.brand-subtitle {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 12px;
+  color: var(--sa-tierra);
+}
+
+.title-row {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 8px;
+}
+
+.flag { font-size: 52px; line-height: 1; }
+
+.team-name {
+  font-family: var(--sa-font-display);
+  font-size: 44px; font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1.1;
+  color: var(--sa-blanco);
+}
+
+.report-type-badge {
+  display: inline-block;
+  font-family: var(--sa-font-data);
+  font-size: 11px; font-weight: 500;
+  color: var(--sa-dorado);
+  border: 1px solid var(--sa-dorado);
+  border-radius: 3px;
+  padding: 3px 10px;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.team-meta {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 15px;
+  color: var(--sa-tierra); margin-top: 4px;
+}
+
+.accent-line {
+  width: 48px; height: 3px;
+  background: var(--sa-rojo);
+  margin: 20px 0;
+}
+
+.quick-stats {
+  display: flex; gap: 24px; flex-wrap: wrap;
+}
+
+.quick-stat-value {
+  font-family: var(--sa-font-data);
+  font-size: 16px; font-weight: 500;
+  color: var(--sa-blanco);
+}
+
+.quick-stat-label {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 11px;
+  color: var(--sa-tierra);
+}
+
+main {
+  max-width: 960px; margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* Editorial Rule */
+.editorial-rule {
+  border-top: 3px solid var(--sa-negro);
+  padding-top: 8px;
+  border-bottom: 1px solid var(--sa-arena);
+  margin-bottom: 32px;
+}
+
+/* Section Header */
+.section-header { margin-bottom: 24px; }
+.section-header .number-title {
+  display: flex; align-items: baseline; gap: 12px;
+}
+.section-number {
+  font-family: var(--sa-font-data);
+  font-size: 13px; color: var(--sa-tierra);
+  font-weight: 500;
+}
+.section-title {
+  font-family: var(--sa-font-display);
+  font-size: 24px; font-weight: 700;
+  color: var(--sa-negro);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Diamond Separator */
+.diamond-sep {
+  display: flex; align-items: center;
+  gap: 12px; margin: 28px 0;
+}
+.diamond-sep .line {
+  flex: 1; height: 1px;
+  background: var(--sa-arena);
+}
+.diamond-sep .diamond {
+  width: 6px; height: 6px;
+  background: var(--sa-rojo);
+  transform: rotate(45deg);
+}
+
+/* Stat Cards */
+.stat-cards-row {
+  display: flex; gap: 12px;
+  flex-wrap: wrap; margin-bottom: 24px;
+}
+.stat-card {
+  background: var(--sa-blanco);
+  border: 1px solid var(--sa-arena);
+  border-radius: 4px;
+  padding: 14px 16px;
+  text-align: center;
+  flex: 1 1 0;
+  min-width: 100px;
+}
+.stat-card-value {
+  font-family: var(--sa-font-data);
+  font-size: 22px; font-weight: 500;
+  color: var(--sa-negro);
+  margin-bottom: 4px;
+}
+.stat-card-value.accent { color: var(--sa-rojo); }
+.stat-card-label {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 11px;
+  color: var(--sa-tierra); line-height: 1.3;
+}
+
+/* Body text */
+.body-text {
+  font-size: 15px; line-height: 1.8;
+  color: var(--sa-negro);
+  margin-bottom: 16px;
+}
+.body-text p { margin-bottom: 12px; }
+
+/* Drop cap */
+.drop-cap::first-letter {
+  font-family: var(--sa-font-display);
+  font-size: 3.2em; font-weight: 700;
+  color: var(--sa-rojo);
+  float: left; line-height: 0.8;
+  margin-right: 8px; margin-top: 4px;
+}
+
+/* Pullquote */
+.pullquote {
+  background: var(--sa-negro);
+  border-radius: 4px;
+  padding: 24px 32px;
+  margin: 24px 0;
+}
+.pullquote p {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 17px;
+  color: var(--sa-crema);
+  line-height: 1.7; margin: 0;
+}
+
+/* Group note / Info box */
+.info-box {
+  background: var(--sa-crema-oscura);
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-family: var(--sa-font-body);
+  font-size: 13px; color: var(--sa-cafe);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.info-box strong { color: var(--sa-negro); }
+
+/* Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+.data-table th {
+  font-family: var(--sa-font-data);
+  font-size: 11px; font-weight: 500;
+  color: var(--sa-tierra);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--sa-negro);
+  background: var(--sa-crema-oscura);
+}
+.data-table td {
+  font-family: var(--sa-font-body);
+  font-size: 13px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--sa-arena);
+  color: var(--sa-negro);
+}
+.data-table td.mono {
+  font-family: var(--sa-font-data);
+  font-weight: 500;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table .accent { color: var(--sa-rojo); font-weight: 600; }
+
+/* Formation diagram */
+.formation-box {
+  background: var(--sa-blanco);
+  border: 1px solid var(--sa-arena);
+  border-radius: 4px; padding: 24px;
+  text-align: center;
+  font-family: var(--sa-font-data);
+  font-size: 13px;
+  line-height: 2.2;
+  margin-bottom: 24px;
+  white-space: pre;
+  color: var(--sa-negro);
+}
+
+/* Sub-heading */
+.sub-heading {
+  font-family: var(--sa-font-display);
+  font-size: 18px; font-weight: 600;
+  color: var(--sa-negro);
+  margin-bottom: 12px;
+  margin-top: 20px;
+}
+
+/* Index card */
+.index-card {
+  background: var(--sa-blanco);
+  border: 1px solid var(--sa-arena);
+  border-left: 3px solid var(--sa-azul);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.index-name {
+  font-family: var(--sa-font-display);
+  font-size: 15px; font-weight: 600;
+  color: var(--sa-negro);
+  margin-bottom: 4px;
+}
+.index-value {
+  font-family: var(--sa-font-data);
+  font-size: 20px; font-weight: 500;
+  color: var(--sa-azul);
+  margin-bottom: 4px;
+}
+.index-desc {
+  font-family: var(--sa-font-body);
+  font-size: 13px; color: var(--sa-cafe);
+  line-height: 1.5;
+}
+
+/* Radar table */
+.radar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+.radar-table th {
+  font-family: var(--sa-font-data);
+  font-size: 11px; font-weight: 500;
+  color: var(--sa-tierra);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--sa-negro);
+}
+.radar-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--sa-arena);
+  font-size: 13px;
+}
+.radar-table td:first-child {
+  font-family: var(--sa-font-body);
+  font-weight: 600;
+  color: var(--sa-negro);
+}
+.radar-table td:nth-child(2),
+.radar-table td:nth-child(3) {
+  font-family: var(--sa-font-data);
+  font-weight: 500;
+  text-align: center;
+}
+.radar-bar {
+  height: 8px;
+  background: var(--sa-crema-oscura);
+  border-radius: 4px;
+  overflow: hidden;
+  min-width: 120px;
+}
+.radar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--sa-azul);
+}
+
+/* Form results */
+.form-row {
+  display: flex; align-items: center;
+  gap: 16px; margin-bottom: 8px;
+}
+.form-label {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 13px;
+  color: var(--sa-cafe);
+  min-width: 100px;
+}
+.form-indicators { display: flex; gap: 6px; }
+.form-box {
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--sa-font-body);
+  font-weight: 600; font-size: 12px;
+  border-width: 1.5px; border-style: solid;
+  background: transparent;
+}
+.form-box.V { border-color: var(--sa-verde); color: var(--sa-verde); }
+.form-box.E { border-color: var(--sa-dorado); color: var(--sa-dorado); }
+.form-box.D { border-color: var(--sa-rojo); color: var(--sa-rojo); }
+
+/* Bullet list */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.bullet-list li {
+  font-size: 14px;
+  line-height: 1.7;
+  padding: 6px 0 6px 20px;
+  position: relative;
+  color: var(--sa-negro);
+}
+.bullet-list li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--sa-rojo);
+  font-size: 8px;
+  top: 11px;
+}
+
+/* Footer */
+.report-footer {
+  background: var(--sa-negro);
+  padding: 32px 24px;
+  text-align: center;
+}
+.footer-brand {
+  font-family: var(--sa-font-display);
+  font-style: italic; font-size: 18px;
+  color: var(--sa-crema);
+  margin-bottom: 8px;
+}
+.footer-meta {
+  font-family: var(--sa-font-body);
+  font-size: 12px;
+  color: var(--sa-tierra);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .team-name { font-size: 32px; }
+  .flag { font-size: 40px; }
+  .stat-cards-row { flex-direction: column; }
+  .formation-box { font-size: 11px; padding: 16px; }
+  .data-table { font-size: 12px; }
+  .data-table th, .data-table td { padding: 8px 6px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="report-header">
+  <div class="container">
+    <div class="brand-bar">
+      <div style="display:flex;align-items:center;">
+        <div class="monogram">S</div>
+        <span class="brand-name">Soy Analista</span>
+      </div>
+      <span class="brand-subtitle">Análisis Táctico · Mundial 2026</span>
+    </div>
+    <div class="report-type-badge">♟ Modelo de Juego</div>
+    <div class="title-row">
+      <span class="flag">🇦🇷</span>
+      <h1 class="team-name">Argentina</h1>
+    </div>
+    <p class="team-meta">Eliminatorias CONMEBOL · 18 partidos (sep 2023 – sep 2025) · Grupo J del Mundial 2026</p>
+    <div class="accent-line"></div>
+    <div class="quick-stats">
+      <div>
+        <div class="quick-stat-value">63.9%</div>
+        <div class="quick-stat-label">Posesión prom.</div>
+      </div>
+      <div>
+        <div class="quick-stat-value">88%</div>
+        <div class="quick-stat-label">Precisión pases</div>
+      </div>
+      <div>
+        <div class="quick-stat-value">4-3-3</div>
+        <div class="quick-stat-label">Formación base</div>
+      </div>
+      <div>
+        <div class="quick-stat-value">31 GF / 10 GC</div>
+        <div class="quick-stat-label">Goles en 18 partidos</div>
+      </div>
+      <div>
+        <div class="quick-stat-value">1.°</div>
+        <div class="quick-stat-label">Pos. Eliminatorias</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ==================== SECTION 1 ==================== -->
+<div class="editorial-rule"></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">01</span>
+    <h2 class="section-title">Ficha de Identidad Táctica</h2>
+  </div>
+</div>
+
+<div class="pullquote">
+  <p>Equipo posicional de juego asociativo, con verticalidad progresiva y solidez defensiva colectiva.</p>
+</div>
+
+<div class="body-text drop-cap">
+  <p>Argentina bajo Scaloni es un equipo que controla los partidos a través de la posesión (63.9%, 1.ª en CONMEBOL), construye con paciencia desde atrás (88% de precisión de pases) y ataca con combinaciones rápidas que explotan la calidad individual de sus jugadores ofensivos. No es un equipo que presione con intensidad extrema, sino uno que defiende con orden colectivo y transiciona con velocidad cuando recupera.</p>
+</div>
+
+<h3 class="sub-heading">Formación principal y variantes</h3>
+
+<table class="data-table">
+  <thead><tr><th>Formación</th><th>Frecuencia</th><th>Contexto típico</th></tr></thead>
+  <tbody>
+    <tr><td class="mono accent">4-3-3</td><td class="mono">44.4% (8/18)</td><td>Formación base, partidos de local, rivales de nivel medio-bajo</td></tr>
+    <tr><td class="mono">4-2-3-1</td><td class="mono">22.2% (4/18)</td><td>Partidos de visitante contra rivales directos</td></tr>
+    <tr><td class="mono">4-4-2</td><td class="mono">16.7% (3/18)</td><td>Partidos tácticos, fuera de casa (Brasil, Colombia)</td></tr>
+    <tr><td class="mono">Otras</td><td class="mono">16.7% (3/18)</td><td>3-5-2, 4-1-3-2, 4-2-2-2 — variantes puntuales</td></tr>
+  </tbody>
+</table>
+
+<div class="info-box">
+  <strong>Flexibilidad formacional:</strong> 6 formaciones distintas en 18 partidos. Scaloni es el DT que más varía de dibujo en CONMEBOL, pero la lógica posicional subyacente se mantiene constante.
+</div>
+
+<h3 class="sub-heading">Características tácticas definitorias</h3>
+
+<ul class="bullet-list">
+  <li><strong>Dominio posicional adaptativo:</strong> 63.9% de posesión promedio, pero baja a 55.2% contra rivales fuertes (Uruguay, Brasil, Colombia) — se adapta sin perder identidad</li>
+  <li><strong>Construcción desde atrás con precisión élite:</strong> 88% de precisión de pases, la más alta de CONMEBOL, con un arquero (E. Martínez) plenamente integrado al juego</li>
+  <li><strong>Verticalidad progresiva:</strong> Ratio de pases progresivos vs conducciones de 1.29 — progresa por pase y conducción en volúmenes altos</li>
+  <li><strong>Gol colectivo con gravitación de Messi:</strong> 31 goles entre 11 goleadores distintos, pero Messi lidera con 0.76 goles/90</li>
+  <li><strong>Solidez defensiva sin pressing extremo:</strong> 0.56 goles en contra por partido, la mejor marca de CONMEBOL, lograda con bloque organizado</li>
+</ul>
+
+<h3 class="sub-heading">ADN del cuerpo técnico</h3>
+
+<div class="body-text">
+  <p><strong>Lionel Scaloni</strong> (DT desde agosto 2018). Sin experiencia previa como DT principal. Escuela pragmática: no es un dogmático posicional ni un contra-atacante puro, sino un gestor que adapta el plan a cada rival. Palmarés: Copa América 2021, Finalissima 2022, Copa del Mundo 2022, Copa América 2024.</p>
+</div>
+
+<!-- ==================== SECTION 2 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">02</span>
+    <h2 class="section-title">Formación y Estructura</h2>
+  </div>
+</div>
+
+<h3 class="sub-heading">Formación base: 4-3-3</h3>
+<div class="formation-box">              Álvarez (o Lautaro)
+    N. González                     Messi
+                    Enzo
+         Mac Allister          De Paul
+    Tagliafico   Otamendi   Romero   Molina
+                  E. Martínez</div>
+
+<h3 class="sub-heading">En posesión → 3-2-4-1 asimétrico</h3>
+<div class="body-text">
+  <p><strong>Tagliafico</strong> sube como carrilero izquierdo. <strong>De Paul</strong> desciende como pivote defensivo formando triángulo con los centrales. <strong>Messi</strong> tiene libertad total de movimiento, flotando entre banda derecha, canal interior y mediapunta.</p>
+</div>
+
+<h3 class="sub-heading">Sin posesión → 4-5-1 / 4-1-4-1</h3>
+<div class="body-text">
+  <p>El equipo se compacta con Messi con licencia para no bajar completamente, generando una estructura de 4-4-1-1. Los laterales se mantienen en línea con los centrales, priorizando solidez. El bloque se ubica predominantemente en el tercio medio.</p>
+</div>
+
+<h3 class="sub-heading">Asimetrías</h3>
+<ul class="bullet-list">
+  <li><strong>Banda izquierda (ofensiva):</strong> Tagliafico más proyectivo + N. González como extremo abierto que busca profundidad — principal corredor de ataque</li>
+  <li><strong>Banda derecha (asociativa):</strong> Messi como falso extremo que corta hacia adentro, liberando el carril para Molina — más combinativo que vertical</li>
+  <li><strong>Mediocampo escalonado:</strong> De Paul con rol más defensivo, Mac Allister adelantado para conectar con atacantes, Enzo como eje distribuidor con proyección</li>
+</ul>
+
+<!-- ==================== SECTION 3 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">03</span>
+    <h2 class="section-title">Principios de Construcción</h2>
+  </div>
+</div>
+
+<div class="stat-cards-row">
+  <div class="stat-card"><div class="stat-card-value accent">88%</div><div class="stat-card-label">Precisión de pases</div></div>
+  <div class="stat-card"><div class="stat-card-value">55%</div><div class="stat-card-label">Pases cortos</div></div>
+  <div class="stat-card"><div class="stat-card-value">30%</div><div class="stat-card-label">Pases medios</div></div>
+  <div class="stat-card"><div class="stat-card-value">15%</div><div class="stat-card-label">Pases largos</div></div>
+</div>
+
+<div class="body-text drop-cap">
+  <p>La construcción parte de una salida en 2+1: los dos centrales (Otamendi y Romero) abren para dar amplitud mientras De Paul o Paredes desciende entre ellos para formar un triángulo de salida. Los laterales se posicionan altos, liberando espacio. Mac Allister y Enzo se ofrecen como receptores entre líneas.</p>
+</div>
+
+<h3 class="sub-heading">Jugadores clave en la construcción</h3>
+<table class="data-table">
+  <thead><tr><th>Jugador</th><th>Rol</th><th>Minutos</th><th>Titularidades</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Nicolás Otamendi</strong></td><td>Central, primer pase constructor</td><td class="mono">1,452</td><td class="mono">17</td></tr>
+    <tr><td><strong>Rodrigo De Paul</strong></td><td>Pivote descendido, primer receptor</td><td class="mono">1,353</td><td class="mono">17</td></tr>
+    <tr><td><strong>Cristian Romero</strong></td><td>Central, conducciones progresivas</td><td class="mono">1,260</td><td class="mono">15</td></tr>
+    <tr><td><strong>Enzo Fernández</strong></td><td>Interior, conexión construc.-progresión</td><td class="mono">1,267</td><td class="mono">15</td></tr>
+  </tbody>
+</table>
+
+<div class="index-card">
+  <div class="index-name">Estilo Posicional Ofensivo</div>
+  <div class="index-value">3.7 / 5.0</div>
+  <div class="index-desc">Juego posicional de nivel alto. La combinación de 63.9% de posesión, 88% de precisión y 55% de pases cortos indica un equipo claramente posicional en el contexto CONMEBOL.</div>
+</div>
+
+<!-- ==================== SECTION 4 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Principios de Progresión</h2>
+  </div>
+</div>
+
+<div class="stat-cards-row">
+  <div class="stat-card"><div class="stat-card-value accent">36.8</div><div class="stat-card-label">Pases progresivos/90</div></div>
+  <div class="stat-card"><div class="stat-card-value">28.6</div><div class="stat-card-label">Conducciones prog./90</div></div>
+  <div class="stat-card"><div class="stat-card-value">1.29</div><div class="stat-card-label">Ratio pases/conduc.</div></div>
+  <div class="stat-card"><div class="stat-card-value">40.9</div><div class="stat-card-label">Pases al último tercio/90</div></div>
+</div>
+
+<div class="body-text">
+  <p>Argentina progresa a través de una combinación equilibrada de pase y conducción, con leve preferencia por el pase (ratio 1.29). No es un equipo extremadamente paciente ni directo: busca progresar con velocidad controlada. La tasa de progresión del 15.4% del total de pases indica que cuando pasa, avanza.</p>
+</div>
+
+<h3 class="sub-heading">Corredores de progresión</h3>
+<table class="data-table">
+  <thead><tr><th>Corredor</th><th>Protagonistas</th><th>Mecanismo</th></tr></thead>
+  <tbody>
+    <tr><td class="accent"><strong>Centro</strong></td><td>Enzo Fernández, Mac Allister</td><td>Pases verticales entre líneas hacia Messi/Álvarez</td></tr>
+    <tr><td><strong>Izquierdo</strong></td><td>Tagliafico, N. González</td><td>Combinaciones en la banda, centros o diagonales</td></tr>
+    <tr><td><strong>Derecho</strong></td><td>Messi, Molina</td><td>Messi recibe, atrae marcas y distribuye — más asociativo</td></tr>
+  </tbody>
+</table>
+
+<div class="index-card">
+  <div class="index-name">Velocidad de Progresión</div>
+  <div class="index-value">3.8 / 5.0</div>
+  <div class="index-desc">Progresión rápida y decidida. 65.5 acciones progresivas por 90 sobre 425.5 pases totales reflejan un equipo que busca avanzar con cada secuencia de posesión.</div>
+</div>
+
+<!-- ==================== SECTION 5 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">05</span>
+    <h2 class="section-title">Principios de Ataque</h2>
+  </div>
+</div>
+
+<div class="stat-cards-row">
+  <div class="stat-card"><div class="stat-card-value accent">9.6</div><div class="stat-card-label">Disparos/90</div></div>
+  <div class="stat-card"><div class="stat-card-value">3.7</div><div class="stat-card-label">A portería/90</div></div>
+  <div class="stat-card"><div class="stat-card-value">1.41</div><div class="stat-card-label">Goles/90</div></div>
+  <div class="stat-card"><div class="stat-card-value">2.3</div><div class="stat-card-label">Centros/90</div></div>
+</div>
+
+<div class="body-text drop-cap">
+  <p>Argentina genera situaciones de gol por múltiples vías: juego combinativo en el canal interior derecho (Messi-Álvarez-Enzo), desbordes individuales (6.4 regates/partido), transiciones rápidas tras recuperación y balón parado (4.9 SCA desde ABP/90). Los centros (2.3/90) no son la vía principal — el equipo prefiere la combinación interior al desborde y centro.</p>
+</div>
+
+<h3 class="sub-heading">Distribución goleadora</h3>
+<table class="data-table">
+  <thead><tr><th>Jugador</th><th>Goles</th><th>G/90</th><th>Titularidades</th><th>Asistencias</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Messi</strong></td><td class="mono accent">8</td><td class="mono accent">0.76</td><td class="mono">10</td><td class="mono">3</td></tr>
+    <tr><td><strong>Julián Álvarez</strong></td><td class="mono">4</td><td class="mono">0.27</td><td class="mono">16</td><td class="mono">3</td></tr>
+    <tr><td><strong>Lautaro Martínez</strong></td><td class="mono">4</td><td class="mono">0.49</td><td class="mono">8</td><td class="mono">1</td></tr>
+    <tr><td><strong>Otamendi</strong></td><td class="mono">3</td><td class="mono">0.19</td><td class="mono">17</td><td class="mono">0</td></tr>
+    <tr><td><strong>Almada</strong></td><td class="mono">3</td><td class="mono">0.57</td><td class="mono">6</td><td class="mono">2</td></tr>
+    <tr><td><strong>Enzo Fernández</strong></td><td class="mono">2</td><td class="mono">0.14</td><td class="mono">15</td><td class="mono">3</td></tr>
+    <tr><td><strong>Mac Allister</strong></td><td class="mono">2</td><td class="mono">0.17</td><td class="mono">13</td><td class="mono">0</td></tr>
+    <tr><td><strong>N. González</strong></td><td class="mono">2</td><td class="mono">0.25</td><td class="mono">8</td><td class="mono">2</td></tr>
+    <tr><td>Tagliafico, Simeone, Dybala</td><td class="mono">1 c/u</td><td class="mono">—</td><td class="mono">—</td><td class="mono">—</td></tr>
+  </tbody>
+</table>
+
+<div class="info-box">
+  <strong>11 goleadores distintos</strong> en 18 partidos demuestran un ataque diversificado. Messi sigue siendo el finalizador más determinante (0.76 goles/90 — casi 1 gol por partido), pero el equipo no depende exclusivamente de él.
+</div>
+
+<!-- ==================== SECTION 6 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">06</span>
+    <h2 class="section-title">Pressing y Organización Defensiva</h2>
+  </div>
+</div>
+
+<div class="stat-cards-row">
+  <div class="stat-card"><div class="stat-card-value">8.4</div><div class="stat-card-label">Tackles/90</div></div>
+  <div class="stat-card"><div class="stat-card-value">7.4</div><div class="stat-card-label">Intercepciones/90</div></div>
+  <div class="stat-card"><div class="stat-card-value accent">0.56</div><div class="stat-card-label">Goles en contra/partido</div></div>
+  <div class="stat-card"><div class="stat-card-value">22.3</div><div class="stat-card-label">Acc. defensivas/90</div></div>
+</div>
+
+<div class="info-box">
+  <strong>PPDA no disponible</strong> — Understat no cubre selecciones nacionales. Las métricas defensivas provienen de FBref (tackles, intercepciones, bloqueos). Argentina aplica un pressing selectivo de intensidad moderada.
+</div>
+
+<div class="body-text">
+  <p>La distribución de acciones defensivas por zona confirma un equipo de <strong>bloque medio-alto</strong>: tercio defensivo 27.9%, tercio medio 45.1%, tercio ofensivo 27.0%. No desciende a un bloque bajo ni sube a un pressing ultra-alto de forma sostenida.</p>
+  <p>Argentina presiona en situaciones favorables — pase hacia atrás del rival, balón en la banda, saques de meta cortos — pero no persigue al rival por todo el campo. Es un pressing selectivo, no constante.</p>
+</div>
+
+<div class="index-card">
+  <div class="index-name">Pressing Intensity</div>
+  <div class="index-value">1.5 / 5.0 <span style="font-size:12px;color:var(--sa-tierra);">(proxy FBref — probablemente subestimado)</span></div>
+  <div class="index-desc">El índice está limitado por la ausencia de PPDA. Argentina no es pasiva defensivamente: presiona selectivamente y mantiene una solidez de 0.56 goles por partido en contra.</div>
+</div>
+
+<!-- ==================== SECTION 7 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">07</span>
+    <h2 class="section-title">Principios de Transición</h2>
+  </div>
+</div>
+
+<h3 class="sub-heading">Transición ofensiva</h3>
+<div class="body-text">
+  <p>Tras recuperar la posesión, Argentina presenta dos comportamientos diferenciados:</p>
+</div>
+
+<table class="data-table">
+  <thead><tr><th>Contexto</th><th>Posesión</th><th>Comportamiento</th></tr></thead>
+  <tbody>
+    <tr><td><strong>vs rivales inferiores</strong></td><td class="mono">&gt;60%</td><td>Recupera y restablece posesión posicional</td></tr>
+    <tr><td><strong>vs rivales directos</strong></td><td class="mono">&lt;60%</td><td>Transiciones rápidas y verticales (Messi acelerador, Álvarez profundidad)</td></tr>
+  </tbody>
+</table>
+
+<div class="body-text">
+  <p>Ejemplo: vs Brasil (A), con 50% de posesión, ganó 1-0 atacando en transición. Vs Uruguay (A), con 45%, ganó 1-0 con efectividad en pocas llegadas.</p>
+</div>
+
+<h3 class="sub-heading">Transición defensiva</h3>
+<div class="body-text">
+  <p><strong>Contra-pressing selectivo:</strong> Presión inmediata del jugador más cercano + 1 durante 5-6 segundos. Si no recupera, repliegue ordenado al bloque medio. Vulnerabilidad: Messi no participa intensamente en la presión post-pérdida, dejando un espacio temporal en la cobertura derecha.</p>
+</div>
+
+<!-- ==================== SECTION 8 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">08</span>
+    <h2 class="section-title">Balón Parado</h2>
+  </div>
+</div>
+
+<div class="stat-cards-row">
+  <div class="stat-card"><div class="stat-card-value accent">4.9</div><div class="stat-card-label">SCA desde ABP/90</div></div>
+  <div class="stat-card"><div class="stat-card-value">108</div><div class="stat-card-label">SCA ABP totales</div></div>
+</div>
+
+<div class="body-text">
+  <p><strong>Ejecutores principales:</strong> Messi (tiros directos), Enzo Fernández (centros de córner/libre indirecto), Lo Celso. <strong>Rematadores aéreos:</strong> Otamendi (3 goles — varios desde ABP), Romero, Álvarez.</p>
+  <p>El balón parado representa una fuente importante de ocasiones. Que un defensor de 37 años (Otamendi) sea el tercer máximo goleador del equipo habla de la relevancia del juego a balón parado en esta selección.</p>
+  <p><strong>Organización defensiva:</strong> Sistema mixto (zonal + marcaje individual a referentes aéreos). Los 10 goles en contra en 18 partidos sugieren solidez general en todas las facetas.</p>
+</div>
+
+<!-- ==================== SECTION 9 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">09</span>
+    <h2 class="section-title">Evolución Táctica</h2>
+  </div>
+</div>
+
+<h3 class="sub-heading">Últimos 10 partidos</h3>
+
+<table class="data-table">
+  <thead><tr><th>Fecha</th><th>Rival</th><th>Res.</th><th>Pos.</th><th>Formación</th></tr></thead>
+  <tbody>
+    <tr><td class="mono">Oct 2024</td><td>Venezuela (A)</td><td class="mono">E 1-1</td><td class="mono">60%</td><td class="mono">4-4-2◆</td></tr>
+    <tr><td class="mono">Oct 2024</td><td>Bolivia (H)</td><td class="mono accent">V 6-0</td><td class="mono">72%</td><td class="mono">4-3-3</td></tr>
+    <tr><td class="mono">Nov 2024</td><td>Paraguay (A)</td><td class="mono" style="color:var(--sa-rojo)">D 1-2</td><td class="mono">77%</td><td class="mono">4-2-3-1</td></tr>
+    <tr><td class="mono">Nov 2024</td><td>Peru (H)</td><td class="mono accent">V 1-0</td><td class="mono">74%</td><td class="mono">4-3-3</td></tr>
+    <tr><td class="mono">Mar 2025</td><td>Uruguay (A)</td><td class="mono accent">V 1-0</td><td class="mono">45%</td><td class="mono">4-2-3-1</td></tr>
+    <tr><td class="mono">Mar 2025</td><td>Brasil (H)</td><td class="mono accent">V 4-1</td><td class="mono">56%</td><td class="mono">4-1-3-2</td></tr>
+    <tr><td class="mono">Jun 2025</td><td>Chile (A)</td><td class="mono accent">V 1-0</td><td class="mono">66%</td><td class="mono">4-2-3-1</td></tr>
+    <tr><td class="mono">Jun 2025</td><td>Colombia (H)</td><td class="mono">E 1-1</td><td class="mono">64%</td><td class="mono">4-3-3</td></tr>
+    <tr><td class="mono">Sep 2025</td><td>Venezuela (H)</td><td class="mono accent">V 3-0</td><td class="mono">77%</td><td class="mono">4-2-2-2</td></tr>
+    <tr><td class="mono">Sep 2025</td><td>Ecuador (A)</td><td class="mono" style="color:var(--sa-rojo)">D 0-1</td><td class="mono">57%</td><td class="mono">4-2-3-1</td></tr>
+  </tbody>
+</table>
+
+<h3 class="sub-heading">Adaptaciones según tipo de rival</h3>
+
+<table class="data-table">
+  <thead><tr><th>Tipo de rival</th><th>Posesión prom.</th><th>Formación</th><th>Resultado</th></tr></thead>
+  <tbody>
+    <tr><td class="accent"><strong>Top</strong> (URU, BRA, COL)</td><td class="mono">55.2%</td><td>4-4-2, 4-2-3-1, 4-1-3-2</td><td class="mono">3V 1E 2D</td></tr>
+    <tr><td><strong>Medio</strong> (CHI, ECU, PAR, VEN)</td><td class="mono">63.8%</td><td>4-3-3, 4-2-3-1</td><td class="mono">4V 2E 2D</td></tr>
+    <tr><td><strong>Bajo</strong> (BOL, PER)</td><td class="mono">69.5%</td><td>4-3-3</td><td class="mono">5V 0E 0D</td></tr>
+  </tbody>
+</table>
+
+<div class="pullquote">
+  <p>Argentina modifica sustancialmente su estilo según el rival: baja la posesión 9 puntos contra rivales top, cambia a formaciones más compactas y juega más en transición. Es un equipo camaleónico.</p>
+</div>
+
+<h3 class="sub-heading">Primera fase vs segunda fase</h3>
+<table class="data-table">
+  <thead><tr><th>Métrica</th><th>1.ª fase (8 partidos)</th><th>2.ª fase (10 partidos)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Resultados</strong></td><td class="mono">5V 0E 3D</td><td class="mono">6V 2E 2D</td></tr>
+    <tr><td><strong>Goles a favor/p</strong></td><td class="mono">1.38</td><td class="mono accent">2.00</td></tr>
+    <tr><td><strong>Goles en contra/p</strong></td><td class="mono accent">0.50</td><td class="mono">0.60</td></tr>
+    <tr><td><strong>Formación principal</strong></td><td>4-3-3 (6/8)</td><td>Variable (4 distintas)</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== SECTION 10 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">10</span>
+    <h2 class="section-title">Comparación de Estilo vs CONMEBOL</h2>
+  </div>
+</div>
+
+<h3 class="sub-heading">Radar de Índices Tácticos</h3>
+
+<table class="radar-table">
+  <thead><tr><th>Índice</th><th>Argentina</th><th>Max.</th><th>Barra</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Block Compactness</td>
+      <td style="font-family:var(--sa-font-data);font-weight:500;text-align:center;">3.3</td>
+      <td style="font-family:var(--sa-font-data);color:var(--sa-tierra);text-align:center;">/ 6.0</td>
+      <td><div class="radar-bar"><div class="radar-fill" style="width:55%;background:var(--sa-azul);"></div></div></td>
+    </tr>
+    <tr>
+      <td>Estilo Posicional Ofensivo</td>
+      <td style="font-family:var(--sa-font-data);font-weight:500;text-align:center;color:var(--sa-verde);">3.7</td>
+      <td style="font-family:var(--sa-font-data);color:var(--sa-tierra);text-align:center;">/ 5.0</td>
+      <td><div class="radar-bar"><div class="radar-fill" style="width:74%;background:var(--sa-verde);"></div></div></td>
+    </tr>
+    <tr>
+      <td>Perfil de Distancia de Pase</td>
+      <td style="font-family:var(--sa-font-data);font-weight:500;text-align:center;color:var(--sa-verde);">4.4</td>
+      <td style="font-family:var(--sa-font-data);color:var(--sa-tierra);text-align:center;">/ 5.0</td>
+      <td><div class="radar-bar"><div class="radar-fill" style="width:88%;background:var(--sa-verde);"></div></div></td>
+    </tr>
+    <tr>
+      <td>Velocidad de Progresión</td>
+      <td style="font-family:var(--sa-font-data);font-weight:500;text-align:center;color:var(--sa-verde);">3.8</td>
+      <td style="font-family:var(--sa-font-data);color:var(--sa-tierra);text-align:center;">/ 5.0</td>
+      <td><div class="radar-bar"><div class="radar-fill" style="width:76%;background:var(--sa-verde);"></div></div></td>
+    </tr>
+    <tr>
+      <td>Intensidad de Pressing</td>
+      <td style="font-family:var(--sa-font-data);font-weight:500;text-align:center;color:var(--sa-rojo);">1.5</td>
+      <td style="font-family:var(--sa-font-data);color:var(--sa-tierra);text-align:center;">/ 5.0</td>
+      <td><div class="radar-bar"><div class="radar-fill" style="width:30%;background:var(--sa-rojo);"></div></div></td>
+    </tr>
+    <tr>
+      <td>Altura del Bloque Defensivo</td>
+      <td style="font-family:var(--sa-font-data);font-weight:500;text-align:center;color:var(--sa-verde);">5.0</td>
+      <td style="font-family:var(--sa-font-data);color:var(--sa-tierra);text-align:center;">/ 5.0</td>
+      <td><div class="radar-bar"><div class="radar-fill" style="width:100%;background:var(--sa-verde);"></div></div></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="info-box">
+  <strong>Nota:</strong> Los índices de Pressing Intensity y Defensive Block Height están afectados por limitaciones de datos (sin PPDA, zonas defensivas estimadas). Deben interpretarse como orientativos. Los valores de referencia CONMEBOL son estimaciones.
+</div>
+
+<h3 class="sub-heading">Donde Argentina es única</h3>
+<ul class="bullet-list">
+  <li><strong>Estilo Posicional Ofensivo (3.7/5.0):</strong> El equipo más posicional de CONMEBOL. 63.9% de posesión y 88% de precisión la colocan significativamente por encima de la media sudamericana (~50-55% posesión)</li>
+  <li><strong>Perfil de Pases (4.4/5.0):</strong> Fuerte preferencia por pase corto y medio en un contexto donde muchos equipos recurren al juego directo</li>
+  <li><strong>Solidez defensiva:</strong> 0.56 goles/partido — mejor registro de las eliminatorias, logrado sin pressing extremo</li>
+</ul>
+
+<h3 class="sub-heading">Equipo más similar en CONMEBOL</h3>
+<div class="body-text">
+  <p><strong>Colombia</strong> presenta el perfil más similar: alto porcentaje de posesión, juego combinativo por dentro, formación 4-3-3 base. Diferencias clave: Colombia depende más de un único referente creativo mientras Argentina tiene un abanico más amplio de creadores, y Argentina tiene mayor capacidad de adaptación formacional.</p>
+</div>
+
+<!-- ==================== RESUMEN EJECUTIVO ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">—</span>
+    <h2 class="section-title">Resumen Ejecutivo</h2>
+  </div>
+</div>
+
+<div class="body-text drop-cap">
+  <p>Argentina llega al Mundial 2026 como el equipo más completo del ciclo CONMEBOL: 1.ª en la tabla de eliminatorias con 38 puntos, mejor ataque (31 goles), mejor defensa (10 en contra), mayor posesión (63.9%) y mayor precisión de pases (88%).</p>
+</div>
+
+<div class="body-text">
+  <p>El modelo de juego de Scaloni se sustenta en tres pilares:</p>
+</div>
+
+<ul class="bullet-list">
+  <li><strong>Control a través de la posesión</strong>, con construcción paciente desde atrás y progresión decidida por el centro del campo</li>
+  <li><strong>Adaptabilidad táctica</strong>, con capacidad de cambiar formación y estilo según el rival (posesional vs transicional)</li>
+  <li><strong>Talento individual integrado en el colectivo</strong>, donde Messi sigue siendo el jugador más determinante pero el equipo no depende exclusivamente de él (11 goleadores distintos)</li>
+</ul>
+
+<div class="pullquote">
+  <p>El principal interrogante de cara al Mundial es la intensidad de pressing: Argentina no presiona alto con intensidad sostenida, lo que podría ser una vulnerabilidad contra selecciones europeas con construcción técnica de alto nivel. La otra incógnita es la gestión de Messi (38 años) y si la estructura puede funcionar al mismo nivel sin él.</p>
+</div>
+
+<div class="info-box">
+  <strong>Grupo J del Mundial 2026:</strong> Argentina vs Argelia 🇩🇿, Austria 🇦🇹, Jordania 🇯🇴
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="report-footer">
+  <div class="footer-brand">Soy Analista</div>
+  <div class="footer-meta">
+    Modelo de Juego — Argentina · Mundial 2026<br>
+    Datos: FBref, fichajes.com, CONMEBOL · 18 partidos analizados<br>
+    Generado el 4 de marzo de 2026 · playing-model v1.0
+  </div>
+</footer>
+
+</body>
+</html>

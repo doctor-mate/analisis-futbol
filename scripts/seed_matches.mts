@@ -1,8 +1,7 @@
 /**
  * Seed World Cup 2026 group stage matches into Supabase.
  *
- * Generates all 72 group stage matches from the 12 groups,
- * with placeholder dates (June 11-28, 2026).
+ * Uses the official FIFA match schedule (72 group stage matches).
  *
  * Usage:
  *   npx tsx scripts/seed_matches.mts
@@ -27,104 +26,148 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
 
-// Matchday dates (approximate schedule for WC2026)
-// Group stage: June 11 - June 28, 2026
-// 72 matches across 18 days = ~4 matches per day
-const MD1_START = "2026-06-11";
-const MD2_START = "2026-06-18";
-const MD3_START = "2026-06-24";
+// Official FIFA World Cup 2026 group stage schedule
+// Source: https://sports.yahoo.com/soccer/live/2026-world-cup-schedule
+// Team slugs must match the 'slug' column in the teams table.
+// Playoff teams use their placeholder slugs.
 
-function addDays(dateStr: string, days: number): string {
-  const d = new Date(dateStr + "T12:00:00Z");
-  d.setDate(d.getDate() + days);
-  return d.toISOString().slice(0, 10);
+interface MatchDef {
+  home: string;
+  away: string;
+  date: string;
+  time: string; // ET
+  venue: string;
+  city: string;
+  group: string;
 }
 
+const schedule: MatchDef[] = [
+  // === GROUP A ===
+  { home: "mexico", away: "south-africa", date: "2026-06-11", time: "15:00", venue: "Estadio Azteca", city: "Ciudad de México", group: "A" },
+  { home: "south-korea", away: "uefa-playoff-d", date: "2026-06-11", time: "22:00", venue: "Estadio Akron", city: "Guadalajara", group: "A" },
+  { home: "uefa-playoff-d", away: "south-africa", date: "2026-06-18", time: "12:00", venue: "Mercedes-Benz Stadium", city: "Atlanta", group: "A" },
+  { home: "mexico", away: "south-korea", date: "2026-06-18", time: "21:00", venue: "Estadio Akron", city: "Guadalajara", group: "A" },
+  { home: "uefa-playoff-d", away: "mexico", date: "2026-06-24", time: "21:00", venue: "Estadio Azteca", city: "Ciudad de México", group: "A" },
+  { home: "south-africa", away: "south-korea", date: "2026-06-24", time: "21:00", venue: "Estadio BBVA", city: "Monterrey", group: "A" },
+
+  // === GROUP B ===
+  { home: "canada", away: "uefa-playoff-a", date: "2026-06-12", time: "15:00", venue: "BMO Field", city: "Toronto", group: "B" },
+  { home: "qatar", away: "switzerland", date: "2026-06-13", time: "15:00", venue: "Levi's Stadium", city: "Santa Clara", group: "B" },
+  { home: "switzerland", away: "uefa-playoff-a", date: "2026-06-18", time: "15:00", venue: "SoFi Stadium", city: "Inglewood", group: "B" },
+  { home: "canada", away: "qatar", date: "2026-06-18", time: "18:00", venue: "BC Place", city: "Vancouver", group: "B" },
+  { home: "switzerland", away: "canada", date: "2026-06-24", time: "15:00", venue: "BC Place", city: "Vancouver", group: "B" },
+  { home: "uefa-playoff-a", away: "qatar", date: "2026-06-24", time: "15:00", venue: "Lumen Field", city: "Seattle", group: "B" },
+
+  // === GROUP C ===
+  { home: "brazil", away: "morocco", date: "2026-06-13", time: "18:00", venue: "MetLife Stadium", city: "East Rutherford", group: "C" },
+  { home: "haiti", away: "scotland", date: "2026-06-13", time: "21:00", venue: "Gillette Stadium", city: "Foxboro", group: "C" },
+  { home: "scotland", away: "morocco", date: "2026-06-19", time: "18:00", venue: "Gillette Stadium", city: "Foxboro", group: "C" },
+  { home: "brazil", away: "haiti", date: "2026-06-19", time: "21:00", venue: "Lincoln Financial Field", city: "Philadelphia", group: "C" },
+  { home: "scotland", away: "brazil", date: "2026-06-24", time: "18:00", venue: "Hard Rock Stadium", city: "Miami", group: "C" },
+  { home: "morocco", away: "haiti", date: "2026-06-24", time: "18:00", venue: "Mercedes-Benz Stadium", city: "Atlanta", group: "C" },
+
+  // === GROUP D ===
+  { home: "united-states", away: "paraguay", date: "2026-06-12", time: "21:00", venue: "SoFi Stadium", city: "Inglewood", group: "D" },
+  { home: "australia", away: "uefa-playoff-c", date: "2026-06-13", time: "00:00", venue: "BC Place", city: "Vancouver", group: "D" },
+  { home: "uefa-playoff-c", away: "paraguay", date: "2026-06-19", time: "00:00", venue: "Levi's Stadium", city: "Santa Clara", group: "D" },
+  { home: "united-states", away: "australia", date: "2026-06-19", time: "15:00", venue: "Lumen Field", city: "Seattle", group: "D" },
+  { home: "uefa-playoff-c", away: "united-states", date: "2026-06-25", time: "22:00", venue: "SoFi Stadium", city: "Inglewood", group: "D" },
+  { home: "paraguay", away: "australia", date: "2026-06-25", time: "22:00", venue: "Levi's Stadium", city: "Santa Clara", group: "D" },
+
+  // === GROUP E ===
+  { home: "germany", away: "curacao", date: "2026-06-14", time: "13:00", venue: "NRG Stadium", city: "Houston", group: "E" },
+  { home: "ivory-coast", away: "ecuador", date: "2026-06-14", time: "19:00", venue: "Lincoln Financial Field", city: "Philadelphia", group: "E" },
+  { home: "germany", away: "ivory-coast", date: "2026-06-20", time: "16:00", venue: "BMO Field", city: "Toronto", group: "E" },
+  { home: "ecuador", away: "curacao", date: "2026-06-20", time: "20:00", venue: "Arrowhead Stadium", city: "Kansas City", group: "E" },
+  { home: "curacao", away: "ivory-coast", date: "2026-06-25", time: "16:00", venue: "Lincoln Financial Field", city: "Philadelphia", group: "E" },
+  { home: "ecuador", away: "germany", date: "2026-06-25", time: "16:00", venue: "MetLife Stadium", city: "East Rutherford", group: "E" },
+
+  // === GROUP F ===
+  { home: "netherlands", away: "japan", date: "2026-06-14", time: "16:00", venue: "AT&T Stadium", city: "Arlington", group: "F" },
+  { home: "uefa-playoff-b", away: "tunisia", date: "2026-06-14", time: "22:00", venue: "Estadio BBVA", city: "Monterrey", group: "F" },
+  { home: "netherlands", away: "uefa-playoff-b", date: "2026-06-20", time: "13:00", venue: "NRG Stadium", city: "Houston", group: "F" },
+  { home: "tunisia", away: "japan", date: "2026-06-20", time: "00:00", venue: "Estadio BBVA", city: "Monterrey", group: "F" },
+  { home: "japan", away: "uefa-playoff-b", date: "2026-06-25", time: "19:00", venue: "AT&T Stadium", city: "Arlington", group: "F" },
+  { home: "tunisia", away: "netherlands", date: "2026-06-25", time: "19:00", venue: "Arrowhead Stadium", city: "Kansas City", group: "F" },
+
+  // === GROUP G ===
+  { home: "belgium", away: "egypt", date: "2026-06-15", time: "15:00", venue: "Lumen Field", city: "Seattle", group: "G" },
+  { home: "iran", away: "new-zealand", date: "2026-06-15", time: "21:00", venue: "SoFi Stadium", city: "Inglewood", group: "G" },
+  { home: "belgium", away: "iran", date: "2026-06-21", time: "15:00", venue: "SoFi Stadium", city: "Inglewood", group: "G" },
+  { home: "new-zealand", away: "egypt", date: "2026-06-21", time: "21:00", venue: "BC Place", city: "Vancouver", group: "G" },
+  { home: "egypt", away: "iran", date: "2026-06-26", time: "23:00", venue: "Lumen Field", city: "Seattle", group: "G" },
+  { home: "new-zealand", away: "belgium", date: "2026-06-26", time: "23:00", venue: "BC Place", city: "Vancouver", group: "G" },
+
+  // === GROUP H ===
+  { home: "spain", away: "cape-verde", date: "2026-06-15", time: "12:00", venue: "Mercedes-Benz Stadium", city: "Atlanta", group: "H" },
+  { home: "saudi-arabia", away: "uruguay", date: "2026-06-15", time: "18:00", venue: "Hard Rock Stadium", city: "Miami", group: "H" },
+  { home: "spain", away: "saudi-arabia", date: "2026-06-21", time: "12:00", venue: "Mercedes-Benz Stadium", city: "Atlanta", group: "H" },
+  { home: "uruguay", away: "cape-verde", date: "2026-06-21", time: "18:00", venue: "Hard Rock Stadium", city: "Miami", group: "H" },
+  { home: "cape-verde", away: "saudi-arabia", date: "2026-06-26", time: "20:00", venue: "NRG Stadium", city: "Houston", group: "H" },
+  { home: "uruguay", away: "spain", date: "2026-06-26", time: "20:00", venue: "Estadio Akron", city: "Guadalajara", group: "H" },
+
+  // === GROUP I ===
+  { home: "france", away: "senegal", date: "2026-06-16", time: "15:00", venue: "MetLife Stadium", city: "East Rutherford", group: "I" },
+  { home: "intercon-playoff-2", away: "norway", date: "2026-06-16", time: "18:00", venue: "Gillette Stadium", city: "Foxborough", group: "I" },
+  { home: "france", away: "intercon-playoff-2", date: "2026-06-22", time: "17:00", venue: "Lincoln Financial Field", city: "Philadelphia", group: "I" },
+  { home: "norway", away: "senegal", date: "2026-06-22", time: "20:00", venue: "MetLife Stadium", city: "East Rutherford", group: "I" },
+  { home: "norway", away: "france", date: "2026-06-26", time: "15:00", venue: "Gillette Stadium", city: "Foxborough", group: "I" },
+  { home: "senegal", away: "intercon-playoff-2", date: "2026-06-26", time: "15:00", venue: "BMO Field", city: "Toronto", group: "I" },
+
+  // === GROUP J ===
+  { home: "argentina", away: "algeria", date: "2026-06-16", time: "21:00", venue: "Arrowhead Stadium", city: "Kansas City", group: "J" },
+  { home: "austria", away: "jordan", date: "2026-06-16", time: "00:00", venue: "Levi's Stadium", city: "Santa Clara", group: "J" },
+  { home: "argentina", away: "austria", date: "2026-06-22", time: "13:00", venue: "AT&T Stadium", city: "Arlington", group: "J" },
+  { home: "jordan", away: "algeria", date: "2026-06-22", time: "23:00", venue: "Levi's Stadium", city: "Santa Clara", group: "J" },
+  { home: "jordan", away: "argentina", date: "2026-06-27", time: "22:00", venue: "AT&T Stadium", city: "Arlington", group: "J" },
+  { home: "algeria", away: "austria", date: "2026-06-27", time: "22:00", venue: "Arrowhead Stadium", city: "Kansas City", group: "J" },
+
+  // === GROUP K ===
+  { home: "portugal", away: "intercon-playoff-1", date: "2026-06-17", time: "13:00", venue: "NRG Stadium", city: "Houston", group: "K" },
+  { home: "uzbekistan", away: "colombia", date: "2026-06-17", time: "22:00", venue: "Estadio Azteca", city: "Ciudad de México", group: "K" },
+  { home: "portugal", away: "uzbekistan", date: "2026-06-23", time: "13:00", venue: "NRG Stadium", city: "Houston", group: "K" },
+  { home: "colombia", away: "intercon-playoff-1", date: "2026-06-23", time: "22:00", venue: "Estadio Akron", city: "Guadalajara", group: "K" },
+  { home: "colombia", away: "portugal", date: "2026-06-27", time: "19:30", venue: "Hard Rock Stadium", city: "Miami", group: "K" },
+  { home: "intercon-playoff-1", away: "uzbekistan", date: "2026-06-27", time: "19:30", venue: "Mercedes-Benz Stadium", city: "Atlanta", group: "K" },
+
+  // === GROUP L ===
+  { home: "england", away: "croatia", date: "2026-06-17", time: "16:00", venue: "AT&T Stadium", city: "Arlington", group: "L" },
+  { home: "ghana", away: "panama", date: "2026-06-17", time: "19:00", venue: "BMO Field", city: "Toronto", group: "L" },
+  { home: "england", away: "ghana", date: "2026-06-23", time: "16:00", venue: "Gillette Stadium", city: "Foxborough", group: "L" },
+  { home: "panama", away: "croatia", date: "2026-06-23", time: "19:00", venue: "BMO Field", city: "Toronto", group: "L" },
+  { home: "panama", away: "england", date: "2026-06-27", time: "17:00", venue: "MetLife Stadium", city: "East Rutherford", group: "L" },
+  { home: "croatia", away: "ghana", date: "2026-06-27", time: "17:00", venue: "Lincoln Financial Field", city: "Philadelphia", group: "L" },
+];
+
 async function seed() {
-  console.log("\nSeeding World Cup 2026 group stage matches...\n");
+  console.log("\nSeeding World Cup 2026 group stage matches (official schedule)...\n");
 
-  // Fetch all national teams with WC group
-  const { data: teams, error } = await supabase
-    .from("teams")
-    .select("slug, wc_group, name_en, flag")
-    .eq("mode", "national")
-    .not("wc_group", "is", null)
-    .order("wc_group")
-    .order("fifa_ranking", { ascending: true });
+  // First, delete existing matches to avoid conflicts
+  const { error: deleteError } = await supabase
+    .from("matches")
+    .delete()
+    .eq("competition_slug", "mundial-2026");
 
-  if (error || !teams) {
-    console.error("Error fetching teams:", error?.message);
-    process.exit(1);
+  if (deleteError) {
+    console.error("Error clearing existing matches:", deleteError.message);
+  } else {
+    console.log("  Cleared existing matches\n");
   }
 
-  // Group teams by their WC group
-  const groupTeams = new Map<string, typeof teams>();
-  for (const team of teams) {
-    const group = team.wc_group!;
-    const existing = groupTeams.get(group) || [];
-    existing.push(team);
-    groupTeams.set(group, existing);
-  }
-
-  const matches: Array<{
-    slug: string;
-    competition_slug: string;
-    stage: string;
-    group_letter: string;
-    match_number: number;
-    match_date: string;
-    home_team_slug: string;
-    away_team_slug: string;
-    status: string;
-  }> = [];
-
-  let matchNumber = 1;
-  let groupIndex = 0;
-
-  for (const [group, groupMembers] of groupTeams) {
-    if (groupMembers.length < 4) {
-      console.warn(`  Group ${group} has ${groupMembers.length} teams, skipping...`);
-      continue;
-    }
-
-    const [t1, t2, t3, t4] = groupMembers;
-
-    // Matchday 1: T1 vs T2, T3 vs T4
-    // Matchday 2: T1 vs T3, T2 vs T4
-    // Matchday 3: T1 vs T4, T2 vs T3
-    const groupMatches = [
-      { home: t1, away: t2, md: 1 },
-      { home: t3, away: t4, md: 1 },
-      { home: t1, away: t3, md: 2 },
-      { home: t2, away: t4, md: 2 },
-      { home: t1, away: t4, md: 3 },
-      { home: t2, away: t3, md: 3 },
-    ];
-
-    for (const gm of groupMatches) {
-      const dateBase =
-        gm.md === 1 ? MD1_START : gm.md === 2 ? MD2_START : MD3_START;
-      // Stagger groups across days within each matchday
-      const dayOffset = Math.floor(groupIndex / 2);
-      const matchDate = addDays(dateBase, dayOffset);
-
-      const slug = `${gm.home.slug}-vs-${gm.away.slug}-group-${group.toLowerCase()}`;
-
-      matches.push({
-        slug,
-        competition_slug: "mundial-2026",
-        stage: "group",
-        group_letter: group,
-        match_number: matchNumber++,
-        match_date: matchDate,
-        home_team_slug: gm.home.slug,
-        away_team_slug: gm.away.slug,
-        status: "scheduled",
-      });
-    }
-
-    groupIndex++;
-  }
+  const matches = schedule.map((m, i) => ({
+    slug: `${m.home}-vs-${m.away}-group-${m.group.toLowerCase()}`,
+    competition_slug: "mundial-2026",
+    stage: "group",
+    group_letter: m.group,
+    match_number: i + 1,
+    match_date: m.date,
+    match_time: m.time,
+    venue: m.venue,
+    city: m.city,
+    home_team_slug: m.home,
+    away_team_slug: m.away,
+    status: "scheduled",
+  }));
 
   console.log(`  Generated ${matches.length} group stage matches\n`);
 
@@ -140,7 +183,6 @@ async function seed() {
 
     if (insertError) {
       console.error(`  Error inserting batch: ${insertError.message}`);
-      // Continue with next batch
     } else {
       inserted += batch.length;
       console.log(`  Inserted batch ${Math.floor(i / BATCH_SIZE) + 1}: ${batch.length} matches`);

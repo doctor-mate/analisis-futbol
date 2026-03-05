@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Austria — Modelo de Juego · Mundial 2026 | Soy Analista</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sa-crema: #F5F0E8;
+  --sa-crema-oscura: #EDE6D8;
+  --sa-arena: #D9CEBC;
+  --sa-tierra: #A69882;
+  --sa-cafe: #6B5B4D;
+  --sa-cafe-oscuro: #4A3E34;
+  --sa-negro: #1C1915;
+  --sa-negro-suave: #2C2822;
+  --sa-tinta: #3A3530;
+  --sa-blanco: #FEFCF8;
+  --sa-rojo: #C13628;
+  --sa-rojo-claro: #D94F42;
+  --sa-dorado: #B8922F;
+  --sa-verde: #3A7D44;
+  --sa-azul: #2E5E8C;
+  --sa-font-display: 'Playfair Display', Georgia, serif;
+  --sa-font-body: 'Source Serif 4', Georgia, serif;
+  --sa-font-data: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--sa-crema);
+  font-family: var(--sa-font-body);
+  color: var(--sa-negro);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.report-header {
+  background: var(--sa-negro);
+  color: var(--sa-crema);
+  padding: 48px 24px 40px;
+}
+
+.container { max-width: 960px; margin: 0 auto; }
+
+.brand-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.monogram {
+  width: 32px; height: 32px;
+  border: 1.5px solid var(--sa-arena);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--sa-font-display);
+  font-style: italic; font-size: 18px; font-weight: 700;
+  color: var(--sa-crema);
+}
+
+.brand-name {
+  font-family: var(--sa-font-display);
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-left: 10px;
+}
+
+.brand-subtitle {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 12px;
+  color: var(--sa-tierra);
+}
+
+.title-row {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 8px;
+}
+
+.flag { font-size: 52px; line-height: 1; }
+
+.team-name {
+  font-family: var(--sa-font-display);
+  font-size: 44px; font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1.1;
+  color: var(--sa-blanco);
+}
+
+.report-type-badge {
+  display: inline-block;
+  font-family: var(--sa-font-data);
+  font-size: 11px; font-weight: 500;
+  color: var(--sa-dorado);
+  border: 1px solid var(--sa-dorado);
+  border-radius: 3px;
+  padding: 3px 10px;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.team-meta {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 15px;
+  color: var(--sa-tierra); margin-top: 4px;
+}
+
+.accent-line {
+  width: 48px; height: 3px;
+  background: var(--sa-rojo);
+  margin: 20px 0;
+}
+
+.quick-stats {
+  display: flex; gap: 24px; flex-wrap: wrap;
+}
+
+.quick-stat-value {
+  font-family: var(--sa-font-data);
+  font-size: 16px; font-weight: 500;
+  color: var(--sa-blanco);
+}
+
+.quick-stat-label {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 11px;
+  color: var(--sa-tierra);
+}
+
+main {
+  max-width: 960px; margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.editorial-rule {
+  border-top: 3px solid var(--sa-negro);
+  padding-top: 8px;
+  border-bottom: 1px solid var(--sa-arena);
+  margin-bottom: 32px;
+}
+
+.section-header { margin-bottom: 24px; }
+.section-header .number-title {
+  display: flex; align-items: baseline; gap: 12px;
+}
+.section-number {
+  font-family: var(--sa-font-data);
+  font-size: 13px; color: var(--sa-tierra);
+  font-weight: 500;
+}
+.section-title {
+  font-family: var(--sa-font-display);
+  font-size: 24px; font-weight: 700;
+  color: var(--sa-negro);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.diamond-sep {
+  display: flex; align-items: center;
+  gap: 12px; margin: 28px 0;
+}
+.diamond-sep .line {
+  flex: 1; height: 1px;
+  background: var(--sa-arena);
+}
+.diamond-sep .diamond {
+  width: 6px; height: 6px;
+  background: var(--sa-rojo);
+  transform: rotate(45deg);
+}
+
+.stat-cards-row {
+  display: flex; gap: 12px;
+  flex-wrap: wrap; margin-bottom: 24px;
+}
+.stat-card {
+  background: var(--sa-blanco);
+  border: 1px solid var(--sa-arena);
+  border-radius: 4px;
+  padding: 14px 16px;
+  text-align: center;
+  flex: 1 1 0;
+  min-width: 100px;
+}
+.stat-card-value {
+  font-family: var(--sa-font-data);
+  font-size: 22px; font-weight: 500;
+  color: var(--sa-negro);
+  margin-bottom: 4px;
+}
+.stat-card-value.accent { color: var(--sa-rojo); }
+.stat-card-label {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 11px;
+  color: var(--sa-tierra); line-height: 1.3;
+}
+
+.body-text {
+  font-size: 15px; line-height: 1.8;
+  color: var(--sa-negro);
+  margin-bottom: 16px;
+}
+.body-text p { margin-bottom: 12px; }
+
+.drop-cap::first-letter {
+  font-family: var(--sa-font-display);
+  font-size: 3.2em; font-weight: 700;
+  color: var(--sa-rojo);
+  float: left; line-height: 0.8;
+  margin-right: 8px; margin-top: 4px;
+}
+
+.pullquote {
+  background: var(--sa-negro);
+  border-radius: 4px;
+  padding: 24px 32px;
+  margin: 24px 0;
+}
+.pullquote p {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 17px;
+  color: var(--sa-crema);
+  line-height: 1.7; margin: 0;
+}
+
+.info-box {
+  background: var(--sa-crema-oscura);
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-family: var(--sa-font-body);
+  font-size: 13px; color: var(--sa-cafe);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.info-box strong { color: var(--sa-negro); }
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+.data-table th {
+  font-family: var(--sa-font-data);
+  font-size: 11px; font-weight: 500;
+  color: var(--sa-tierra);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--sa-negro);
+  background: var(--sa-crema-oscura);
+}
+.data-table td {
+  font-family: var(--sa-font-body);
+  font-size: 13px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--sa-arena);
+  color: var(--sa-negro);
+}
+.data-table td.mono {
+  font-family: var(--sa-font-data);
+  font-weight: 500;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table .accent { color: var(--sa-rojo); font-weight: 600; }
+
+.formation-box {
+  background: var(--sa-blanco);
+  border: 1px solid var(--sa-arena);
+  border-radius: 4px; padding: 24px;
+  text-align: center;
+  font-family: var(--sa-font-data);
+  font-size: 13px;
+  line-height: 2.2;
+  margin-bottom: 24px;
+  white-space: pre;
+  color: var(--sa-negro);
+}
+
+.sub-heading {
+  font-family: var(--sa-font-display);
+  font-size: 18px; font-weight: 600;
+  color: var(--sa-negro);
+  margin-bottom: 12px;
+  margin-top: 20px;
+}
+
+.index-card {
+  background: var(--sa-blanco);
+  border: 1px solid var(--sa-arena);
+  border-left: 3px solid var(--sa-azul);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.index-name {
+  font-family: var(--sa-font-display);
+  font-size: 15px; font-weight: 600;
+  color: var(--sa-negro);
+  margin-bottom: 4px;
+}
+.index-value {
+  font-family: var(--sa-font-data);
+  font-size: 20px; font-weight: 500;
+  color: var(--sa-azul);
+  margin-bottom: 4px;
+}
+.index-desc {
+  font-family: var(--sa-font-body);
+  font-size: 13px; color: var(--sa-cafe);
+  line-height: 1.5;
+}
+
+.index-card.high { border-left-color: var(--sa-rojo); }
+.index-card.high .index-value { color: var(--sa-rojo); }
+.index-card.low { border-left-color: var(--sa-dorado); }
+.index-card.low .index-value { color: var(--sa-dorado); }
+
+.radar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+.radar-table th {
+  font-family: var(--sa-font-data);
+  font-size: 11px; font-weight: 500;
+  color: var(--sa-tierra);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--sa-negro);
+}
+.radar-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--sa-arena);
+  font-size: 13px;
+}
+.radar-table td:first-child {
+  font-family: var(--sa-font-body);
+  font-weight: 600;
+  color: var(--sa-negro);
+}
+.radar-table td:nth-child(2),
+.radar-table td:nth-child(3) {
+  font-family: var(--sa-font-data);
+  font-weight: 500;
+  text-align: center;
+}
+.radar-bar {
+  height: 8px;
+  background: var(--sa-crema-oscura);
+  border-radius: 4px;
+  overflow: hidden;
+  min-width: 120px;
+}
+.radar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--sa-azul);
+}
+.radar-fill.high { background: var(--sa-rojo); }
+.radar-fill.low { background: var(--sa-dorado); }
+
+.form-row {
+  display: flex; align-items: center;
+  gap: 16px; margin-bottom: 8px;
+}
+.form-label {
+  font-family: var(--sa-font-body);
+  font-style: italic; font-size: 13px;
+  color: var(--sa-cafe);
+  min-width: 100px;
+}
+.form-indicators { display: flex; gap: 6px; }
+.form-box {
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--sa-font-body);
+  font-weight: 600; font-size: 12px;
+  border-width: 1.5px; border-style: solid;
+  background: transparent;
+}
+.form-box.V { border-color: var(--sa-verde); color: var(--sa-verde); }
+.form-box.E { border-color: var(--sa-dorado); color: var(--sa-dorado); }
+.form-box.D { border-color: var(--sa-rojo); color: var(--sa-rojo); }
+
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.bullet-list li {
+  font-size: 14px;
+  line-height: 1.7;
+  padding: 6px 0 6px 20px;
+  position: relative;
+  color: var(--sa-negro);
+}
+.bullet-list li::before {
+  content: '\25C6';
+  position: absolute;
+  left: 0;
+  color: var(--sa-rojo);
+  font-size: 8px;
+  top: 11px;
+}
+
+.report-footer {
+  background: var(--sa-negro);
+  padding: 32px 24px;
+  text-align: center;
+}
+.footer-brand {
+  font-family: var(--sa-font-display);
+  font-style: italic; font-size: 18px;
+  color: var(--sa-crema);
+  margin-bottom: 8px;
+}
+.footer-meta {
+  font-family: var(--sa-font-body);
+  font-size: 12px;
+  color: var(--sa-tierra);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .team-name { font-size: 32px; }
+  .flag { font-size: 40px; }
+  .stat-cards-row { flex-direction: column; }
+  .formation-box { font-size: 11px; padding: 16px; }
+  .data-table { font-size: 12px; }
+  .data-table th, .data-table td { padding: 8px 6px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="report-header">
+  <div class="container">
+    <div class="brand-bar">
+      <div style="display:flex;align-items:center;">
+        <div class="monogram">S</div>
+        <span class="brand-name">Soy Analista</span>
+      </div>
+      <span class="brand-subtitle">Modelo de Juego · Mundial 2026</span>
+    </div>
+    <div class="report-type-badge">&#9823; Modelo de Juego</div>
+    <div class="title-row">
+      <span class="flag">&#127462;&#127481;</span>
+      <h1 class="team-name">Austria</h1>
+    </div>
+    <p class="team-meta">UEFA · 20 partidos competitivos (Euro 2024 + Nations League + Eliminatorias 2026) · Grupo J del Mundial 2026</p>
+    <div class="accent-line"></div>
+    <div class="quick-stats">
+      <div>
+        <div class="quick-stat-value">4-2-3-1</div>
+        <div class="quick-stat-label">Formaci&oacute;n base</div>
+      </div>
+      <div>
+        <div class="quick-stat-value">PPDA 8.4</div>
+        <div class="quick-stat-label">Pressing (2.&deg; de Europa)</div>
+      </div>
+      <div>
+        <div class="quick-stat-value">22 GF / 4 GC</div>
+        <div class="quick-stat-label">WCQ (8 partidos)</div>
+      </div>
+      <div>
+        <div class="quick-stat-value">1.&deg;</div>
+        <div class="quick-stat-label">Pos. Grupo H UEFA</div>
+      </div>
+      <div>
+        <div class="quick-stat-value">57%</div>
+        <div class="quick-stat-label">% Victoria (Rangnick)</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ==================== SECTION 1 ==================== -->
+<div class="editorial-rule"></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">01</span>
+    <h2 class="section-title">Ficha de Identidad T&aacute;ctica</h2>
+  </div>
+</div>
+
+<div class="pullquote">
+  <p>Equipo de pressing intenso y transiciones verticales, con gegenpressing sistem&aacute;tico y amenaza a&eacute;rea como recurso de finalizaci&oacute;n.</p>
+</div>
+
+<div class="body-text drop-cap">
+  <p>Austria bajo Ralf Rangnick es un proyecto t&aacute;ctico coherente, maduro y peligroso. No es un equipo de estrellas; es un sistema que maximiza la capacidad f&iacute;sica y la organizaci&oacute;n t&aacute;ctica de sus jugadores. El gegenpressing sistem&aacute;tico, las transiciones verticales y la amenaza a&eacute;rea forman un cocktail que ya derrot&oacute; a Francia y Pa&iacute;ses Bajos en la Euro 2024. Con un PPDA de 8.4, Austria fue la 2.&ordf; selecci&oacute;n m&aacute;s intensa del torneo. En eliminatorias, clasific&oacute; 1.&ordf; con 22 goles a favor y solo 4 en contra.</p>
+</div>
+
+<h3 class="sub-heading">Formaci&oacute;n principal y variantes</h3>
+
+<table class="data-table">
+  <thead><tr><th>Formaci&oacute;n</th><th>Frecuencia</th><th>Contexto</th></tr></thead>
+  <tbody>
+    <tr><td class="mono accent">4-2-3-1</td><td class="mono">100% (20/20)</td><td>Formaci&oacute;n &uacute;nica e inamovible desde junio 2024</td></tr>
+    <tr><td class="mono">4-4-2</td><td class="mono">Hist&oacute;rica</td><td>Usada en eliminatorias Euro 2024 (2023), abandonada</td></tr>
+    <tr><td class="mono">4-4-2 defensivo</td><td class="mono">Fase sin bal&oacute;n</td><td>Colapso defensivo del 4-2-3-1</td></tr>
+  </tbody>
+</table>
+
+<h3 class="sub-heading">5 caracter&iacute;sticas definitorias</h3>
+
+<ul class="bullet-list">
+  <li><strong>Gegenpressing con &ldquo;regla de los 8 segundos&rdquo;:</strong> Tras perder el bal&oacute;n, 3 jugadores presionan inmediatamente. Si no recuperan en 8 segundos, colapsan a bloque medio. PPDA 8.4 en Euro 2024.</li>
+  <li><strong>Transiciones ofensivas como arma principal:</strong> El primer pensamiento tras recuperar es jugar hacia adelante. No buscan posesi&oacute;n prolongada; buscan verticalidad inmediata atacando los half-spaces.</li>
+  <li><strong>Amenaza a&eacute;rea sist&eacute;mica:</strong> Arnautovic (1.92m), Gregoritsch (1.93m), Danso (1.90m), Posch (1.88m) y Lienhart (1.87m) forman una columna vertebral de gigantes.</li>
+  <li><strong>L&iacute;nea defensiva adelantada con bloque compacto:</strong> Distancia m&iacute;nima entre l&iacute;neas (~25-30m). Trampa de offside activa. 85 offsides rivales en 8 WCQ (10.6/partido).</li>
+  <li><strong>Pipeline Red Bull:</strong> Baumgartner, Seiwald, X. Schlager (RB Leipzig) + A. Schlager (RB Salzburg) + Laimer (ex-Leipzig). La filosof&iacute;a Red Bull que Rangnick dise&ntilde;&oacute; est&aacute; en el ADN del equipo.</li>
+</ul>
+
+<h3 class="sub-heading">ADN del cuerpo t&eacute;cnico</h3>
+
+<table class="data-table">
+  <thead><tr><th>Dato</th><th>Detalle</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Ralf Rangnick</strong></td><td>DT desde junio 2022. 51 partidos: 29V - 11E - 11D (57% victorias)</td></tr>
+    <tr><td>Escuela t&aacute;ctica</td><td>Gegenpressing &mdash; padre conceptual del modelo RB Leipzig/Salzburg</td></tr>
+    <tr><td>Clubes previos</td><td>Hoffenheim, Schalke 04, RB Leipzig (arquitecto), Manchester United (interino)</td></tr>
+    <tr><td>Hito</td><td>Rechaz&oacute; oferta del Bayern Munich (abril 2024) para quedarse con Austria</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== SECTION 2 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">02</span>
+    <h2 class="section-title">Formaci&oacute;n y Estructura</h2>
+  </div>
+</div>
+
+<h3 class="sub-heading">Formaci&oacute;n base: 4-2-3-1</h3>
+<div class="formation-box">                Arnautovic
+    Schmid      Baumgartner       Laimer
+            Seiwald    Sabitzer
+  Mwene    Lienhart    Danso     Posch
+                Schlager</div>
+
+<h3 class="sub-heading">En posesi&oacute;n &rarr; 2-2-5-1</h3>
+<div class="body-text">
+  <p>Los centrales se abren para generar amplitud. Los laterales (especialmente <strong>Posch</strong> por derecha) suben a la l&iacute;nea de mediocampo/ataque. <strong>Seiwald</strong> y <strong>Sabitzer</strong> forman el doble pivote, con Sabitzer proyect&aacute;ndose como enganche. <strong>Baumgartner</strong> opera como 10 libre entre l&iacute;neas. <strong>Laimer</strong>, nominalmente mediapunta derecho, funciona como interior con llegada al &aacute;rea.</p>
+</div>
+
+<h3 class="sub-heading">Sin posesi&oacute;n &rarr; 4-4-2 compacto</h3>
+<div class="formation-box">          Arnautovic   Baumgartner
+    Schmid                       Laimer
+            Seiwald    Sabitzer
+  Mwene    Lienhart    Danso     Posch
+                Schlager</div>
+
+<div class="body-text">
+  <p><strong>Baumgartner</strong> sube a formar pareja con Arnautovic en la primera l&iacute;nea de presi&oacute;n. Los mediocampistas laterales cierran hacia adentro. Bloque compacto, especialmente estrecho en el centro.</p>
+</div>
+
+<h3 class="sub-heading">Asimetr&iacute;as</h3>
+
+<table class="data-table">
+  <thead><tr><th>Aspecto</th><th>Lado izquierdo</th><th>Lado derecho</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Lateral</strong></td><td>Mwene/Prass: perfil conservador</td><td>Posch: lateral agresivo (2G, 2A en WCQ)</td></tr>
+    <tr><td><strong>Interior</strong></td><td>Schmid: creador, combinaci&oacute;n (6 ast en club)</td><td>Laimer: box-to-box, pressing, llegada (2G 4A Bayern)</td></tr>
+    <tr><td><strong>Tendencia</strong></td><td>Ancla defensiva, menor volumen</td><td>Corredor m&aacute;s ofensivo, mayor volumen de centros</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== SECTION 3 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">03</span>
+    <h2 class="section-title">Principios de Construcci&oacute;n</h2>
+  </div>
+</div>
+
+<div class="stat-cards-row">
+  <div class="stat-card">
+    <div class="stat-card-value">64%</div>
+    <div class="stat-card-label">Posesi&oacute;n promedio (WCQ + NL)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value">52%</div>
+    <div class="stat-card-label">Posesi&oacute;n vs rivales de nivel (Euro)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value">~60-65%</div>
+    <div class="stat-card-label">Pases cortos del GK</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value accent">Seiwald</div>
+    <div class="stat-card-label">Eje de construcci&oacute;n (100% min)</div>
+  </div>
+</div>
+
+<div class="body-text">
+  <p>Austria construye con <strong>2 centrales abiertos + doble pivote</strong> (Seiwald-Sabitzer). Cuando el rival presiona alto, Austria no insiste en jugar corto: recurre al pase largo directo hacia Arnautovic, que protege la pelota y genera la segunda jugada.</p>
+  <p><strong>Dato clave</strong>: la posesi&oacute;n var&iacute;a dr&aacute;sticamente seg&uacute;n el rival. Contra equipos inferiores (Kazajist&aacute;n, San Marino): 66-71%. Contra rivales de nivel (Francia, Pa&iacute;ses Bajos): 48-53%. Austria es un equipo que funciona mejor cuando NO tiene la pelota.</p>
+</div>
+
+<div class="index-card">
+  <div class="index-name">&Iacute;ndice de Construcci&oacute;n</div>
+  <div class="index-value">2.9 / 5.0</div>
+  <div class="index-desc">Construcci&oacute;n directa-moderada. No es un equipo posicional de construcci&oacute;n paciente. Construye cuando puede, pero su primera opci&oacute;n siempre es la verticalidad.</div>
+</div>
+
+<h3 class="sub-heading">Jugadores clave en construcci&oacute;n</h3>
+
+<table class="data-table">
+  <thead><tr><th>Jugador</th><th>Rol</th><th>Dato clave</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Nicolas Seiwald</strong></td><td>Pivote defensivo, metr&oacute;nomo</td><td>700 min en 8 WCQ (100%), FotMob 7.19</td></tr>
+    <tr><td><strong>Marcel Sabitzer</strong></td><td>Pivote creativo, distribuidor</td><td>700 min, 3G 3A, lidera en tiros (24 Sh)</td></tr>
+    <tr><td><strong>David Alaba</strong></td><td>CB constructor (cuando disponible)</td><td>297 min WCQ, liderazgo, 6 Int en 3.3 90s</td></tr>
+    <tr><td><strong>Philipp Lienhart</strong></td><td>CB seguro en salida</td><td>585 min WCQ (91% minutos)</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== SECTION 4 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Principios de Progresi&oacute;n</h2>
+  </div>
+</div>
+
+<div class="body-text">
+  <p>Austria progresa de tres formas principales, en este orden de prioridad:</p>
+</div>
+
+<div class="stat-cards-row">
+  <div class="stat-card">
+    <div class="stat-card-value accent">~40%</div>
+    <div class="stat-card-label">Transici&oacute;n directa post-recuperaci&oacute;n</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value">~30%</div>
+    <div class="stat-card-label">Conducci&oacute;n progresiva</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value">~30%</div>
+    <div class="stat-card-label">Pase progresivo vertical</div>
+  </div>
+</div>
+
+<h3 class="sub-heading">Corredores de progresi&oacute;n</h3>
+
+<table class="data-table">
+  <thead><tr><th>Corredor</th><th>%</th><th>Mecanismo</th></tr></thead>
+  <tbody>
+    <tr><td class="accent"><strong>Central</strong></td><td class="mono">~45%</td><td>Sabitzer/Seiwald progresando, Baumgartner entre l&iacute;neas</td></tr>
+    <tr><td><strong>Derecho</strong></td><td class="mono">~30%</td><td>Laimer + Posch generando superioridad, centros al &aacute;rea</td></tr>
+    <tr><td><strong>Izquierdo</strong></td><td class="mono">~25%</td><td>Schmid/Prass en combinaciones, menor volumen</td></tr>
+  </tbody>
+</table>
+
+<h3 class="sub-heading">Jugadores clave en progresi&oacute;n</h3>
+
+<table class="data-table">
+  <thead><tr><th>Jugador</th><th>Tipo</th><th>Dato clave</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Christoph Baumgartner</strong></td><td>Receptor entre l&iacute;neas</td><td>10G + 6A en RB Leipzig 2025-26, FotMob 7.38</td></tr>
+    <tr><td><strong>Konrad Laimer</strong></td><td>Conductor de pressing</td><td>2G 4A Bayern, rompe l&iacute;neas con y sin bal&oacute;n</td></tr>
+    <tr><td><strong>Marcel Sabitzer</strong></td><td>Distribuidor progresivo</td><td>24 Sh en WCQ, organiza la progresi&oacute;n central</td></tr>
+    <tr><td><strong>Romano Schmid</strong></td><td>Creador lateral</td><td>2G 6A en Werder Bremen, FotMob 7.21</td></tr>
+  </tbody>
+</table>
+
+<div class="index-card high">
+  <div class="index-name">Velocidad de Progresi&oacute;n</div>
+  <div class="index-value">4.1 / 5.0 &mdash; P88</div>
+  <div class="index-desc">Altamente vertical. Austria busca llegar al tercio final en el menor n&uacute;mero de pases posible. Rara vez recicla posesi&oacute;n.</div>
+</div>
+
+<!-- ==================== SECTION 5 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">05</span>
+    <h2 class="section-title">Principios de Ataque</h2>
+  </div>
+</div>
+
+<h3 class="sub-heading">M&eacute;todos de creaci&oacute;n</h3>
+
+<table class="data-table">
+  <thead><tr><th>M&eacute;todo</th><th>Frecuencia</th><th>Descripci&oacute;n</th></tr></thead>
+  <tbody>
+    <tr><td class="accent"><strong>Transiciones r&aacute;pidas</strong></td><td class="mono">~35%</td><td>Recuperaci&oacute;n + verticalidad inmediata. ADN del equipo.</td></tr>
+    <tr><td><strong>Centros y juego a&eacute;reo</strong></td><td class="mono">~30%</td><td>Posch y Laimer centran; Arnautovic, Gregoritsch y Danso cabecean.</td></tr>
+    <tr><td><strong>Combinaci&oacute;n en zona 14</strong></td><td class="mono">~20%</td><td>Baumgartner + Sabitzer en pase corto en zona de creaci&oacute;n</td></tr>
+    <tr><td><strong>Acciones individuales</strong></td><td class="mono">~15%</td><td>Wimmer y Schmid en 1v1 desde las bandas</td></tr>
+  </tbody>
+</table>
+
+<h3 class="sub-heading">Volumen y precisi&oacute;n de tiro</h3>
+
+<div class="stat-cards-row">
+  <div class="stat-card">
+    <div class="stat-card-value accent">13.4</div>
+    <div class="stat-card-label">Tiros/90 (WCQ)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value accent">50.5%</div>
+    <div class="stat-card-label">SoT% (WCQ)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value">12.5</div>
+    <div class="stat-card-label">Tiros/90 (Euro 2024)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value">42.0%</div>
+    <div class="stat-card-label">SoT% (Euro 2024)</div>
+  </div>
+</div>
+
+<h3 class="sub-heading">xG en Euro 2024</h3>
+
+<table class="data-table">
+  <thead><tr><th>Partido</th><th>Resultado</th><th>xG Austria</th><th>Tiros</th><th>SoT</th><th>Posesi&oacute;n</th></tr></thead>
+  <tbody>
+    <tr><td>vs Francia</td><td class="mono">0-1 D</td><td class="mono">0.87</td><td class="mono">6</td><td class="mono">3</td><td class="mono">52%</td></tr>
+    <tr><td>vs Polonia</td><td class="mono accent">3-1 V</td><td class="mono">2.14</td><td class="mono">15</td><td class="mono">9</td><td class="mono">53%</td></tr>
+    <tr><td>vs Pa&iacute;ses Bajos</td><td class="mono accent">3-2 V</td><td class="mono">1.04</td><td class="mono">9</td><td class="mono">5</td><td class="mono">48%</td></tr>
+    <tr><td>vs Turqu&iacute;a (R16)</td><td class="mono">1-2 D</td><td class="mono">2.85</td><td class="mono">21</td><td class="mono">5</td><td class="mono">60%</td></tr>
+    <tr><td><strong>TOTAL</strong></td><td class="mono"><strong>7 goles</strong></td><td class="mono"><strong>~6.90</strong></td><td class="mono"><strong>51</strong></td><td class="mono"><strong>22</strong></td><td class="mono"><strong>53%</strong></td></tr>
+  </tbody>
+</table>
+
+<div class="info-box">
+  <strong>Dato clave vs Argentina:</strong> Contra Pa&iacute;ses Bajos (3-2), Austria marc&oacute; 3 goles con solo 1.04 xG &mdash; sobreperformance extrema. Contra Turqu&iacute;a (1-2), gener&oacute; 2.85 xG pero solo marc&oacute; 1. Su eficacia es <strong>vol&aacute;til</strong> contra rivales de nivel.
+</div>
+
+<div class="index-card low">
+  <div class="index-name">Estilo Ofensivo Posicional</div>
+  <div class="index-value">2.5 / 5.0 &mdash; P25</div>
+  <div class="index-desc">Predominantemente directo. Austria NO busca ataque posicional paciente. Ataca en transiciones, con verticalidad y juego directo al &aacute;rea.</div>
+</div>
+
+<!-- ==================== SECTION 6 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">06</span>
+    <h2 class="section-title">Pressing y Organizaci&oacute;n Defensiva</h2>
+  </div>
+</div>
+
+<div class="stat-cards-row">
+  <div class="stat-card">
+    <div class="stat-card-value accent">8.4</div>
+    <div class="stat-card-label">PPDA (Euro 2024)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value">2.&deg;</div>
+    <div class="stat-card-label">Pressing m&aacute;s intenso (Euro)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value">55%</div>
+    <div class="stat-card-label">Duelos ganados (Euro)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value">0.50</div>
+    <div class="stat-card-label">GA/90 (WCQ)</div>
+  </div>
+</div>
+
+<div class="body-text">
+  <p><strong>La &ldquo;regla de 8 segundos&rdquo;</strong> es el pilar defensivo: tras perder el bal&oacute;n, 3 jugadores rodean al portador inmediatamente. Si no recuperan en 8 segundos, colapsan al bloque medio. Austria fue el 2.&deg; equipo m&aacute;s intenso de la Euro 2024 (PPDA 8.4), solo detr&aacute;s de Alemania (8.8).</p>
+</div>
+
+<h3 class="sub-heading">Pressing triggers</h3>
+
+<ul class="bullet-list">
+  <li><strong>Pase atrasado del rival:</strong> Se&ntilde;al de indecisi&oacute;n &mdash; activa pressing colectivo inmediato</li>
+  <li><strong>Bal&oacute;n en banda rival:</strong> Zona de trampa, se cierra el espacio lateral</li>
+  <li><strong>Saque de meta corto del rival:</strong> Pressing coordinado sobre la salida</li>
+  <li><strong>Sin trigger espec&iacute;fico:</strong> Bloque medio 4-4-2 a ~35-40m del arco propio</li>
+</ul>
+
+<h3 class="sub-heading">Datos defensivos (WCQ 2026)</h3>
+
+<table class="data-table">
+  <thead><tr><th>M&eacute;trica</th><th>Austria</th><th>Rivales</th><th>Ratio</th></tr></thead>
+  <tbody>
+    <tr><td>Tackles ganados (TklW)</td><td class="mono">41</td><td class="mono">8</td><td class="mono accent">5.1x</td></tr>
+    <tr><td>Intercepciones (Int)</td><td class="mono">16</td><td class="mono">10</td><td class="mono">1.6x</td></tr>
+    <tr><td>Faltas recibidas (Fld)</td><td class="mono">115</td><td class="mono">89</td><td class="mono">1.3x</td></tr>
+    <tr><td>Offsides del rival</td><td class="mono">11</td><td class="mono accent">85</td><td class="mono">L&iacute;nea muy alta</td></tr>
+  </tbody>
+</table>
+
+<div class="info-box">
+  <strong>85 offsides del equipo en 8 partidos</strong> (10.6/partido): Austria juega tan adelantada que cae en offside con alt&iacute;sima frecuencia. Confirma la l&iacute;nea alta agresiva.
+</div>
+
+<div class="index-card high">
+  <div class="index-name">Intensidad de Pressing</div>
+  <div class="index-value">4.0 / 5.0 &mdash; P92</div>
+  <div class="index-desc">Pressing agresivo (PPDA ~8.4). 2.&ordf; selecci&oacute;n m&aacute;s intensa de Europa. Presiona como un equipo de Bundesliga de &eacute;lite.</div>
+</div>
+
+<div class="index-card high">
+  <div class="index-name">Altura del Bloque Defensivo</div>
+  <div class="index-value">4.0 / 5.0 &mdash; P85</div>
+  <div class="index-desc">L&iacute;nea defensiva muy avanzada. Trampa de offside activa. Riesgo calculado: espacio enorme detr&aacute;s si el rival escapa del pressing.</div>
+</div>
+
+<!-- ==================== SECTION 7 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">07</span>
+    <h2 class="section-title">Principios de Transici&oacute;n</h2>
+  </div>
+</div>
+
+<h3 class="sub-heading">Transici&oacute;n ofensiva: del robo al ataque</h3>
+
+<div class="body-text">
+  <p>Austria es, en esencia, un <strong>equipo de transiciones</strong>. Su modelo de juego orbita alrededor de este momento: robo en zona media/alta &rarr; Baumgartner o Sabitzer reciben &rarr; primer pase vertical en 1-2 toques &rarr; carrera al espacio de Laimer, Wimmer o los delanteros &rarr; resoluci&oacute;n r&aacute;pida antes de que el rival se reorganice.</p>
+</div>
+
+<table class="data-table">
+  <thead><tr><th>Jugador</th><th>Rol en transici&oacute;n</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Baumgartner</strong></td><td>Receptor en zona 14, giro y pase final o tiro</td></tr>
+    <tr><td><strong>Laimer</strong></td><td>Llegada al &aacute;rea desde segunda l&iacute;nea, timing de inserci&oacute;n</td></tr>
+    <tr><td><strong>Sabitzer</strong></td><td>Distribuidor: primer pase tras recuperaci&oacute;n</td></tr>
+    <tr><td><strong>Wimmer</strong></td><td>Velocidad en conducci&oacute;n por banda, directo al &aacute;rea</td></tr>
+    <tr><td><strong>Arnautovic</strong></td><td>Referencia de &aacute;rea, protege pelota para combinaci&oacute;n r&aacute;pida</td></tr>
+  </tbody>
+</table>
+
+<h3 class="sub-heading">Transici&oacute;n defensiva: gegenpressing puro</h3>
+
+<div class="body-text">
+  <p>Tras perder la pelota, Austria ejecuta <strong>gegenpressing inmediato</strong>: 3 jugadores presionan al portador en los primeros 3 segundos. Si no se recupera en 8 segundos, repliegue organizado. Seiwald act&uacute;a como escoba: su posici&oacute;n retrasada garantiza cobertura. La l&iacute;nea defensiva NO retrocede inmediatamente &mdash; se mantiene alta para comprimir el espacio.</p>
+</div>
+
+<div class="pullquote">
+  <p>Si el rival escapa del gegenpressing, queda un espacio enorme detr&aacute;s de la defensa. Es la apuesta t&aacute;ctica fundamental de Rangnick: alto riesgo, alta recompensa.</p>
+</div>
+
+<!-- ==================== SECTION 8 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">08</span>
+    <h2 class="section-title">Acciones a Bal&oacute;n Parado</h2>
+  </div>
+</div>
+
+<h3 class="sub-heading">ABP ofensivas &mdash; Fortaleza</h3>
+
+<div class="stat-cards-row">
+  <div class="stat-card">
+    <div class="stat-card-value accent">4.75</div>
+    <div class="stat-card-label">Corners/partido (Euro 2024)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value">12</div>
+    <div class="stat-card-label">Corners vs Turqu&iacute;a (R16)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-card-value">5+</div>
+    <div class="stat-card-label">Jugadores de 1.87m+ en el XI</div>
+  </div>
+</div>
+
+<div class="body-text">
+  <p><strong>Lanzadores principales:</strong> Sabitzer (izquierda), Baumgartner (derecha). Env&iacute;o predominante al segundo palo y zona de penalti. Austria es extremadamente peligrosa en corners ofensivos.</p>
+</div>
+
+<h3 class="sub-heading">ABP defensivas &mdash; PUNTO D&Eacute;BIL</h3>
+
+<div class="pullquote">
+  <p>Los 3 goles del partido Austria vs Turqu&iacute;a (Euro 2024 R16) vinieron de corners. Hecho sin precedente en la historia de los Europeos desde 1980.</p>
+</div>
+
+<div class="body-text">
+  <p>Los corners defensivos son el <strong>punto d&eacute;bil m&aacute;s documentado</strong> de Austria. Problemas identificados: marca zonal deficiente en el primer palo, falta de reacci&oacute;n ante segundas pelotas, y jugadores rivales rematando libres de marca. Demiral (Turqu&iacute;a) remat&oacute; dos veces libre.</p>
+</div>
+
+<!-- ==================== SECTION 9 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">09</span>
+    <h2 class="section-title">Evoluci&oacute;n T&aacute;ctica</h2>
+  </div>
+</div>
+
+<h3 class="sub-heading">Trayectoria bajo Rangnick (2022-2026)</h3>
+
+<table class="data-table">
+  <thead><tr><th>Per&iacute;odo</th><th>Formaci&oacute;n</th><th>Resultado</th></tr></thead>
+  <tbody>
+    <tr><td>Jun-Nov 2022</td><td class="mono">4-4-2 / 4-2-3-1</td><td>NL League A: 1W 1D 4L (relegados)</td></tr>
+    <tr><td>Mar-Nov 2023</td><td class="mono">4-4-2</td><td>Clasificados a Euro 2024</td></tr>
+    <tr><td>Mar-Jul 2024</td><td class="mono accent">4-2-3-1</td><td>Euro 2024: 1.&deg; Grupo D (sobre Francia y Pa&iacute;ses Bajos)</td></tr>
+    <tr><td>Sep 2024 - Mar 2025</td><td class="mono">4-2-3-1</td><td>NL: 2.&deg; en grupo, eliminados por Serbia</td></tr>
+    <tr><td>Jun-Nov 2025</td><td class="mono accent">4-2-3-1</td><td>WCQ: 1.&deg; (19 pts, 22GF 4GA). Clasificados al Mundial.</td></tr>
+  </tbody>
+</table>
+
+<h3 class="sub-heading">Adaptaci&oacute;n seg&uacute;n rival</h3>
+
+<table class="data-table">
+  <thead><tr><th>Tipo de rival</th><th>Posesi&oacute;n</th><th>Pressing</th><th>Enfoque</th></tr></thead>
+  <tbody>
+    <tr><td>Inferiores (San Marino, Kazajist&aacute;n)</td><td class="mono">66-71%</td><td class="mono">Alto sostenido</td><td>Dominio territorial, goleadas</td></tr>
+    <tr><td>Nivel medio (Bosnia, Rumania)</td><td class="mono">58-65%</td><td class="mono">Alto-medio</td><td>Transiciones como arma principal</td></tr>
+    <tr><td class="accent"><strong>&Eacute;lite (Francia, Paises Bajos)</strong></td><td class="mono accent">48-55%</td><td class="mono accent">Muy alto</td><td>Pressing extremo, ceder posesi&oacute;n, contraataque</td></tr>
+  </tbody>
+</table>
+
+<h3 class="sub-heading">&Uacute;ltimos 10 partidos: forma reciente</h3>
+
+<div class="form-row">
+  <span class="form-label">&Uacute;lt. 10</span>
+  <div class="form-indicators">
+    <span class="form-box V">V</span>
+    <span class="form-box V">V</span>
+    <span class="form-box V">V</span>
+    <span class="form-box V">V</span>
+    <span class="form-box V">V</span>
+    <span class="form-box D">D</span>
+    <span class="form-box V">V</span>
+    <span class="form-box E">E</span>
+    <span class="form-box E">E</span>
+    <span class="form-box D">D</span>
+  </div>
+</div>
+
+<div class="info-box">
+  <strong>5V 3E 2D en &uacute;ltimos 10.</strong> Las 2 derrotas fueron contra Serbia (equipo f&iacute;sico que neutraliz&oacute; el pressing) y Rumania (gol en el 90+4). Solo 6 goles encajados en 10 partidos.
+</div>
+
+<!-- ==================== SECTION 10 ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">10</span>
+    <h2 class="section-title">Radar de &Iacute;ndices T&aacute;cticos</h2>
+  </div>
+</div>
+
+<table class="radar-table">
+  <thead>
+    <tr><th>&Iacute;ndice</th><th>Valor</th><th>Percentil</th><th>Barra</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Compactaci&oacute;n del bloque</td>
+      <td>4.4 / 6.0</td>
+      <td>P78</td>
+      <td><div class="radar-bar"><div class="radar-fill" style="width:73%"></div></div></td>
+    </tr>
+    <tr>
+      <td>Estilo ofensivo posicional</td>
+      <td>2.5 / 5.0</td>
+      <td>P25</td>
+      <td><div class="radar-bar"><div class="radar-fill low" style="width:50%"></div></div></td>
+    </tr>
+    <tr>
+      <td>Distancia de pase</td>
+      <td>3.3 / 5.0</td>
+      <td>P50</td>
+      <td><div class="radar-bar"><div class="radar-fill" style="width:66%"></div></div></td>
+    </tr>
+    <tr>
+      <td>Velocidad de progresi&oacute;n</td>
+      <td>4.1 / 5.0</td>
+      <td>P88</td>
+      <td><div class="radar-bar"><div class="radar-fill high" style="width:82%"></div></div></td>
+    </tr>
+    <tr>
+      <td>Intensidad de pressing</td>
+      <td>4.0 / 5.0</td>
+      <td>P92</td>
+      <td><div class="radar-bar"><div class="radar-fill high" style="width:80%"></div></div></td>
+    </tr>
+    <tr>
+      <td>Altura del bloque defensivo</td>
+      <td>4.0 / 5.0</td>
+      <td>P85</td>
+      <td><div class="radar-bar"><div class="radar-fill high" style="width:80%"></div></div></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="sub-heading">Outliers: donde Austria es &uacute;nica</h3>
+
+<ul class="bullet-list">
+  <li><strong>Pressing (P92):</strong> 2.&ordf; selecci&oacute;n m&aacute;s intensa de Europa. Solo Alemania presiona m&aacute;s.</li>
+  <li><strong>Velocidad de progresi&oacute;n (P88):</strong> Progresi&oacute;n extremadamente r&aacute;pida. Pocas selecciones son tan verticales.</li>
+  <li><strong>Altura del bloque (P85):</strong> L&iacute;nea defensiva muy avanzada. Riesgo calculado.</li>
+  <li><strong>Estilo posicional (P25):</strong> Austria NO juega posicional. Es directa y transicional &mdash; el opuesto de Espa&ntilde;a o Argentina.</li>
+</ul>
+
+<h3 class="sub-heading">Equipo m&aacute;s similar: RB Leipzig</h3>
+
+<div class="body-text">
+  <p>No es coincidencia. El equipo que Rangnick dise&ntilde;&oacute; desde cero comparte el ADN con su selecci&oacute;n: PPDA ~8-9, formaci&oacute;n 4-2-3-1, transiciones como identidad, y 3 jugadores compartidos (Baumgartner, Seiwald, X. Schlager).</p>
+</div>
+
+<!-- ==================== CONTEXT VS ARGENTINA ==================== -->
+<div class="diamond-sep"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+<div class="section-header">
+  <div class="number-title">
+    <span class="section-number">&#9733;</span>
+    <h2 class="section-title">Contexto para Argentina &mdash; Grupo J</h2>
+  </div>
+</div>
+
+<h3 class="sub-heading">Once probable vs Argentina (22 de junio)</h3>
+
+<div class="formation-box">                Arnautovic (36)
+  Schmid (26)    Baumgartner (26)    Laimer (28)
+          Seiwald (24)    Sabitzer (31)
+Prass (24)  Lienhart (29)  Danso (27)  Posch (28)
+              Schlager (30)</div>
+
+<h3 class="sub-heading">Fortalezas que Argentina debe respetar</h3>
+
+<ul class="bullet-list">
+  <li><strong>Pressing de &eacute;lite:</strong> Presionar&aacute;n la salida de Argentina con intensidad Top-2 de Europa.</li>
+  <li><strong>Transiciones letales:</strong> Cada pelota perdida en zona media es oportunidad de gol para Austria.</li>
+  <li><strong>Juego a&eacute;reo:</strong> 5+ jugadores de 1.87m+. Peligro real en ABP.</li>
+  <li><strong>Mentalidad:</strong> Vencieron a Francia y Pa&iacute;ses Bajos en la Euro. No se achican.</li>
+  <li><strong>Sistema consolidado:</strong> 20+ partidos con el mismo esquema y jugadores. Automatizados.</li>
+</ul>
+
+<h3 class="sub-heading">Debilidades que Argentina puede explotar</h3>
+
+<ul class="bullet-list">
+  <li><strong>Espacio detr&aacute;s de la l&iacute;nea alta:</strong> La defensa sube mucho. Pases en profundidad y velocistas pueden destrozarlos.</li>
+  <li><strong>ABP defensivas:</strong> Punto d&eacute;bil documentado. 3 goles encajados de corners en un solo partido.</li>
+  <li><strong>Desgaste post-min. 60:</strong> La intensidad del pressing baja. Los cambios de ritmo de Argentina pueden explotar esto.</li>
+  <li><strong>Calidad individual limitada:</strong> Plantel de &euro;232M vs +&euro;1,200M de Argentina. En igualdad t&aacute;ctica, la calidad individual argentina es superior.</li>
+  <li><strong>Portero cuestionable:</strong> Ni Schlager ni Pentz son porteros de &eacute;lite mundial. Bajo presi&oacute;n pueden cometer errores.</li>
+</ul>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="report-footer">
+  <div class="footer-brand">Soy Analista</div>
+  <div class="footer-meta">
+    Modelo de Juego &middot; Austria &middot; Mundial 2026<br>
+    20 partidos competitivos analizados (Euro 2024 + Nations League 2024-25 + Eliminatorias 2026)<br>
+    Fuentes: FBref, Understat, Transfermarkt, UEFA.com, xGscore.io, Total Football Analysis<br>
+    Marzo 2026
+  </div>
+</footer>
+
+</body>
+</html>

@@ -24,6 +24,7 @@ interface NavbarProps {
       calendario: string;
       jugadores: string;
       about: string;
+      academy?: string;
     };
     search?: { placeholder: string };
   };
@@ -45,6 +46,7 @@ export default function Navbar({ locale, dict, searchTeams }: NavbarProps) {
     { href: `/${locale}/clubes`, label: dict.nav.clubes },
     { href: `/${locale}/jugadores`, label: dict.nav.jugadores },
     { href: `/${locale}/sobre`, label: dict.nav.about },
+    { href: `/${locale}/academy`, label: dict.nav.academy ?? "SA Academy" },
   ];
 
   const mundialSubLinks = [

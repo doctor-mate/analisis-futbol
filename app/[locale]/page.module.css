@@ -70,6 +70,50 @@
   opacity: 0.8;
 }
 
+/* League cards on homepage */
+.leagueGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.leagueCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 28px;
+  background: var(--sa-crema);
+  border: 1.5px solid var(--sa-arena);
+  border-radius: var(--sa-radius-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.leagueCard:hover {
+  border-color: var(--sa-rojo);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.leagueFlag {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.leagueName {
+  font-family: var(--sa-font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--sa-negro);
+}
+
+.leagueCount {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--sa-tierra);
+  white-space: nowrap;
+}
+
 @media (max-width: 768px) {
   .featuredGrid {
     grid-template-columns: repeat(2, 1fr);

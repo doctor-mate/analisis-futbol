@@ -5,8 +5,10 @@
   },
   "nav": {
     "mundial": "Mundial 2026",
+    "equipos": "Equipos",
     "clubes": "Clubes",
     "calendario": "Calendario",
+    "jugadores": "Jugadores",
     "about": "Sobre el proyecto"
   },
   "search": {
@@ -105,6 +107,15 @@
   "clubes": {
     "title": "Informes de clubes",
     "subtitle": "Informes tácticos de clubes de LaLiga, Premier League, Serie A, Bundesliga y Ligue 1"
+  },
+  "jugadores": {
+    "title": "Perfiles de jugador",
+    "subtitle": "Scouting individual con radar de métricas, percentiles y análisis táctico",
+    "viewProfile": "Ver perfil",
+    "position": "Posición",
+    "team": "Equipo",
+    "age": "Edad",
+    "years": "años"
   },
   "footer": {
     "brand": "Soy Analista",

@@ -106,6 +106,15 @@ export async function getPlayersByTeam(teamSlug: string): Promise<PlayerRow[]> {
   return data ?? [];
 }
 
+export async function getPlayersWithProfiles(): Promise<PlayerRow[]> {
+  const { data, error } = await supabase
+    .from("players")
+    .select("*")
+    .order("name");
+  if (error) throw error;
+  return data ?? [];
+}
+
 // ---- Matches ----
 
 export async function getMatchBySlug(slug: string): Promise<MatchRow | null> {

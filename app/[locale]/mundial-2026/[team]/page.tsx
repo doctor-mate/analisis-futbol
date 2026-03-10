@@ -63,7 +63,9 @@ export default async function TeamPage({
 
   const team = toTeam(teamRow);
   const reportRows = await getReportsForTeam(team.slug);
-  const teamReports = reportRows.map(toReport);
+  const teamReports = reportRows
+    .map(toReport)
+    .filter((r) => r.type !== "player-profile");
 
   const rivalRows = await getTeamsByGroup(team.group);
   const groupRivals = rivalRows.map(toTeam).filter((t) => t.slug !== team.slug);

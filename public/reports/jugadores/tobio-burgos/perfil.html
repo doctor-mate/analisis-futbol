@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil de Jugador — Joaquín Tobio Burgos | Soy Analista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5F0E8;
+  --cream-dark: #EDE7DA;
+  --red: #C13628;
+  --red-dark: #A02D22;
+  --black: #1A1A1A;
+  --gray-dark: #3A3A3A;
+  --gray: #6B6B6B;
+  --gray-light: #A0A0A0;
+  --white: #FFFFFF;
+  --green: #2D8B46;
+  --yellow: #C9A227;
+  --orange: #D4722A;
+  --red-bar: #C13628;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--cream);
+  color: var(--black);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 32px;
+}
+
+/* --- Hero Photo --- */
+.hero-photo {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 4px;
+  margin-bottom: 0;
+  display: block;
+}
+
+/* --- Header / Cover --- */
+.header {
+  text-align: center;
+  padding: 48px 0 32px;
+  border-bottom: 3px solid var(--red);
+  margin-bottom: 40px;
+}
+
+.header .brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--black);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.header .subtitle {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  color: var(--gray);
+  font-style: italic;
+}
+
+.header .meta-line {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--gray-light);
+  margin-top: 12px;
+  letter-spacing: 1px;
+}
+
+/* --- Identity Card --- */
+.identity-section {
+  display: flex;
+  gap: 0;
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.identity-photo {
+  flex: 0 0 200px;
+  background: var(--cream-dark);
+}
+
+.identity-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.identity-card {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.identity-card .field {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.identity-card .field:nth-child(odd) {
+  border-right: 1px solid var(--cream-dark);
+}
+
+.identity-card .field-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gray-light);
+  margin-bottom: 2px;
+}
+
+.identity-card .field-value {
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.identity-card .field-value.accent {
+  color: var(--red);
+}
+
+/* --- Section headers --- */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--black);
+  margin: 48px 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--red);
+}
+
+h2 .section-number {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--red);
+  margin-right: 8px;
+}
+
+h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-dark);
+  margin: 24px 0 12px;
+}
+
+p {
+  margin-bottom: 16px;
+  color: var(--gray-dark);
+}
+
+/* --- Warning box --- */
+.warning {
+  background: #FFF8E1;
+  border-left: 4px solid var(--yellow);
+  padding: 14px 20px;
+  margin: 20px 0;
+  font-size: 14px;
+  color: var(--gray-dark);
+}
+
+.warning strong {
+  color: var(--yellow);
+}
+
+/* --- Tables --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 14px;
+}
+
+thead th {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray);
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--black);
+  text-align: left;
+}
+
+thead th.num {
+  text-align: right;
+}
+
+tbody td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--cream-dark);
+  color: var(--gray-dark);
+}
+
+tbody td.num {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  text-align: right;
+}
+
+tbody td.metric {
+  font-weight: 600;
+  color: var(--black);
+}
+
+tbody tr:hover {
+  background: var(--cream-dark);
+}
+
+/* --- Percentile bars --- */
+.pct-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pct-bar {
+  flex: 1;
+  height: 10px;
+  background: var(--cream-dark);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.pct-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s;
+}
+
+.pct-bar-fill.green { background: var(--green); }
+.pct-bar-fill.yellow { background: var(--yellow); }
+.pct-bar-fill.orange { background: var(--orange); }
+.pct-bar-fill.red { background: var(--red-bar); }
+
+.pct-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 32px;
+  text-align: right;
+}
+
+.pct-label.green { color: var(--green); }
+.pct-label.yellow { color: var(--yellow); }
+.pct-label.orange { color: var(--orange); }
+.pct-label.red { color: var(--red-bar); }
+
+/* --- Radar Chart (SVG) --- */
+.radar-section {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+
+.radar-chart {
+  flex: 0 0 380px;
+}
+
+.radar-table {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* --- Role Profile --- */
+.role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0 24px;
+}
+
+.role-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+
+.role-card .dimension-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gray-light);
+}
+
+.role-card .dimension-score {
+  font-family: 'DM Mono', monospace;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--black);
+  margin: 4px 0;
+}
+
+.role-card .dimension-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-dark);
+}
+
+.archetype-box {
+  background: var(--black);
+  color: var(--cream);
+  padding: 20px 24px;
+  border-radius: 4px;
+  text-align: center;
+  margin: 16px 0 32px;
+}
+
+.archetype-box .archetype-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.archetype-box .archetype-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--gray-light);
+  margin-top: 4px;
+}
+
+/* --- Strengths / Weaknesses --- */
+.sw-item {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-left: 4px solid var(--green);
+  padding: 16px 20px;
+  margin: 12px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.sw-item.weakness {
+  border-left-color: var(--red-bar);
+}
+
+.sw-item .sw-label {
+  font-family: 'Source Serif 4', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.sw-item .sw-metric {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: var(--red);
+  margin-bottom: 6px;
+}
+
+.sw-item .sw-text {
+  font-size: 14px;
+  color: var(--gray-dark);
+  line-height: 1.5;
+}
+
+/* --- Rating --- */
+.rating-box {
+  display: flex;
+  gap: 24px;
+  margin: 20px 0;
+}
+
+.rating-card {
+  flex: 1;
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 4px;
+  padding: 24px;
+  text-align: center;
+}
+
+.rating-card .rating-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gray-light);
+}
+
+.rating-card .rating-grade {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1;
+  margin: 8px 0;
+}
+
+.rating-card .rating-grade.current { color: var(--yellow); }
+.rating-card .rating-grade.potential { color: var(--green); }
+
+.rating-card .rating-desc {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+/* --- Footer --- */
+.footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 2px solid var(--red);
+  text-align: center;
+}
+
+.footer .brand-footer {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 2px;
+}
+
+.footer .footer-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--gray-light);
+  margin-top: 8px;
+}
+
+/* --- Timeline --- */
+.timeline-table tbody td:first-child {
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+}
+
+.highlight-row {
+  background: rgba(193, 54, 40, 0.05);
+  font-weight: 600;
+}
+
+/* --- Action Photo --- */
+.action-photo {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 4px;
+  margin: 20px 0;
+  display: block;
+  border: 1px solid var(--cream-dark);
+}
+
+.photo-caption {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--gray-light);
+  text-align: center;
+  margin-top: -12px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+  .identity-section { flex-direction: column; }
+  .identity-photo { flex: 0 0 auto; max-height: 240px; }
+  .identity-card { grid-template-columns: 1fr; }
+  .identity-card .field:nth-child(odd) { border-right: none; }
+  .radar-section { flex-direction: column; }
+  .radar-chart { flex: 1; width: 100%; }
+  .role-grid { grid-template-columns: 1fr; }
+  .rating-box { flex-direction: column; }
+  .header h1 { font-size: 32px; }
+}
+
+/* --- Print / PDF --- */
+@media print {
+  body { background: var(--cream); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .container { max-width: 100%; padding: 0 24px; }
+
+  /* Force identity card side-by-side */
+  .identity-section { flex-direction: row !important; }
+  .identity-photo { flex: 0 0 160px !important; max-height: none !important; }
+  .identity-card { grid-template-columns: 1fr 1fr !important; }
+  .identity-card .field:nth-child(odd) { border-right: 1px solid var(--cream-dark) !important; }
+
+  /* Force radar side-by-side */
+  .radar-section { flex-direction: row !important; }
+  .radar-chart { flex: 0 0 340px !important; }
+
+  /* Force role grid and rating box side-by-side */
+  .role-grid { grid-template-columns: 1fr 1fr !important; }
+  .rating-box { flex-direction: row !important; }
+
+  /* Avoid page breaks inside key sections */
+  .identity-section, .radar-section, .role-grid, .archetype-box,
+  .rating-box, .sw-item, .warning, table { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+
+  /* Photos: control sizing for print */
+  .hero-photo { max-height: 320px; }
+  .action-photo { max-height: 380px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HERO PHOTO -->
+<img src="https://media.0221.com.ar/p/dc5407773bbaa941ad7154173388eef0/adjuntos/357/imagenes/100/214/0100214392/1200x630/smart/estudiantes-sarmiento-la-banda-festejo-gol-tobio-burgos-2jpg.jpg" alt="Tobio Burgos celebrando gol con Estudiantes de La Plata" class="hero-photo">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="brand">Soy Analista</div>
+  <h1>Joaquín Tobio Burgos</h1>
+  <div class="subtitle">Extremo izquierdo · Estudiantes de La Plata · Liga Profesional Argentina</div>
+  <div class="meta-line">PERFIL DE JUGADOR · MARZO 2026 · v1.0</div>
+</div>
+
+<!-- 1. IDENTITY CARD -->
+<div class="identity-section">
+<div class="identity-photo">
+  <img src="https://img.a.transfermarkt.technology/portrait/big/1298369-1739827596.jpg?lm=1" alt="Joaquín Tobio Burgos — Retrato">
+</div>
+<div class="identity-card">
+  <div class="field"><div class="field-label">Nombre completo</div><div class="field-value">Joaquín Tobio Burgos</div></div>
+  <div class="field"><div class="field-label">Fecha de nacimiento</div><div class="field-value">14/12/2004 (21 años)</div></div>
+  <div class="field"><div class="field-label">Nacionalidad</div><div class="field-value">Argentina (Chascomús)</div></div>
+  <div class="field"><div class="field-label">Posición</div><div class="field-value">Extremo izquierdo (LW)</div></div>
+  <div class="field"><div class="field-label">Pie preferido</div><div class="field-value">Izquierdo</div></div>
+  <div class="field"><div class="field-label">Altura / Peso</div><div class="field-value">1.77m / 72kg</div></div>
+  <div class="field"><div class="field-label">Dorsal</div><div class="field-value accent">#17</div></div>
+  <div class="field"><div class="field-label">Club</div><div class="field-value">Estudiantes de La Plata</div></div>
+  <div class="field"><div class="field-label">Contrato</div><div class="field-value">Hasta dic. 2026</div></div>
+  <div class="field"><div class="field-label">Valor de mercado</div><div class="field-value accent">€1.80M</div></div>
+</div>
+</div>
+
+<p>Surgido de las categorías infantiles de Chascomús, fue rechazado en pruebas por River Plate, Argentinos Juniors y Defensa y Justicia antes de ingresar a la cantera de Estudiantes (2022). Debutó en primera en octubre de 2024 con gol contra Banfield. Superó una lesión de aductores de 5 meses en 2025 para consolidarse como una de las figuras emergentes del plantel, donde el Cacique Medina lo utiliza como titular cuando está disponible.</p>
+
+<!-- 2. CAREER TIMELINE -->
+<h2><span class="section-number">02</span>Trayectoria</h2>
+
+<table class="timeline-table">
+<thead><tr><th>Temporada</th><th>Competencias</th><th class="num">PJ</th><th class="num">Goles</th><th class="num">Asist.</th><th class="num">Min</th><th>Notas</th></tr></thead>
+<tbody>
+<tr><td class="num">2024</td><td>Primera Div., Copa Argentina</td><td class="num">12</td><td class="num">2</td><td class="num">0</td><td class="num">708</td><td>Debut oct. 2024</td></tr>
+<tr><td class="num">2025</td><td>Primera, Libertadores, Copa Arg., Trofeo Campeones</td><td class="num">23</td><td class="num">4</td><td class="num">1</td><td class="num">919</td><td>Lesión aductores jun-nov</td></tr>
+<tr class="highlight-row"><td class="num">2026</td><td>Primera Div. (Apertura)</td><td class="num">6</td><td class="num">0</td><td class="num">2</td><td class="num">255</td><td>En curso</td></tr>
+<tr style="border-top:2px solid var(--black);font-weight:700;"><td class="num">Total</td><td></td><td class="num">41</td><td class="num">6</td><td class="num">3</td><td class="num">1.884</td><td></td></tr>
+</tbody>
+</table>
+
+<!-- 3. CURRENT SEASON -->
+<h2><span class="section-number">03</span>Temporada 2026</h2>
+
+<div class="warning">
+  <strong>Muestra reducida:</strong> 255 minutos en 6 partidos (4 titularidades) del Torneo Apertura 2026. Todas las métricas per 90 deben interpretarse con cautela.
+</div>
+
+<h3>Producción ofensiva</h3>
+<table>
+<thead><tr><th>Métrica</th><th class="num">Total</th><th class="num">Per 90</th><th>Percentil vs FW/MF liga</th></tr></thead>
+<tbody>
+<tr><td class="metric">Goles</td><td class="num">0</td><td class="num">0.00</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill yellow" style="width:60%"></div></div><span class="pct-label yellow">P60</span></div></td></tr>
+<tr><td class="metric">Asistencias</td><td class="num">2</td><td class="num">0.71</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:99%"></div></div><span class="pct-label green">P99</span></div></td></tr>
+<tr><td class="metric">xG</td><td class="num">0.05</td><td class="num">0.02</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill red" style="width:10%"></div></div><span class="pct-label red">P10</span></div></td></tr>
+<tr><td class="metric">xA</td><td class="num">1.61</td><td class="num">0.57</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:99%"></div></div><span class="pct-label green">P99</span></div></td></tr>
+<tr><td class="metric">G+A</td><td class="num">2</td><td class="num">0.71</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:95%"></div></div><span class="pct-label green">P95</span></div></td></tr>
+</tbody>
+</table>
+
+<h3>Creación y centros</h3>
+<table>
+<thead><tr><th>Métrica</th><th class="num">Total</th><th class="num">Per 90</th><th>Percentil</th></tr></thead>
+<tbody>
+<tr><td class="metric">Pases clave</td><td class="num">8</td><td class="num">2.80</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:99%"></div></div><span class="pct-label green">P99</span></div></td></tr>
+<tr><td class="metric">Centros</td><td class="num">19</td><td class="num">6.79</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:96%"></div></div><span class="pct-label green">P96</span></div></td></tr>
+<tr><td class="metric">Centros exitosos</td><td class="num">10</td><td class="num">3.57</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:90%"></div></div><span class="pct-label green">P90</span></div></td></tr>
+<tr><td class="metric">Pass completion</td><td class="num">44/53</td><td class="num">83.0%</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:75%"></div></div><span class="pct-label green">P75</span></div></td></tr>
+</tbody>
+</table>
+
+<h3>Regate y conducción</h3>
+<table>
+<thead><tr><th>Métrica</th><th class="num">Total</th><th class="num">Per 90</th><th>Percentil</th></tr></thead>
+<tbody>
+<tr><td class="metric">Regates intentados</td><td class="num">8</td><td class="num">2.80</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:85%"></div></div><span class="pct-label green">P85</span></div></td></tr>
+<tr><td class="metric">Regates exitosos</td><td class="num">4</td><td class="num">1.43</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:85%"></div></div><span class="pct-label green">P85</span></div></td></tr>
+</tbody>
+</table>
+
+<h3>Disparo y defensa</h3>
+<table>
+<thead><tr><th>Métrica</th><th class="num">Total</th><th class="num">Per 90</th><th>Percentil</th></tr></thead>
+<tbody>
+<tr><td class="metric">Tiros</td><td class="num">1</td><td class="num">0.35</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill red" style="width:11%"></div></div><span class="pct-label red">P11</span></div></td></tr>
+<tr><td class="metric">Tiros al arco</td><td class="num">0</td><td class="num">0.00</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill red" style="width:22%"></div></div><span class="pct-label red">P22</span></div></td></tr>
+<tr><td class="metric">Tackles ganados</td><td class="num">3</td><td class="num">1.07</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill yellow" style="width:56%"></div></div><span class="pct-label yellow">P56</span></div></td></tr>
+<tr><td class="metric">Intercepciones</td><td class="num">2</td><td class="num">0.71</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill yellow" style="width:56%"></div></div><span class="pct-label yellow">P56</span></div></td></tr>
+</tbody>
+</table>
+
+<!-- 4. RADAR CHART -->
+<h2><span class="section-number">04</span>Radar Chart</h2>
+
+<div class="radar-section">
+<div class="radar-chart">
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .radar-grid { fill: none; stroke: #D5CFC4; stroke-width: 0.5; }
+      .radar-axis { stroke: #D5CFC4; stroke-width: 0.5; }
+      .radar-area { fill: rgba(193, 54, 40, 0.15); stroke: #C13628; stroke-width: 2; }
+      .radar-dot { fill: #C13628; }
+      .radar-label { font-family: 'DM Mono', monospace; font-size: 9px; fill: #6B6B6B; }
+      .radar-value { font-family: 'DM Mono', monospace; font-size: 8px; fill: #C13628; font-weight: 500; }
+    </style>
+  </defs>
+  <!-- Grid circles -->
+  <circle cx="200" cy="200" r="150" class="radar-grid"/>
+  <circle cx="200" cy="200" r="112.5" class="radar-grid"/>
+  <circle cx="200" cy="200" r="75" class="radar-grid"/>
+  <circle cx="200" cy="200" r="37.5" class="radar-grid"/>
+  <!-- Axes (8 metrics) -->
+  <!-- 0°=top, 45° intervals -->
+  <line x1="200" y1="200" x2="200" y2="50" class="radar-axis"/>
+  <line x1="200" y1="200" x2="306" y2="94" class="radar-axis"/>
+  <line x1="200" y1="200" x2="350" y2="200" class="radar-axis"/>
+  <line x1="200" y1="200" x2="306" y2="306" class="radar-axis"/>
+  <line x1="200" y1="200" x2="200" y2="350" class="radar-axis"/>
+  <line x1="200" y1="200" x2="94" y2="306" class="radar-axis"/>
+  <line x1="200" y1="200" x2="50" y2="200" class="radar-axis"/>
+  <line x1="200" y1="200" x2="94" y2="94" class="radar-axis"/>
+  <!-- Data polygon -->
+  <!-- Metrics (percentile/100 * 150 = radius): -->
+  <!-- 1. xG/90: P10 = 15px from center → 200, 200-15=185 -->
+  <!-- 2. xAG/90: P99 = 148.5 → 200+105,200-105 → 305,95 -->
+  <!-- 3. Key Passes/90: P99 = 148.5 → 200+148.5,200 = 349,200 -->
+  <!-- 4. Succ Dribbles/90: P85 = 127.5 → 200+90,200+90 = 290,290 -->
+  <!-- 5. Crosses/90: P96 = 144 → 200,200+144 = 200,344 -->
+  <!-- 6. Shots/90: P11 = 16.5 → 200-12,200+12 = 188,212 → actually axis at 225° -->
+  <!-- 7. Tkl+Int/90: P58 = 87 → 200-87,200 = 113,200 -->
+  <!-- 8. SoT/90: P22 = 33 → 200-23,200-23 = 177,177 → axis at 315° -->
+  <!-- Let me recalculate properly for 8 axes at 45° intervals -->
+  <!-- Axis 0 (top, 0°): xG/90 P10 → r=15 → (200, 200-15) = (200, 185) -->
+  <!-- Axis 1 (45°): xAG/90 P99 → r=148.5 → (200+148.5*sin45, 200-148.5*cos45) = (200+105, 200-105) = (305, 95) -->
+  <!-- Axis 2 (90°, right): KP/90 P99 → r=148.5 → (348.5, 200) -->
+  <!-- Axis 3 (135°): Dribbles P85 → r=127.5 → (200+90.2, 200+90.2) = (290, 290) -->
+  <!-- Axis 4 (180°, bottom): Crosses P96 → r=144 → (200, 344) -->
+  <!-- Axis 5 (225°): Shots P11 → r=16.5 → (200-11.7, 200+11.7) = (188, 212) -->
+  <!-- Axis 6 (270°, left): Tkl+Int P58 → r=87 → (113, 200) -->
+  <!-- Axis 7 (315°): SoT P22 → r=33 → (200-23.3, 200-23.3) = (177, 177) -->
+  <polygon points="200,185 305,95 349,200 290,290 200,344 188,212 113,200 177,177" class="radar-area"/>
+  <circle cx="200" cy="185" r="4" class="radar-dot"/>
+  <circle cx="305" cy="95" r="4" class="radar-dot"/>
+  <circle cx="349" cy="200" r="4" class="radar-dot"/>
+  <circle cx="290" cy="290" r="4" class="radar-dot"/>
+  <circle cx="200" cy="344" r="4" class="radar-dot"/>
+  <circle cx="188" cy="212" r="4" class="radar-dot"/>
+  <circle cx="113" cy="200" r="4" class="radar-dot"/>
+  <circle cx="177" cy="177" r="4" class="radar-dot"/>
+  <!-- Labels -->
+  <text x="200" y="38" text-anchor="middle" class="radar-label">xG/90</text>
+  <text x="200" y="48" text-anchor="middle" class="radar-value">0.02 · P10</text>
+  <text x="325" y="78" text-anchor="start" class="radar-label">xAG/90</text>
+  <text x="325" y="88" text-anchor="start" class="radar-value">0.57 · P99</text>
+  <text x="365" y="196" text-anchor="start" class="radar-label">KP/90</text>
+  <text x="365" y="206" text-anchor="start" class="radar-value">2.80 · P99</text>
+  <text x="315" y="318" text-anchor="start" class="radar-label">Dribbles/90</text>
+  <text x="315" y="328" text-anchor="start" class="radar-value">1.43 · P85</text>
+  <text x="200" y="372" text-anchor="middle" class="radar-label">Crosses/90</text>
+  <text x="200" y="382" text-anchor="middle" class="radar-value">6.79 · P96</text>
+  <text x="62" y="318" text-anchor="end" class="radar-label">Shots/90</text>
+  <text x="62" y="328" text-anchor="end" class="radar-value">0.35 · P11</text>
+  <text x="30" y="196" text-anchor="end" class="radar-label">Tkl+Int/90</text>
+  <text x="30" y="206" text-anchor="end" class="radar-value">1.79 · P58</text>
+  <text x="62" y="78" text-anchor="end" class="radar-label">SoT/90</text>
+  <text x="62" y="88" text-anchor="end" class="radar-value">0.00 · P22</text>
+</svg>
+</div>
+<div class="radar-table">
+<table>
+<thead><tr><th>#</th><th>Métrica</th><th class="num">Valor</th><th class="num">Pctl</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>xG/90</td><td class="num">0.02</td><td class="num" style="color:var(--red-bar)">P10</td></tr>
+<tr><td class="num">2</td><td>xAG/90</td><td class="num">0.57</td><td class="num" style="color:var(--green)">P99</td></tr>
+<tr><td class="num">3</td><td>Key Passes/90</td><td class="num">2.80</td><td class="num" style="color:var(--green)">P99</td></tr>
+<tr><td class="num">4</td><td>Succ Dribbles/90</td><td class="num">1.43</td><td class="num" style="color:var(--green)">P85</td></tr>
+<tr><td class="num">5</td><td>Crosses/90</td><td class="num">6.79</td><td class="num" style="color:var(--green)">P96</td></tr>
+<tr><td class="num">6</td><td>Shots/90</td><td class="num">0.35</td><td class="num" style="color:var(--red-bar)">P11</td></tr>
+<tr><td class="num">7</td><td>Tkl+Int/90</td><td class="num">1.79</td><td class="num" style="color:var(--yellow)">P58</td></tr>
+<tr><td class="num">8</td><td>SoT/90</td><td class="num">0.00</td><td class="num" style="color:var(--red-bar)">P22</td></tr>
+</tbody>
+</table>
+<p style="font-size:12px;color:var(--gray-light);margin-top:8px;">4 métricas excluidas: Prog. Carries, Passes into PA, Passes into Final 3rd, Carries — no disponibles en FBref para la liga argentina.</p>
+</div>
+</div>
+
+<!-- 5. PERCENTILE MATRIX -->
+<h2><span class="section-number">05</span>Matriz de Percentiles</h2>
+
+<table>
+<thead><tr><th>Métrica</th><th class="num">Per 90</th><th>Percentil</th><th class="num">Tier</th></tr></thead>
+<tbody>
+<tr><td class="metric">Pases clave</td><td class="num">2.80</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:99%"></div></div><span class="pct-label green">P99</span></div></td><td class="num" style="color:var(--green)">+++</td></tr>
+<tr><td class="metric">Asistencias</td><td class="num">0.71</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:99%"></div></div><span class="pct-label green">P99</span></div></td><td class="num" style="color:var(--green)">+++</td></tr>
+<tr><td class="metric">xA</td><td class="num">0.57</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:99%"></div></div><span class="pct-label green">P99</span></div></td><td class="num" style="color:var(--green)">+++</td></tr>
+<tr><td class="metric">Centros</td><td class="num">6.79</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:96%"></div></div><span class="pct-label green">P96</span></div></td><td class="num" style="color:var(--green)">+++</td></tr>
+<tr><td class="metric">G+A</td><td class="num">0.71</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:95%"></div></div><span class="pct-label green">P95</span></div></td><td class="num" style="color:var(--green)">+++</td></tr>
+<tr><td class="metric">Regates</td><td class="num">2.80</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:85%"></div></div><span class="pct-label green">P85</span></div></td><td class="num" style="color:var(--green)">+++</td></tr>
+<tr><td class="metric">Pass completion</td><td class="num">83.0%</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill green" style="width:75%"></div></div><span class="pct-label green">P75</span></div></td><td class="num" style="color:var(--green)">+++</td></tr>
+<tr><td class="metric">Goles</td><td class="num">0.00</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill yellow" style="width:60%"></div></div><span class="pct-label yellow">P60</span></div></td><td class="num" style="color:var(--yellow)">++</td></tr>
+<tr><td class="metric">Tkl+Int</td><td class="num">1.79</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill yellow" style="width:58%"></div></div><span class="pct-label yellow">P58</span></div></td><td class="num" style="color:var(--yellow)">++</td></tr>
+<tr><td class="metric">Tackles ganados</td><td class="num">1.07</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill yellow" style="width:56%"></div></div><span class="pct-label yellow">P56</span></div></td><td class="num" style="color:var(--yellow)">++</td></tr>
+<tr><td class="metric">Intercepciones</td><td class="num">0.71</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill yellow" style="width:56%"></div></div><span class="pct-label yellow">P56</span></div></td><td class="num" style="color:var(--yellow)">++</td></tr>
+<tr><td class="metric">Faltas recibidas</td><td class="num">1.07</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill orange" style="width:41%"></div></div><span class="pct-label orange">P41</span></div></td><td class="num" style="color:var(--orange)">+</td></tr>
+<tr><td class="metric">SoT</td><td class="num">0.00</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill red" style="width:22%"></div></div><span class="pct-label red">P22</span></div></td><td class="num" style="color:var(--red-bar)">---</td></tr>
+<tr><td class="metric">Tiros</td><td class="num">0.35</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill red" style="width:11%"></div></div><span class="pct-label red">P11</span></div></td><td class="num" style="color:var(--red-bar)">---</td></tr>
+<tr><td class="metric">xG</td><td class="num">0.02</td><td><div class="pct-bar-container"><div class="pct-bar"><div class="pct-bar-fill red" style="width:10%"></div></div><span class="pct-label red">P10</span></div></td><td class="num" style="color:var(--red-bar)">---</td></tr>
+</tbody>
+</table>
+
+<!-- 6. ROLE PROFILE -->
+<h2><span class="section-number">06</span>Perfil de Rol</h2>
+
+<div class="role-grid">
+  <div class="role-card"><div class="dimension-name">Trabajo defensivo</div><div class="dimension-score">1.68</div><div class="dimension-label">Contribuidor defensivo</div></div>
+  <div class="role-card"><div class="dimension-name">Capacidad creativa</div><div class="dimension-score" style="color:var(--green)">2.91</div><div class="dimension-label">Playmaker puro</div></div>
+  <div class="role-card"><div class="dimension-name">Progresión</div><div class="dimension-score" style="color:var(--green)">2.55</div><div class="dimension-label">Explosivo / Vertical</div></div>
+  <div class="role-card"><div class="dimension-name">Finalización</div><div class="dimension-score" style="color:var(--red-bar)">0.33</div><div class="dimension-label">Raramente finaliza</div></div>
+</div>
+
+<div class="archetype-box">
+  <div class="archetype-title">Creative Winger</div>
+  <div class="archetype-sub">EXTREMO CREATIVO · PROVEEDOR DE BANDA NATURAL</div>
+</div>
+
+<p>Tobio Burgos es un extremo izquierdo creativo que opera por su banda natural con pie izquierdo. Su función principal es generar ocasiones para los delanteros a través de centros (6.79/90, P96) y pases clave (2.80/90, P99). Desborda con regate (P85) y entrega el balón al área con alta frecuencia y precisión. No busca el gol propio: su xG/90 (0.02) confirma que su posicionamiento es de proveedor, no de finalizador.</p>
+
+<!-- 7. TACTICAL FIT -->
+<h2><span class="section-number">07</span>Encaje Táctico</h2>
+
+<img src="https://media.eleditormendoza.com.ar/p/0570252384c554dec8cc0639aa3e67b5/adjuntos/371/imagenes/100/056/0100056227/1200x675/smart/joaquin-tobio-burgos-estudiantes-la-plata-libertadores.png" alt="Tobio Burgos en acción — Copa Libertadores" class="action-photo">
+<div class="photo-caption">Tobio Burgos en acción con la camiseta de Estudiantes · Copa Libertadores 2025</div>
+
+<h3>Rol actual en el sistema</h3>
+<p>El Cacique Medina utiliza un <strong>4-2-3-1</strong> como formación base. Tobio Burgos opera como extremo izquierdo: se abre a la banda para recibir, busca el 1v1 contra el lateral rival, y centra desde posiciones profundas o perfiladas. No recorta hacia adentro buscando el disparo — su salida natural es el centro o el pase filtrado al área.</p>
+
+<h3>Sistemas óptimos</h3>
+<p><strong>4-2-3-1 con extremos abiertos</strong> (su perfil natural), <strong>4-3-3 con wingers</strong> en equipos de posesión, o potencialmente como <strong>carrilero izquierdo en 3-5-2</strong>. Necesita un delantero de área (tipo Guido Carrillo o Adolfo Gaich) que convierta sus centros. No encaja en sistemas con extremos invertidos ni en formaciones que requieren goleadores desde la banda.</p>
+
+<h3>Flexibilidad posicional</h3>
+<p>Posición primaria: extremo izquierdo. Secundaria viable: segundo punta o mediapunta — su capacidad de pase clave podría funcionar entre líneas, pero perdería la amplitud que genera desde la banda. No recomendable como extremo derecho (perdería la capacidad de centro directo con la zurda).</p>
+
+<!-- 8. STRENGTHS & WEAKNESSES -->
+<h2><span class="section-number">08</span>Fortalezas y Debilidades</h2>
+
+<h3>Fortalezas</h3>
+
+<div class="sw-item">
+  <div class="sw-label">Generación de ocasiones de elite</div>
+  <div class="sw-metric">2.80 Key Passes/90 · P99 entre FW/MF de la Liga Profesional</div>
+  <div class="sw-text">Lidera a Estudiantes en pases clave/partido y se ubica en el tope absoluto de la liga. Cada envío tiene intención y destino — no centra por centrar, busca el pase que genere el tiro.</div>
+</div>
+
+<div class="sw-item">
+  <div class="sw-label">Asistencia como función principal</div>
+  <div class="sw-metric">0.71 Ast/90 · P99 | 0.57 xA/90 · P99</div>
+  <div class="sw-text">En 255 minutos ya acumula 2 asistencias con 1.61 xA que valida la calidad de las chances que genera. Su tasa de conversión de ocasiones generadas → asistencias reales está por encima de lo esperado.</div>
+</div>
+
+<div class="sw-item">
+  <div class="sw-label">Centros como arma ofensiva constante</div>
+  <div class="sw-metric">6.79 Crs/90 · P96 | 52.6% precisión</div>
+  <div class="sw-text">19 centros en 255 minutos — bombardeo constante al área. Juega por su banda natural (zurdo en la izquierda), lo que le permite perfilar centros con su pierna hábil sin necesidad de recortar.</div>
+</div>
+
+<div class="sw-item">
+  <div class="sw-label">Regate vertical efectivo</div>
+  <div class="sw-metric">2.80 Dribbles/90 · P85 | 50% éxito</div>
+  <div class="sw-text">Desborda con cambio de ritmo y verticalidad, generando superioridad en el 1v1 contra laterales. Su velocidad en conducción crea espacios que luego explota con centros o pases clave.</div>
+</div>
+
+<h3>Debilidades</h3>
+
+<div class="sw-item weakness">
+  <div class="sw-label">Ausencia total de amenaza goleadora</div>
+  <div class="sw-metric">0.35 Sh/90 · P11 | 0.02 xG/90 · P10</div>
+  <div class="sw-text">Solo 1 tiro en 255 minutos. No busca el disparo, no perfila hacia adentro, no se presenta como opción de gol. Los rivales pueden defender su banda sabiendo que solo va a centrar, simplificando las coberturas.</div>
+</div>
+
+<div class="sw-item weakness">
+  <div class="sw-label">Nula presencia en el remate</div>
+  <div class="sw-metric">0.00 SoT/90 · P22</div>
+  <div class="sw-text">Ni siquiera los pocos tiros que intenta van al arco. Estudiantes necesita que los centrodelanteros estén disponibles, porque Tobio Burgos no va a resolver por sí mismo frente al gol.</div>
+</div>
+
+<div class="sw-item weakness">
+  <div class="sw-label">Muestra reducida y fragilidad física</div>
+  <div class="sw-metric">255 min en 2026 | 919 min en 2025 (5 meses lesionado) | 1.884 min carrera total</div>
+  <div class="sw-text">La lesión de aductores es una señal de alerta en un jugador de 21 años que todavía necesita sumar carga competitiva. La continuidad física es el mayor interrogante para una proyección de crecimiento sostenido.</div>
+</div>
+
+<!-- 9. RATING -->
+<h2><span class="section-number">09</span>Rating y Proyección</h2>
+
+<div class="rating-box">
+  <div class="rating-card">
+    <div class="rating-label">Rating actual</div>
+    <div class="rating-grade current">C</div>
+    <div class="rating-desc">Emergente con destellos de elite creativa. 255 min en 2026 — necesita más continuidad.</div>
+  </div>
+  <div class="rating-card">
+    <div class="rating-label">Potencial (2-3 años)</div>
+    <div class="rating-grade potential">B</div>
+    <div class="rating-desc">21 años, en pleno desarrollo. Si suma goles y regularidad, puede consolidarse o dar el salto.</div>
+  </div>
+</div>
+
+<h3>Trayectoria por edad</h3>
+<p>A los 21 años, los extremos están en plena fase de desarrollo. Los picos de rendimiento para wingers suelen ubicarse entre los 24 y 28 años. Tobio Burgos tiene 3-7 años de crecimiento por delante.</p>
+
+<h3>Tendencia estadística</h3>
+<p>Progresión clara de 2 goles en 2024 (12 PJ) → 4 goles en 2025 (23 PJ), a pesar de perderse 5 meses por lesión. La capacidad creativa (P99) ya está a nivel de elite — lo que necesita desarrollar es la faceta goleadora.</p>
+
+<h3>Áreas clave de desarrollo</h3>
+<p><strong>1. Sumar disparo propio:</strong> Necesita incorporar la perfilada hacia adentro y el tiro desde el borde del área. Su zurda tiene potencial, pero no la usa para rematar.<br>
+<strong>2. Robustez física:</strong> Superar la lesión de 2025 y acumular 1.500+ minutos en una temporada sin interrupciones.<br>
+<strong>3. Continuidad como titular:</strong> Pasar de 4-6 titularidades a 15-20 por torneo para confirmar que su rendimiento se sostiene con carga completa.</p>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="brand-footer">SOY ANALISTA</div>
+  <div class="footer-meta">Fuentes: FBref · FootyStats · Transfermarkt · ESPN<br>Pool: 289 FW/MF con 200+ min · Liga Profesional Argentina 2026<br>Generado: 10 de marzo de 2026</div>
+</div>
+
+</div>
+</body>
+</html>

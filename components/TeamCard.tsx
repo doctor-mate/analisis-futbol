@@ -26,7 +26,6 @@ export default function TeamCard({ team, locale, tierLabel, statusLabel, compact
       <div className={styles.name}>{localized(team.name, locale)}</div>
       {!compact && (
         <div className={styles.meta}>
-          <TierBadge tier={team.tier} label={tierLabel} />
           <span className={`${styles.status} ${styles[`status_${team.status}`]}`}>
             {statusLabel}
           </span>

@@ -60,7 +60,9 @@ export default async function ClubTeamPage({
 
   const team = toTeam(teamRow);
   const reportRows = await getReportsForTeam(team.slug);
-  const teamReports = reportRows.map(toReport);
+  const teamReports = reportRows
+    .map(toReport)
+    .filter((r) => r.type !== "player-profile");
   const tierLabel = dict.tiers[String(team.tier) as keyof typeof dict.tiers];
 
   return (

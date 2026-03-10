@@ -1,0 +1,191 @@
+.header {
+  padding: 48px 0 0;
+}
+
+.header h1 {
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-style: italic;
+  color: var(--sa-cafe);
+  font-size: 1.05rem;
+}
+
+.players {
+  padding-bottom: 40px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  gap: 24px;
+  background: var(--sa-crema-oscura);
+  border: 1px solid var(--sa-arena);
+  border-radius: var(--sa-radius-lg);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: var(--sa-rojo);
+}
+
+.photoCol {
+  flex: 0 0 100px;
+}
+
+.photo {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--sa-radius);
+  border: 1px solid var(--sa-arena);
+}
+
+.infoCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flag {
+  font-size: 20px;
+}
+
+.name {
+  font-family: var(--sa-font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--sa-negro);
+  margin: 0;
+}
+
+.position {
+  font-family: var(--sa-font-body);
+  font-size: 14px;
+  color: var(--sa-cafe);
+  font-style: italic;
+  margin: 0;
+}
+
+.meta {
+  font-family: var(--sa-font-data);
+  font-size: 13px;
+  color: var(--sa-tierra);
+}
+
+.sep {
+  margin: 0 4px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.archetype {
+  font-family: var(--sa-font-data);
+  font-size: 11px;
+  background: var(--sa-negro);
+  color: var(--sa-crema);
+  padding: 2px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ratingBadge,
+.potentialBadge {
+  font-family: var(--sa-font-data);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+
+.ratingBadge {
+  background: var(--sa-arena);
+  color: var(--sa-negro);
+}
+
+.potentialBadge {
+  background: var(--sa-rojo);
+  color: white;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.viewBtn {
+  font-family: var(--sa-font-data);
+  font-size: 12px;
+  background: var(--sa-negro);
+  color: var(--sa-crema);
+  padding: 6px 14px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.viewBtn:hover {
+  background: var(--sa-tinta);
+}
+
+.pdfBtn {
+  font-family: var(--sa-font-data);
+  font-size: 12px;
+  border: 1px solid var(--sa-arena);
+  color: var(--sa-tierra);
+  padding: 6px 14px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.pdfBtn:hover {
+  border-color: var(--sa-rojo);
+  color: var(--sa-rojo);
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nameRow {
+    justify-content: center;
+  }
+
+  .meta {
+    justify-content: center;
+  }
+
+  .tags {
+    justify-content: center;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+}

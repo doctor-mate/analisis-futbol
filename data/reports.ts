@@ -60,6 +60,29 @@ export const reports: Report[] = [
     },
   },
 
+  // Player Profiles
+  {
+    teamSlug: "estudiantes-lp",
+    competition: "liga-profesional-2026",
+    type: "player-profile",
+    playerSlug: "tobio-burgos",
+    label: {
+      es: "Perfil de Jugador — Joaquín Tobio Burgos",
+      en: "Player Profile — Joaquín Tobio Burgos",
+    },
+    description: {
+      es: "Scouting individual: radar de métricas, percentiles, clasificación de rol y análisis de encaje táctico.",
+      en: "Individual scouting: metric radar, percentiles, role classification and tactical fit analysis.",
+    },
+    sections: 8,
+    pages: "6",
+    date: "2026-03-10",
+    formats: {
+      html: "/reports/jugadores/tobio-burgos/perfil.html",
+      pdf: "/reports/jugadores/tobio-burgos/perfil.pdf",
+    },
+  },
+
   // Real Madrid — LaLiga 2025-26
   {
     teamSlug: "real-madrid",

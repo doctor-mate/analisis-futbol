@@ -5,8 +5,10 @@
   },
   "nav": {
     "mundial": "World Cup 2026",
+    "equipos": "Teams",
     "clubes": "Clubs",
     "calendario": "Schedule",
+    "jugadores": "Players",
     "about": "About"
   },
   "search": {
@@ -105,6 +107,15 @@
   "clubes": {
     "title": "Club reports",
     "subtitle": "Tactical reports for clubs across LaLiga, Premier League, Serie A, Bundesliga, and Ligue 1"
+  },
+  "jugadores": {
+    "title": "Player profiles",
+    "subtitle": "Individual scouting with metric radar, percentiles, and tactical analysis",
+    "viewProfile": "View profile",
+    "position": "Position",
+    "team": "Team",
+    "age": "Age",
+    "years": "years"
   },
   "footer": {
     "brand": "Soy Analista",

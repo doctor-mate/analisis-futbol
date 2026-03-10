@@ -1,9 +1,20 @@
+import Link from "next/link";
 import { getDictionary, Locale } from "@/lib/i18n";
 import { getClubTeams, toTeam } from "@/lib/queries";
-import TeamCard from "@/components/TeamCard";
 import styles from "./page.module.css";
 
 export const revalidate = 3600;
+
+const competitionMeta: Record<
+  string,
+  { label: string; country: string; flag: string }
+> = {
+  "laliga-2025-26": { label: "LaLiga 2025-26", country: "España", flag: "🇪🇸" },
+  "premier-league-2025-26": { label: "Premier League 2025-26", country: "Inglaterra", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
+  "serie-a-2025-26": { label: "Serie A 2025-26", country: "Italia", flag: "🇮🇹" },
+  "bundesliga-2025-26": { label: "Bundesliga 2025-26", country: "Alemania", flag: "🇩🇪" },
+  "ligue-1-2025-26": { label: "Ligue 1 2025-26", country: "Francia", flag: "🇫🇷" },
+};
 
 export default async function ClubesPage({
   params,
@@ -17,21 +28,18 @@ export default async function ClubesPage({
   const clubRows = await getClubTeams();
   const clubTeams = clubRows.map(toTeam);
 
-  // Group clubs by competition
-  const competitions = new Map<string, typeof clubTeams>();
+  // Only show leagues that have at least one team with a report (status: available)
+  const leaguesWithReports = new Map<string, number>();
   for (const team of clubTeams) {
-    const key = team.competition;
-    if (!competitions.has(key)) competitions.set(key, []);
-    competitions.get(key)!.push(team);
+    if (team.status === "available") {
+      leaguesWithReports.set(
+        team.competition,
+        (leaguesWithReports.get(team.competition) ?? 0) + 1
+      );
+    }
   }
 
-  const competitionLabels: Record<string, { es: string; en: string }> = {
-    "laliga-2025-26": { es: "LaLiga 2025-26", en: "LaLiga 2025-26" },
-    "premier-league-2025-26": { es: "Premier League 2025-26", en: "Premier League 2025-26" },
-    "serie-a-2025-26": { es: "Serie A 2025-26", en: "Serie A 2025-26" },
-    "bundesliga-2025-26": { es: "Bundesliga 2025-26", en: "Bundesliga 2025-26" },
-    "ligue-1-2025-26": { es: "Ligue 1 2025-26", en: "Ligue 1 2025-26" },
-  };
+  const leagues = Array.from(leaguesWithReports.entries());
 
   return (
     <>
@@ -43,36 +51,43 @@ export default async function ClubesPage({
         </div>
       </section>
 
-      <hr className="editorial-rule" style={{ margin: "0 auto 40px", maxWidth: 960 }} />
+      <hr
+        className="editorial-rule"
+        style={{ margin: "0 auto 40px", maxWidth: 960 }}
+      />
 
       <section className={styles.leagues}>
         <div className="container">
-          {Array.from(competitions.entries()).map(([comp, compTeams]) => (
-            <div key={comp} className={styles.leagueBlock}>
-              <h2>{competitionLabels[comp]?.[loc] || comp}</h2>
-              <div className={styles.grid}>
-                {compTeams.map((team) => (
-                  <TeamCard
-                    key={team.slug}
-                    team={team}
-                    locale={loc}
-                    tierLabel={dict.tiers[String(team.tier) as keyof typeof dict.tiers]}
-                    statusLabel={
-                      team.status === "available"
-                        ? dict.team.available
-                        : dict.team.comingSoon
-                    }
-                  />
-                ))}
-              </div>
+          {leagues.length > 0 ? (
+            <div className={styles.leagueGrid}>
+              {leagues.map(([comp, count]) => {
+                const meta = competitionMeta[comp];
+                return (
+                  <Link
+                    key={comp}
+                    href={`/${locale}/clubes/${comp}`}
+                    className={styles.leagueCard}
+                  >
+                    <span className={styles.leagueFlag}>
+                      {meta?.flag ?? "🏳️"}
+                    </span>
+                    <span className={styles.leagueName}>
+                      {meta?.label ?? comp}
+                    </span>
+                    <span className={styles.leagueCount}>
+                      {count} {count === 1
+                        ? (loc === "es" ? "informe" : "report")
+                        : (loc === "es" ? "informes" : "reports")}
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
-          ))}
-
-          {competitions.size === 0 && (
+          ) : (
             <div className={styles.upcoming}>
               <p>
                 {loc === "es"
-                  ? "Informes de clubes — Próximamente"
+                  ? "Informes de clubes — Pr\u00f3ximamente"
                   : "Club reports — Coming soon"}
               </p>
             </div>

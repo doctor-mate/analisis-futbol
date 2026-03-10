@@ -16,6 +16,14 @@ import styles from "./page.module.css";
 
 export const revalidate = 3600;
 
+const competitionMeta: Record<string, { label: string; flag: string }> = {
+  "laliga-2025-26": { label: "LaLiga 2025-26", flag: "🇪🇸" },
+  "premier-league-2025-26": { label: "Premier League 2025-26", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
+  "serie-a-2025-26": { label: "Serie A 2025-26", flag: "🇮🇹" },
+  "bundesliga-2025-26": { label: "Bundesliga 2025-26", flag: "🇩🇪" },
+  "ligue-1-2025-26": { label: "Ligue 1 2025-26", flag: "🇫🇷" },
+};
+
 export default async function HomePage({
   params,
 }: {
@@ -35,9 +43,16 @@ export default async function HomePage({
     .filter(Boolean)
     .map((row) => toTeam(row!));
 
-  // Club teams
+  // Club teams — group by league, only those with reports
   const clubRows = await getClubTeams();
   const clubs = clubRows.map(toTeam);
+  const leagueMap = new Map<string, number>();
+  for (const team of clubs) {
+    if (team.status === "available") {
+      leagueMap.set(team.competition, (leagueMap.get(team.competition) ?? 0) + 1);
+    }
+  }
+  const leaguesWithReports = Array.from(leagueMap.entries());
 
   function getStatusLabel(status: string): string {
     const map: Record<string, string> = {
@@ -137,8 +152,8 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* Clubs section */}
-      {clubs.length > 0 && (
+      {/* Clubs section — league cards only */}
+      {leaguesWithReports.length > 0 && (
         <>
           <div className="container">
             <div className="diamond-separator">
@@ -148,16 +163,29 @@ export default async function HomePage({
           <section className={styles.section}>
             <div className="container">
               <h2>{dict.home.clubes}</h2>
-              <div className={styles.featuredGrid}>
-                {clubs.map((team) => (
-                  <TeamCard
-                    key={team.slug}
-                    team={team}
-                    locale={loc}
-                    tierLabel={dict.tiers[String(team.tier) as keyof typeof dict.tiers]}
-                    statusLabel={getStatusLabel(team.status)}
-                  />
-                ))}
+              <div className={styles.leagueGrid}>
+                {leaguesWithReports.map(([comp, count]) => {
+                  const meta = competitionMeta[comp];
+                  return (
+                    <Link
+                      key={comp}
+                      href={`/${locale}/clubes/${comp}`}
+                      className={styles.leagueCard}
+                    >
+                      <span className={styles.leagueFlag}>
+                        {meta?.flag ?? "🏳️"}
+                      </span>
+                      <span className={styles.leagueName}>
+                        {meta?.label ?? comp}
+                      </span>
+                      <span className={styles.leagueCount}>
+                        {count} {count === 1
+                          ? (loc === "es" ? "informe" : "report")
+                          : (loc === "es" ? "informes" : "reports")}
+                      </span>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </section>
